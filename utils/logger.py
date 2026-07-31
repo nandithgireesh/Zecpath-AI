@@ -6,6 +6,6 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
-logging.info("Zecpath AI Started")
+logger = logging.getLogger(__name__)
 
-print("Logger Initialized")
+logger.info("Zecpath AI Started")

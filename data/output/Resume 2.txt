@@ -1,0 +1,48 @@
+ABHAY GIREESH
+Kochi, Kerala - 682030 |  +91 1234567890 |  Nambu007@gmail.com
+BUSINESS ANALYST / APPLICATION ANALYST - RETAIL SUPPLY CHAIN DOMAIN
+Warehouse Management System (WMS) - Digital Transformation Project
+Profile Summary
+Systems and Application Analyst with 4 years of hands-on experience in the Retail Supply Chain (Warehouse Management System) domain. Strong background in analysing legacy PowerBuilder scripts and SQL stored procedures to understand end-to-end system workflows, backend logic, and data flow across enterprise applications. Experienced in interpreting how system components interact during modernization and cloud transformation to Microsoft Azure. Adept at investigating system behaviour, performing root cause analysis, validating data accuracy, and supporting development and QA teams to ensure accurate migration of legacy functionality into modern architectures. Proficient in translating technical understanding of existing systems into structured workflows that support scalable, reliable, and high-performance solutions.
+Experience
+Tata Consultancy Services (TCS) | Systems & Application Analyst (Business Analyst Role)
+December 2021 - Present
+Analysed legacy PowerBuilder scripts and SQL stored procedures to understand end-to-end system workflows and backend logic during enterprise application migration.
+Interpreted application behaviour by tracing data flow between UI, business logic, and database layers to identify functional gaps and system issues.
+Gained strong exposure to understanding how enterprise systems behave under different operational scenarios and how backend logic impacts overall system functionality.
+Performed reverse engineering and root cause analysis for production issues by examining backend logic and database interactions.
+Validated system behaviour using SQL queries and data checks to ensure accuracy of business processes and application functionality.
+Investigated how different system components interacted under various scenarios to identify logic mismatches and performance issues.
+Worked closely with developers to translate legacy system behaviour into modern Azure-based architecture through detailed technical analysis.
+Reviewed API responses and database outputs to ensure synchronization between UI and backend data layers.
+Conducted manual testing and data validation by comparing legacy and new systems to ensure functional parity.
+Developed detailed workflow documentation based on technical understanding of existing code and database logic.
+Utilized DBeaver and Sybase SQL extensively for data analysis, impact assessment, and troubleshooting.
+Participated in Agile ceremonies, collaborating with cross-functional teams including developers, testers, and architects.
+Mapped As-Is and To-Be system workflows to identify logic gaps, bottlenecks, and improvement opportunities.
+Supported issue triage and defect resolution during UAT and post-migration phases through technical investigation.
+Designed UI mockups using Figma to better represent system workflows and improve usability.
+Education
+Bachelor of Technology (Electronics and Communication Engineering)
+Mar Athanasius College of Engineering, Kothamangalam | 2016 - 2020
+Higher Secondary (Plus Two)
+Sree Narayana Higher Secondary School, Vadakara | 2014 - 2016
+Certifications
+Microsoft Certified: Azure Fundamentals (AZ-900)
+Microsoft Certified: Security, Compliance, and Identity Fundamentals (SC-900)
+Microsoft Certified: Azure AI Fundamentals (AI-900)
+Figma Fundamentals - Udemy
+Cisco Certified Network Associate Trained (CCNA) - EduSense Technologies, Kochi
+
+Skills
+SQL (Stored Procedures, Queries, Data Validation)
+PowerBuilder Script Analysis (Legacy System Understanding)
+System Workflow & Data Flow Analysis
+Root Cause Analysis & Troubleshooting
+Azure Cloud Fundamentals
+Networking Fundamentals (CCNA level, Packet Tracer)
+API & Database Output Validation
+Agile Collaboration
+References
+Shwetank Sahu - Technical Lead, Tata Consultancy Services | +91 9889581878
+Sudeep Pandey - Technical Lead, Tata Consultancy Services | +91 9987050473
