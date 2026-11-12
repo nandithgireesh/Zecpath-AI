@@ -1,0 +1,110 @@
+{
+    "total_resumes": 3,
+    "total_jds": 5,
+    "total_comparisons": 15,
+    "average_similarity": 0.13,
+    "highest_match": {
+        "resume": "Resume 2.json",
+        "jd": "JD4.json",
+        "score": 0.32,
+        "match": "Poor"
+    },
+    "lowest_match": {
+        "resume": "Resume 3.json",
+        "jd": "JD1.json",
+        "score": -0.0,
+        "match": "Poor"
+    },
+    "all_results": [
+        {
+            "resume": "Resume 1.json",
+            "jd": "JD1.json",
+            "score": 0.22,
+            "match": "Poor"
+        },
+        {
+            "resume": "Resume 1.json",
+            "jd": "JD2.json",
+            "score": 0.12,
+            "match": "Poor"
+        },
+        {
+            "resume": "Resume 1.json",
+            "jd": "JD3.json",
+            "score": 0.06,
+            "match": "Poor"
+        },
+        {
+            "resume": "Resume 1.json",
+            "jd": "JD4.json",
+            "score": 0.17,
+            "match": "Poor"
+        },
+        {
+            "resume": "Resume 1.json",
+            "jd": "JD5.json",
+            "score": 0.05,
+            "match": "Poor"
+        },
+        {
+            "resume": "Resume 2.json",
+            "jd": "JD1.json",
+            "score": 0.11,
+            "match": "Poor"
+        },
+        {
+            "resume": "Resume 2.json",
+            "jd": "JD2.json",
+            "score": 0.04,
+            "match": "Poor"
+        },
+        {
+            "resume": "Resume 2.json",
+            "jd": "JD3.json",
+            "score": 0.13,
+            "match": "Poor"
+        },
+        {
+            "resume": "Resume 2.json",
+            "jd": "JD4.json",
+            "score": 0.32,
+            "match": "Poor"
+        },
+        {
+            "resume": "Resume 2.json",
+            "jd": "JD5.json",
+            "score": 0.07,
+            "match": "Poor"
+        },
+        {
+            "resume": "Resume 3.json",
+            "jd": "JD1.json",
+            "score": -0.0,
+            "match": "Poor"
+        },
+        {
+            "resume": "Resume 3.json",
+            "jd": "JD2.json",
+            "score": 0.1,
+            "match": "Poor"
+        },
+        {
+            "resume": "Resume 3.json",
+            "jd": "JD3.json",
+            "score": 0.19,
+            "match": "Poor"
+        },
+        {
+            "resume": "Resume 3.json",
+            "jd": "JD4.json",
+            "score": 0.15,
+            "match": "Poor"
+        },
+        {
+            "resume": "Resume 3.json",
+            "jd": "JD5.json",
+            "score": 0.25,
+            "match": "Poor"
+        }
+    ]
+}

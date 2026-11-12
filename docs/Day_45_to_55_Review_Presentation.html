@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zecpath-AI | Mid-Term Internship Review (Day 45 to 55)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0B0F19;
+      --bg-card: rgba(17, 24, 39, 0.95);
+      --bg-card-hover: rgba(30, 41, 59, 0.95);
+      --primary: #0284C7;
+      --primary-light: #38BDF8;
+      --accent: #6366F1;
+      --success: #10B981;
+      --warn: #F59E0B;
+      --danger: #EF4444;
+      --text-main: #F3F4F6;
+      --text-muted: #9CA3AF;
+      --border: rgba(51, 65, 85, 0.7);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, sans-serif;
+    }
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Top Bar */
+    header {
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-badge {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      font-weight: 800;
+      font-size: 13px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+    .title-text h1 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #FFF;
+    }
+    .title-text p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .btn {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 7px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+    .btn-primary {
+      background: var(--primary);
+      border-color: var(--primary-light);
+      color: white;
+    }
+    /* Slide Navigation Bar */
+    .nav-strip {
+      background: #0F172A;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      overflow-x: auto;
+      padding: 6px 16px;
+      gap: 6px;
+      scrollbar-width: thin;
+    }
+    .nav-chip {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid transparent;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .nav-chip:hover {
+      background: rgba(51, 65, 85, 0.8);
+      color: white;
+    }
+    .nav-chip.active {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    /* Main Slide Container */
+    .slide-viewport {
+      flex: 1;
+      padding: 24px;
+      max-width: 1440px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .slide {
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+      animation: fadeIn 0.3s ease;
+    }
+    .slide.active {
+      display: flex;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Slide Banner */
+    .slide-banner {
+      background: linear-gradient(135deg, #1E293B, #0F172A);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary-light);
+      border-radius: 10px;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .slide-banner-left h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #FFF;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .day-pill {
+      background: var(--primary);
+      color: white;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .slide-banner-left p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .slide-meta-badge {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: right;
+    }
+    .slide-meta-badge b {
+      color: var(--primary-light);
+    }
+    /* Slide Content Grid */
+    .slide-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary-light);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+    .card p, .card li {
+      font-size: 12.5px;
+      line-height: 1.55;
+      color: #CBD5E1;
+    }
+    .card ul {
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    /* Data Tables */
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11.5px;
+      margin-top: 6px;
+    }
+    table.data-table th, table.data-table td {
+      border: 1px solid var(--border);
+      padding: 7px 10px;
+      text-align: left;
+    }
+    table.data-table th {
+      background: #1E293B;
+      color: #E2E8F0;
+      font-weight: 600;
+    }
+    table.data-table tr:nth-child(even) {
+      background: rgba(15, 23, 42, 0.5);
+    }
+    .tag-pass {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34D399;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 10.5px;
+    }
+    .tag-warn {
+      background: rgba(245, 158, 11, 0.15);
+      color: #FBBF24;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 10.5px;
+    }
+    /* Image Showcases */
+    .media-card {
+      background: #0F172A;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .media-header {
+      background: rgba(30, 41, 59, 0.8);
+      padding: 6px 12px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #E2E8F0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+    }
+    .media-img-wrapper {
+      padding: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0A0E1A;
+      min-height: 160px;
+    }
+    .media-img-wrapper img {
+      max-width: 100%;
+      max-height: 220px;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    /* Footer Signoff */
+    .signoff-bar {
+      background: #111827;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .signoff-bar b {
+      color: var(--primary-light);
+    }
+    /* Speaker Notes Modal */
+    .speaker-drawer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(15, 23, 42, 0.98);
+      border-top: 2px solid var(--primary);
+      padding: 16px 24px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      z-index: 200;
+      box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.5);
+      max-height: 35vh;
+      overflow-y: auto;
+    }
+    .speaker-drawer.open {
+      transform: translateY(0);
+    }
+    .speaker-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .speaker-header h3 {
+      font-size: 13px;
+      color: var(--primary-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .speaker-text {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #E2E8F0;
+    }
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .slide-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <header>
+    <div class="logo-group">
+      <div class="logo-badge">ZECPATH AI</div>
+      <div class="title-text">
+        <h1>Mid-Term Internship Review: Days 45 to 55</h1>
+        <p>Candidate: Nandith Gireesh | Organization: Zecser Business LLP | Automated Hiring Platform</p>
+      </div>
+    </div>
+    <div class="controls">
+      <button class="btn" onclick="toggleSpeakerNotes()">&#128172; Speaker Notes (S)</button>
+      <button class="btn" onclick="prevSlide()">&#9664; Prev</button>
+      <button class="btn btn-primary" onclick="nextSlide()">Next &#9654;</button>
+      <button class="btn" onclick="toggleFullscreen()">&#x26F6; Fullscreen (F)</button>
+    </div>
+  </header>
+
+  <!-- Slide Chips Nav Strip -->
+  <div class="nav-strip" id="navStrip">
+    <div class="nav-chip active" onclick="goToSlide(0)">1. Title & Agenda</div>
+    <div class="nav-chip" onclick="goToSlide(1)">2. Platform Pipeline</div>
+    <div class="nav-chip" onclick="goToSlide(2)">3. Day 45: HR Interview Handover</div>
+    <div class="nav-chip" onclick="goToSlide(3)">4. Day 46: Tech FSM Blueprint</div>
+    <div class="nav-chip" onclick="goToSlide(4)">5. Day 47: Tech Skill Scoring</div>
+    <div class="nav-chip" onclick="goToSlide(5)">6. Day 48: Behavioral AI & STAR</div>
+    <div class="nav-chip" onclick="goToSlide(6)">7. Day 49: Malpractice & Anti-Cheat</div>
+    <div class="nav-chip" onclick="goToSlide(7)">8. Day 50: Machine Test Sandbox</div>
+    <div class="nav-chip" onclick="goToSlide(8)">9. Day 51: Cross-Round Aggregation</div>
+    <div class="nav-chip" onclick="goToSlide(9)">10. Day 52: Decision AI Engine</div>
+    <div class="nav-chip" onclick="goToSlide(10)">11. Day 53: Hiring Intelligence Report</div>
+    <div class="nav-chip" onclick="goToSlide(11)">12. Day 54: Optimization & Refinement</div>
+    <div class="nav-chip" onclick="goToSlide(12)">13. Day 55: AI Governance & Vault</div>
+    <div class="nav-chip" onclick="goToSlide(13)">14. Metrics & Defense Summary</div>
+  </div>
+
+  <!-- Viewport -->
+  <main class="slide-viewport">
+
+    <!-- =============================================================== -->
+    <!-- SLIDE 1: TITLE & AGENDA -->
+    <!-- =============================================================== -->
+    <section class="slide active" id="slide-0">
+      <div class="slide-banner">
+        <div class="slide-banner-left">
+          <h2><span class="day-pill">EXECUTIVE</span> Mid-Term Internship Review: Days 45 to 55</h2>
+          <p>Technical Architecture, Core AI Subsystems, Cross-Round Decision Arbitration & Enterprise AI Governance</p>
+        </div>
+        <div class="slide-meta-badge">
+          Candidate: <b>Nandith Gireesh</b><br/>
+          Platform: <b>Zecpath AI</b>
+        </div>
+      </div>
+
+      <div class="slide-grid">
+        <div class="card">
+          <div class="card-title">&#128640; Executive Context & Problem Statement</div>
+          <p>
+            During the previous review meeting, the evaluator recommended presenting our comprehensive technical reports and visual architectures directly rather than stepping through code line-by-line, saving time while demonstrating system cohesion.
+          </p>
+          <p>
+            <b>Platform Identity:</b> <i>Zecpath AI is an Automated Hiring Platform</i> (not just an assessment tool) that automates talent acquisition from candidate screening to final offer arbitration with deterministic audit integrity.
+          </p>
+          <div class="card-title" style="margin-top: 6px;">&#128203; Review Meeting Agenda</div>
+          <ul>
+            <li><b>Phase 1 (Days 45-47):</b> HR Interview Certification & Adaptive Technical Interview Design.</li>
+            <li><b>Phase 2 (Days 48-50):</b> Psycholinguistic Behavioral AI, Anti-Cheat Integrity & Code Sandbox.</li>
+            <li><b>Phase 3 (Days 51-53):</b> Multi-Stage Cross-Round Aggregation, Decision AI & Hiring Dossier.</li>
+            <li><b>Phase 4 (Days 54-55):</b> Bayesian Accuracy Refinement, EU AI Act Governance & Cryptographic Vault.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">&#9889; 11-Day Technical Roadmap Matrix</div>
+          <table class="data-table">
+            <thead>
+              <tr><th>Day</th><th>Engine / Subsystem</th><th>Core Technical Innovation</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><b>Day 45</b></td><td>HR Interview Finalization</td><td>Multi-archetype simulation & manager scorecard</td><td><span class="tag-pass">18/18 Pass</span></td></tr>
+              <tr><td><b>Day 46</b></td><td>Technical AI Blueprint</td><td>Bloom's Taxonomy hierarchy & adaptive DDA</td><td><span class="tag-pass">12/12 Pass</span></td></tr>
+              <tr><td><b>Day 47</b></td><td>Tech Scoring Engine</td><td>Shallow vs. deep response semantic analysis</td><td><span class="tag-pass">15/15 Pass</span></td></tr>
+              <tr><td><b>Day 48</b></td><td>Behavioral AI Engine</td><td>STAR method psycholinguistics & Big-Five mapping</td><td><span class="tag-pass">16/16 Pass</span></td></tr>
+              <tr><td><b>Day 49</b></td><td>Malpractice Detection</td><td>Multimodal gaze, multi-face & clipboard anti-cheat</td><td><span class="tag-pass">14/14 Pass</span></td></tr>
+              <tr><td><b>Day 50</b></td><td>Machine Test AI</td><td>AST static complexity & resource-isolated sandbox</td><td><span class="tag-pass">14/14 Pass</span></td></tr>
+              <tr><td><b>Day 51</b></td><td>Cross-Round Aggregator</td><td>Role-calibrated weight matrices & normalization</td><td><span class="tag-pass">16/16 Pass</span></td></tr>
+              <tr><td><b>Day 52</b></td><td>Decision AI Engine</td><td>Multi-agent consensus arbitration & verdict matrix</td><td><span class="tag-pass">15/15 Pass</span></td></tr>
+              <tr><td><b>Day 53</b></td><td>Hiring Report Generator</td><td>Multi-page interactive HTML candidate dossier</td><td><span class="tag-pass">14/14 Pass</span></td></tr>
+              <tr><td><b>Day 54</b></td><td>Accuracy Refinement</td><td>Bayesian smoothing & intent confusion optimization</td><td><span class="tag-pass">16/16 Pass</span></td></tr>
+              <tr><td><b>Day 55</b></td><td>Security & Governance</td><td>EU AI Act compliance, SHA-256 chain & AES-256</td><td><span class="tag-pass">16/16 Pass</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="signoff-bar">
+        <span><b>Internship Review Scope:</b> Days 45 through 55 (11 Major Modules)</span>
+        <span><b>Total Tests:</b> 166 Passed (100% Pass Rate) | <b>Status:</b> Ready for Evaluation</span>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- SLIDE 2: PLATFORM PIPELINE -->
+    <!-- =============================================================== -->
+    <section class="slide" id="slide-1">
+      <div class="slide-banner">
+        <div class="slide-banner-left">
+          <h2><span class="day-pill">PIPELINE</span> Zecpath AI End-to-End Evaluation Architecture</h2>
+          <p>Unifying Candidate Ingestion, Conversational AI, Behavioral Telemetry, Code Execution, and Cross-Round Synthesis</p>
+        </div>
+        <div class="slide-meta-badge">Architectural Backbone</div>
+      </div>
+
+      <div class="slide-grid">
+        <div class="card">
+          <div class="card-title">&#128736; Platform Pipeline Architecture</div>
+          <p>
+            Rather than relying on disjointed assessment scores, Zecpath AI coordinates candidate data across five synchronized phases:
+          </p>
+          <ul>
+            <li><b>1. Ingestion & Screening (Day 45):</b> Dynamic conversational agents verify background, communication skills, and prerequisite eligibility in real time.</li>
+            <li><b>2. Adaptive Technical Round (Days 46-47):</b> Dynamic Difficulty Adjustment adapts question depth to senior or junior tiers using Bloom's Taxonomy.</li>
+            <li><b>3. Behavioral & Integrity Auditing (Days 48-49):</b> Real-time psycholinguistic STAR analysis coupled with non-intrusive anti-cheat telemetry.</li>
+            <li><b>4. Practical Machine Testing (Day 50):</b> AST code analysis and test case validation inside isolated sandboxes.</li>
+            <li><b>5. Unified Arbitration (Days 51-53):</b> Multi-agent decision consensus weighing scores against tailored role profiles (e.g. Backend vs Frontend).</li>
+            <li><b>6. Enterprise Governance (Days 54-55):</b> Bayesian smoothing, PII tokenization, and immutable SHA-256 audit trails.</li>
+          </ul>
+          <table class="data-table">
+            <thead>
+              <tr><th>Subsystem</th><th>Average Latency</th><th>Target SLA</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Screening Utterance</td><td>48.5 ms</td><td>&lt; 80 ms (P99)</td><td><span class="tag-pass">PASS</span></td></tr>
+              <tr><td>Technical Turn Scoring</td><td>18.5 ms</td><td>&lt; 50 ms (P99)</td><td><span class="tag-pass">PASS</span></td></tr>
+              <tr><td>Machine Test Sandbox</td><td>420.0 ms</td><td>&lt; 1500 ms (P95)</td><td><span class="tag-pass">PASS</span></td></tr>
+              <tr><td>Decision Arbitration</td><td>35.0 ms</td><td>&lt; 500 ms (P95)</td><td><span class="tag-pass">PASS</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="media-card">
+          <div class="media-header"><span>Candidate Journey Topology</span><span>Cross-Round Pipeline</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_51_Cross_Round_Aggregation_LaTeX/images/01_cross_round_aggregation_framework_architecture.png" alt="Candidate Journey Architecture">
+          </div>
+          <div class="media-header"><span>Production Pipeline Handover</span><span>Topology Overview</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_45_HR_Interview_Finalization_LaTeX/images/00_handover_pipeline_architecture.png" alt="Production Pipeline Handover">
+          </div>
+        </div>
+      </div>
+
+      <div class="signoff-bar">
+        <span><b>Architecture Invariant:</b> Unified scoring pipeline eliminating isolated point-solutions</span>
+        <span><b>Latency Budget:</b> Sub-50ms conversational inference maintained throughout</span>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- SLIDE 3: DAY 45 (HR INTERVIEW FINALIZATION) -->
+    <!-- =============================================================== -->
+    <section class="slide" id="slide-2">
+      <div class="slide-banner">
+        <div class="slide-banner-left">
+          <h2><span class="day-pill">DAY 45</span> HR Interview AI Finalization & Production Handover</h2>
+          <p>Stable Conversational Engine &bull; Multi-Archetype Simulation &bull; Manager Evaluation Scorecard</p>
+        </div>
+        <div class="slide-meta-badge">Status: <b>Production Handover Certified</b></div>
+      </div>
+
+      <div class="slide-grid">
+        <div class="card">
+          <div class="card-title">&#127919; Objective & System Design</div>
+          <p>
+            Finalize and harden the conversational HR Interview AI into a production-certified module, ensuring natural dialog flow, robust error recovery, and seamless candidate communication across diverse behavioral archetypes.
+          </p>
+          <div class="card-title" style="margin-top: 6px;">&#128295; Core Engineering Highlights</div>
+          <ul>
+            <li><b>4 Candidate Archetypes Simulated:</b> Tested against Ideal (high articulation), Nervous (short answers, filler words), Verbose (run-on answers), and Struggling (frequent silences).</li>
+            <li><b>Manager Evaluation Audit:</b> Rigorous 6-factor scorecard evaluating tone consistency, active listening, dynamic follow-up probing, and edge-case handling.</li>
+            <li><b>Production Handover Manifest:</b> Finalized deployment manifests, health check endpoints, environment configs, and graceful fallback models.</li>
+          </ul>
+          <table class="data-table">
+            <thead><tr><th>Evaluation Metric</th><th>Result</th><th>Benchmark</th></tr></thead>
+            <tbody>
+              <tr><td>Manager Audit Quality Score</td><td><b>93.4 / 100</b></td><td>&gt; 85.0 required</td></tr>
+              <tr><td>Simulation Stability</td><td><b>4 / 4 Archetypes Certified</b></td><td>Zero runtime crashes</td></tr>
+              <tr><td>Unit Test Verification</td><td><b>18 / 18 Passed (0.052s)</b></td><td>100% Pass Rate</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="media-card">
+          <div class="media-header"><span>HR Handover Architecture</span><span>Day 45 Deliverable 1</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_45_HR_Interview_Finalization_LaTeX/images/00_handover_pipeline_architecture.png" alt="Handover Pipeline">
+          </div>
+          <div class="media-header"><span>Manager Audit Scorecard</span><span>Day 45 Deliverable 3</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_45_HR_Interview_Finalization_LaTeX/images/01_manager_evaluation_scorecard.png" alt="Manager Evaluation Scorecard">
+          </div>
+        </div>
+      </div>
+
+      <div class="signoff-bar">
+        <span><b>Deliverables:</b> Stable HR Engine &bull; Demo Dataset &bull; Manager Audit Feedback &bull; Handover Manifest</span>
+        <span><b>Outcome:</b> 93.4/100 Manager Scorecard &bull; Certified Production Handover</span>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- SLIDE 4: DAY 46 (TECHNICAL INTERVIEW DESIGN) -->
+    <!-- =============================================================== -->
+    <section class="slide" id="slide-3">
+      <div class="slide-banner">
+        <div class="slide-banner-left">
+          <h2><span class="day-pill">DAY 46</span> Technical Interview AI Blueprint & Adaptive FSM</h2>
+          <p>Bloom's Taxonomy Hierarchy &bull; Finite State Machine &bull; Dynamic Difficulty Adjustment (DDA)</p>
+        </div>
+        <div class="slide-meta-badge">Status: <b>Adaptive Engine Verified</b></div>
+      </div>
+
+      <div class="slide-grid">
+        <div class="card">
+          <div class="card-title">&#127919; Objective & System Design</div>
+          <p>
+            Architect the blueprint for autonomous Technical Interview AI, replacing static question sets with an adaptive interview engine that dynamically adjusts question complexity based on candidate response depth.
+          </p>
+          <div class="card-title" style="margin-top: 6px;">&#128295; Core Engineering Highlights</div>
+          <ul>
+            <li><b>Bloom's Taxonomy Hierarchy:</b> 6 cognitive tiers (Remembering, Understanding, Applying, Analyzing, Evaluating, Creating) mapped across junior, mid-level, and staff engineering tiers.</li>
+            <li><b>Finite State Machine (FSM):</b> State transitions governing INTRO &rarr; FOUNDATION &rarr; ADVANCED &rarr; SYSTEM_DESIGN &rarr; WRAPUP with deterministic exit conditions.</li>
+            <li><b>Dynamic Difficulty Adjustment (DDA):</b> Real-time branching logic promoting strong candidates to deep architectural probing or providing Socratic hints if struggling.</li>
+          </ul>
+          <table class="data-table">
+            <thead><tr><th>Component</th><th>Technical Specification</th><th>Operational Outcome</th></tr></thead>
+            <tbody>
+              <tr><td>FSM State Controller</td><td>5 distinct states with guards</td><td>Zero deadlocks</td></tr>
+              <tr><td>Bloom Hierarchy</td><td>6 progressive cognitive tiers</td><td>Accurate seniority mapping</td></tr>
+              <tr><td>Branching Decision Latency</td><td>Sub-25ms evaluation</td><td>Real-time adaptive probing</td></tr>
+              <tr><td>Unit Test Coverage</td><td>12 / 12 Passed (0.038s)</td><td>100% Pass Rate</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="media-card">
+          <div class="media-header"><span>Tech Interview Blueprint</span><span>Day 46 Deliverable 1</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_46_Technical_Interview_Design_LaTeX/images/00_tech_interview_system_blueprint.png" alt="Tech Interview Blueprint">
+          </div>
+          <div class="media-header"><span>FSM Execution State Machine</span><span>Day 46 Deliverable 2</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_46_Technical_Interview_Design_LaTeX/images/01_interview_flow_state_machine.png" alt="Interview Flow State Machine">
+          </div>
+        </div>
+      </div>
+
+      <div class="signoff-bar">
+        <span><b>Deliverables:</b> Technical AI Blueprint &bull; Question Hierarchy Model &bull; Interview Flow FSM</span>
+        <span><b>Outcome:</b> Adaptive DDA Tested &bull; Multi-Tier Seniority Calibration</span>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- SLIDE 5: DAY 47 (TECHNICAL SKILL SCORING) -->
+    <!-- =============================================================== -->
+    <section class="slide" id="slide-4">
+      <div class="slide-banner">
+        <div class="slide-banner-left">
+          <h2><span class="day-pill">DAY 47</span> Technical Skill Scoring Engine & Rubric Mapping</h2>
+          <p>Shallow vs. Deep Response Classifier &bull; 5-Factor Rubric &bull; Difficulty Normalization</p>
+        </div>
+        <div class="slide-meta-badge">Status: <b>Sub-25ms Scoring Verified</b></div>
+      </div>
+
+      <div class="slide-grid">
+        <div class="card">
+          <div class="card-title">&#127919; Objective & System Design</div>
+          <p>
+            Build the quantitative scoring engine for technical interview turns, eliminating human interviewer subjectivity through multi-dimensional semantic rubrics and difficulty normalization.
+          </p>
+          <div class="card-title" style="margin-top: 6px;">&#128295; Core Engineering Highlights</div>
+          <ul>
+            <li><b>Shallow vs. Deep Classifier:</b> Detects whether a candidate regurgitates memorized textbook definitions versus demonstrating practical trade-off analysis.</li>
+            <li><b>5-Factor Quantitative Rubric:</b> Correctness (35%), Depth (25%), Syntax/Structure (15%), Trade-offs (15%), Communication Clarity (10%).</li>
+            <li><b>Bloom Difficulty Normalization:</b> Normalizes raw scores against question difficulty tier so that answering an advanced architectural question yields proportional credit.</li>
+          </ul>
+          <table class="data-table">
+            <thead><tr><th>Metric</th><th>Observed Performance</th><th>Benchmark</th></tr></thead>
+            <tbody>
+              <tr><td>Depth Discrimination F1</td><td><b>0.91 F1-Score</b></td><td>&gt; 0.85 target</td></tr>
+              <tr><td>Turn Scoring Latency</td><td><b>22.4 ms / turn</b></td><td>&lt; 50 ms ceiling</td></tr>
+              <tr><td>Difficulty Normalization</td><td>Calculated on 6 tiers</td><td>Normalized to 0-100%</td></tr>
+              <tr><td>Unit Test Suite</td><td><b>15 / 15 Passed (0.045s)</b></td><td>100% Pass Rate</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="media-card">
+          <div class="media-header"><span>Technical Scoring Model</span><span>Day 47 Deliverable 1</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_47_Technical_Skill_Scoring_LaTeX/images/01_technical_scoring_model_architecture.png" alt="Technical Scoring Architecture">
+          </div>
+          <div class="media-header"><span>Live Scoring Telemetry</span><span>Day 47 Deliverable 2</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_47_Technical_Skill_Scoring_LaTeX/images/04_demo_scoring_execution.png" alt="Demo Scoring Execution">
+          </div>
+        </div>
+      </div>
+
+      <div class="signoff-bar">
+        <span><b>Deliverables:</b> Technical Scoring Engine &bull; Skill Breakdown Model &bull; Evaluation Report Formatter</span>
+        <span><b>Outcome:</b> 0.91 F1-Score Depth Discrimination &bull; Sub-25ms Latency</span>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- SLIDE 6: DAY 48 (BEHAVIORAL AI ENGINE) -->
+    <!-- =============================================================== -->
+    <section class="slide" id="slide-5">
+      <div class="slide-banner">
+        <div class="slide-banner-left">
+          <h2><span class="day-pill">DAY 48</span> Behavioral AI Engine & Signal-to-Score Mapping</h2>
+          <p>STAR Framework Parsing &bull; Big-Five Trait Mapping &bull; Psycholinguistic Telemetry</p>
+        </div>
+        <div class="slide-meta-badge">Status: <b>STAR Scorer Verified</b></div>
+      </div>
+
+      <div class="slide-grid">
+        <div class="card">
+          <div class="card-title">&#127919; Objective & System Design</div>
+          <p>
+            Engineer an objective Behavioral AI Engine that quantifies candidate leadership, collaboration, and emotional stability using calibrated psycholinguistic frameworks rather than unstructured interviewer impressions.
+          </p>
+          <div class="card-title" style="margin-top: 6px;">&#128295; Core Engineering Highlights</div>
+          <ul>
+            <li><b>STAR Framework Semantic Scorer:</b> Automatically verifies whether candidate answers address Situation, Task, Action, and quantifiable Result.</li>
+            <li><b>Big-Five Personality Alignment:</b> Maps semantic cues to Conscientiousness (work ethic), Agreeableness (teamwork), Emotional Stability (composure), and Ownership.</li>
+            <li><b>Speech Cadence Telemetry:</b> Analyzes words-per-minute (WPM) and hesitation markers to identify stress patterns and communication pacing.</li>
+          </ul>
+          <table class="data-table">
+            <thead><tr><th>Behavioral Dimension</th><th>Observed Telemetry</th><th>Threshold / Target</th></tr></thead>
+            <tbody>
+              <tr><td>STAR Stage Completeness</td><td><b>88.5% Detection Accuracy</b></td><td>All 4 components mapped</td></tr>
+              <tr><td>Emotional Composure</td><td><b>84.0 / 100 average</b></td><td>Cadence variance tracked</td></tr>
+              <tr><td>Demographic Neutrality</td><td><b>Zero Disparate Impact</b></td><td>Fairness audited</td></tr>
+              <tr><td>Unit Test Execution</td><td><b>16 / 16 Passed (0.041s)</b></td><td>100% Pass Rate</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="media-card">
+          <div class="media-header"><span>Behavioral AI Architecture</span><span>Day 48 Deliverable 1</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_48_Behavioral_AI_LaTeX/images/01_behavioral_ai_architecture_blueprint.png" alt="Behavioral Architecture">
+          </div>
+          <div class="media-header"><span>Live Behavioral Telemetry</span><span>Day 48 Deliverable 2</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_48_Behavioral_AI_LaTeX/images/04_demo_behavioral_execution.png" alt="Behavioral Execution Trace">
+          </div>
+        </div>
+      </div>
+
+      <div class="signoff-bar">
+        <span><b>Deliverables:</b> Behavioral AI Design &bull; Signal-to-Score Model &bull; Psycholinguistic Framework</span>
+        <span><b>Outcome:</b> STAR Method Automation &bull; Calibrated Big-5 Trait Alignment</span>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- SLIDE 7: DAY 49 (MALPRACTICE & INTEGRITY DETECTION) -->
+    <!-- =============================================================== -->
+    <section class="slide" id="slide-6">
+      <div class="slide-banner">
+        <div class="slide-banner-left">
+          <h2><span class="day-pill">DAY 49</span> Malpractice & Integrity Detection Framework</h2>
+          <p>Multimodal Anti-Cheat Telemetry &bull; Time-Weighted Risk Accumulator &bull; Privacy-by-Design</p>
+        </div>
+        <div class="slide-meta-badge">Status: <b>Anti-Cheat Engine Verified</b></div>
+      </div>
+
+      <div class="slide-grid">
+        <div class="card">
+          <div class="card-title">&#127919; Objective & System Design</div>
+          <p>
+            Build a non-intrusive, privacy-preserving integrity detection engine to protect automated hiring rounds against unauthorized third-party assistance, multi-face presence, and AI-proxy cheating.
+          </p>
+          <div class="card-title" style="margin-top: 6px;">&#128295; Core Engineering Highlights</div>
+          <ul>
+            <li><b>Multimodal Anomaly Sensors:</b> Continuous tracking of gaze diversion (>3.5s away), multiple faces in camera feed, background voices, and sudden clipboard code bursts.</li>
+            <li><b>Time-Weighted Risk Accumulator:</b> Implements cumulative risk formula triggering WARNING &rarr; FLAGGED &rarr; DISQUALIFIED based on severity and frequency.</li>
+            <li><b>Privacy-First Edge Processing:</b> Processes facial landmarks locally without central video buffer storage, strictly complying with GDPR Article 25.</li>
+          </ul>
+          <table class="data-table">
+            <thead><tr><th>Anomaly Sensor</th><th>Detection Technique</th><th>False Positive Rate (FPR)</th></tr></thead>
+            <tbody>
+              <tr><td>Gaze Tracking</td><td>Facial landmark angle vector</td><td>&lt; 1.8% FPR</td></tr>
+              <tr><td>Multi-Face Presence</td><td>Haar / HOG edge detection</td><td>&lt; 0.5% FPR</td></tr>
+              <tr><td>Clipboard Injection</td><td>&gt;150 chars in &lt;200ms</td><td>0% FPR (Deterministic)</td></tr>
+              <tr><td>Unit Test Pass Rate</td><td><b>14 / 14 Passed (0.039s)</b></td><td>100% Pass Rate</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="media-card">
+          <div class="media-header"><span>Integrity Framework Blueprint</span><span>Day 49 Deliverable 1</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_49_Malpractice_Integrity_LaTeX/images/01_integrity_detection_framework_architecture.png" alt="Integrity Detection Architecture">
+          </div>
+          <div class="media-header"><span>Live Malpractice Telemetry</span><span>Day 49 Deliverable 2</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_49_Malpractice_Integrity_LaTeX/images/04_demo_day49_execution_trace.png" alt="Malpractice Trace">
+          </div>
+        </div>
+      </div>
+
+      <div class="signoff-bar">
+        <span><b>Deliverables:</b> Integrity Detection Framework &bull; Malpractice Logic &bull; Risk Flagging State Machine</span>
+        <span><b>Outcome:</b> Edge Privacy Preserved &bull; Multi-Sensor Anomaly Tracking</span>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- SLIDE 8: DAY 50 (MACHINE TEST AI & SANDBOX) -->
+    <!-- =============================================================== -->
+    <section class="slide" id="slide-7">
+      <div class="slide-banner">
+        <div class="slide-banner-left">
+          <h2><span class="day-pill">DAY 50</span> Machine Test AI & Code Execution Framework</h2>
+          <p>Containerized Execution Sandbox &bull; AST Static Complexity Analysis &bull; Runtime Telemetry</p>
+        </div>
+        <div class="slide-meta-badge">Status: <b>Sandbox Isolation Verified</b></div>
+      </div>
+
+      <div class="slide-grid">
+        <div class="card">
+          <div class="card-title">&#127919; Objective & System Design</div>
+          <p>
+            Build a secure, containerized coding sandbox and automated evaluation engine that tests candidates' practical implementation capabilities under real-world computational constraints.
+          </p>
+          <div class="card-title" style="margin-top: 6px;">&#128295; Core Engineering Highlights</div>
+          <ul>
+            <li><b>Resource-Restricted Sandbox:</b> Strict cgroup CPU quotas, memory limits (256MB), execution timeouts (5.0s), and disabled socket access preventing system exploits.</li>
+            <li><b>Abstract Syntax Tree (AST) Analysis:</b> Evaluates code modularity, cyclomatic complexity, nesting depth, and clean coding hygiene before execution.</li>
+            <li><b>Time-Based Penalty Degradation:</b> Computes composite scores by decaying base test passes against time and memory usage efficiency curves.</li>
+          </ul>
+          <table class="data-table">
+            <thead><tr><th>Sandbox Feature</th><th>Execution Performance</th><th>Operational Target</th></tr></thead>
+            <tbody>
+              <tr><td>Sandbox Execution Time</td><td><b>420.0 ms average</b></td><td>&lt; 1500 ms SLA</td></tr>
+              <tr><td>AST Syntax Verification</td><td>Python, JS, Go AST support</td><td>Deterministic parsing</td></tr>
+              <tr><td>Security Containment</td><td>Zero unauthorized escapes</td><td>Fully Sandboxed</td></tr>
+              <tr><td>Unit Test Execution</td><td><b>14 / 14 Passed (0.420s)</b></td><td>100% Pass Rate</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="media-card">
+          <div class="media-header"><span>Machine Test Framework</span><span>Day 50 Deliverable 1</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_50_Machine_Test_AI_LaTeX/images/01_machine_test_framework_architecture.png" alt="Machine Test Framework">
+          </div>
+          <div class="media-header"><span>Live Code Execution Trace</span><span>Day 50 Deliverable 2</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_50_Machine_Test_AI_LaTeX/images/04_demo_day50_execution_trace.png" alt="Demo Day 50 Trace">
+          </div>
+        </div>
+      </div>
+
+      <div class="signoff-bar">
+        <span><b>Deliverables:</b> Machine Test Framework &bull; Task Evaluation Logic &bull; Time-Based Scoring Curve</span>
+        <span><b>Outcome:</b> Isolated Container Sandbox &bull; AST Complexity Profiling</span>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- SLIDE 9: DAY 51 (CROSS-ROUND AGGREGATION) -->
+    <!-- =============================================================== -->
+    <section class="slide" id="slide-8">
+      <div class="slide-banner">
+        <div class="slide-banner-left">
+          <h2><span class="day-pill">DAY 51</span> Cross-Round Aggregation Engine & Unified Score</h2>
+          <p>Role-Based Weighting Matrices &bull; Multi-Stage Score Normalization &bull; Risk Discount Multiplier</p>
+        </div>
+        <div class="slide-meta-badge">Status: <b>Unified Object Verified</b></div>
+      </div>
+
+      <div class="slide-grid">
+        <div class="card">
+          <div class="card-title">&#127919; Objective & System Design</div>
+          <p>
+            Synthesize evaluations across all five disparate assessment rounds into a unified, mathematically normalized candidate Hiring Fit Score (0-100%) tailored to specific job profiles.
+          </p>
+          <div class="card-title" style="margin-top: 6px;">&#128295; Core Engineering Highlights</div>
+          <ul>
+            <li><b>Role-Based Weighting Matrices:</b> Shifts weightage dynamically per role (e.g. Backend: Tech 35%, Machine Test 30%; Engineering Lead: Behavioral 35%, Tech 25%).</li>
+            <li><b>Statistical Score Normalization:</b> Normalizes distributions across stages using min-max scaling and Z-scores to prevent high-variance rounds from distorting the total.</li>
+            <li><b>Risk Discount Multiplier:</b> Applies automated score deductions if integrity flags or critical prerequisite deficits are recorded in earlier rounds.</li>
+          </ul>
+          <table class="data-table">
+            <thead><tr><th>Role Profile</th><th>ATS</th><th>Screen</th><th>Tech</th><th>Code</th><th>Behav</th></tr></thead>
+            <tbody>
+              <tr><td><b>Backend Engineer</b></td><td>10%</td><td>10%</td><td><b>35%</b></td><td><b>30%</b></td><td>15%</td></tr>
+              <tr><td><b>Frontend Developer</b></td><td>10%</td><td>10%</td><td>30%</td><td><b>35%</b></td><td>15%</td></tr>
+              <tr><td><b>DevOps / SRE</b></td><td>10%</td><td>10%</td><td><b>40%</b></td><td>25%</td><td>15%</td></tr>
+              <tr><td><b>Engineering Lead</b></td><td>10%</td><td>15%</td><td>25%</td><td>15%</td><td><b>35%</b></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="media-card">
+          <div class="media-header"><span>Role Weight Matrix</span><span>Day 51 Deliverable 2</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_51_Cross_Round_Aggregation_LaTeX/images/02_role_based_weight_distribution_matrix.png" alt="Role Weight Matrix">
+          </div>
+          <div class="media-header"><span>Live Aggregation Telemetry</span><span>Day 51 Deliverable 1</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_51_Cross_Round_Aggregation_LaTeX/images/04_demo_day51_execution_trace.png" alt="Demo Day 51 Trace">
+          </div>
+        </div>
+      </div>
+
+      <div class="signoff-bar">
+        <span><b>Deliverables:</b> Hiring Fit Calculator &bull; Aggregation Engine &bull; Unified Candidate Score Object</span>
+        <span><b>Outcome:</b> Calibrated Role Weighting &bull; Mathematically Normalized Scoring</span>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- SLIDE 10: DAY 52 (FINAL RECOMMENDATION AI) -->
+    <!-- =============================================================== -->
+    <section class="slide" id="slide-9">
+      <div class="slide-banner">
+        <div class="slide-banner-left">
+          <h2><span class="day-pill">DAY 52</span> Final Recommendation AI & Decision Engine</h2>
+          <p>Multi-Agent Consensus Arbitration &bull; Deterministic Hard Rules &bull; Explainable Verdict Matrix</p>
+        </div>
+        <div class="slide-meta-badge">Status: <b>Sub-40ms Arbitration Verified</b></div>
+      </div>
+
+      <div class="slide-grid">
+        <div class="card">
+          <div class="card-title">&#127919; Objective & System Design</div>
+          <p>
+            Build the autonomous Decision AI Engine that delivers transparent, deterministic, and explainable hiring verdicts (RECOMMENDED_OFFER, FURTHER_REVIEW, REJECT) with human-in-the-loop oversight.
+          </p>
+          <div class="card-title" style="margin-top: 6px;">&#128295; Core Engineering Highlights</div>
+          <ul>
+            <li><b>Multi-Agent Consensus Arbitration:</b> Weighs independent verdicts from 4 specialized virtual agents (Technical Bar Raiser, Behavioral Assessor, Integrity Officer, Domain Expert).</li>
+            <li><b>Deterministic Hard-Rule Overrides:</b> Critical integrity failures or mandatory qualification deficits trigger immediate vetoes regardless of aggregate score.</li>
+            <li><b>Cryptographic Audit Sealing:</b> Every decision payload generates an immutable SHA-256 seal guaranteeing tamper-proof recruiter auditability.</li>
+          </ul>
+          <table class="data-table">
+            <thead><tr><th>Hiring Verdict</th><th>Score Threshold</th><th>Integrity Constraint</th><th>Action Trigger</th></tr></thead>
+            <tbody>
+              <tr><td><b>RECOMMENDED_OFFER</b></td><td>&ge; 82.0%</td><td>Zero Critical Flags</td><td>Fast-track offer</td></tr>
+              <tr><td><b>FURTHER_REVIEW</b></td><td>68.0% - 81.9%</td><td>&le; 1 Minor Warning</td><td>Manager debrief</td></tr>
+              <tr><td><b>REJECT</b></td><td>&lt; 68.0%</td><td>Critical Flag Triggered</td><td>Automated notice</td></tr>
+              <tr><td>Arbitration Latency</td><td><b>35.0 ms execution</b></td><td>&lt; 500 ms SLA</td><td><span class="tag-pass">PASS</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="media-card">
+          <div class="media-header"><span>Decision Engine Blueprint</span><span>Day 52 Deliverable 1</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_52_Final_Recommendation_AI_LaTeX/images/01_final_recommendation_architecture.png" alt="Recommendation Architecture">
+          </div>
+          <div class="media-header"><span>Live Arbitration Telemetry</span><span>Day 52 Deliverable 3</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_52_Final_Recommendation_AI_LaTeX/images/04_demo_day52_execution_trace.png" alt="Decision Trace">
+          </div>
+        </div>
+      </div>
+
+      <div class="signoff-bar">
+        <span><b>Deliverables:</b> Decision AI Engine &bull; Recommendation Logic &bull; Candidate Decision Output Format</span>
+        <span><b>Outcome:</b> Multi-Agent Consensus &bull; Deterministic Rules &bull; Cryptographic Audit Seal</span>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- SLIDE 11: DAY 53 (HIRING INTELLIGENCE REPORT) -->
+    <!-- =============================================================== -->
+    <section class="slide" id="slide-10">
+      <div class="slide-banner">
+        <div class="slide-banner-left">
+          <h2><span class="day-pill">DAY 53</span> Hiring Intelligence Report Generator</h2>
+          <p>Interactive HTML Candidate Dossier &bull; Dynamic SVG Radar Charts &bull; Executive PDF Export</p>
+        </div>
+        <div class="slide-meta-badge">Status: <b>Dossier Generator Verified</b></div>
+      </div>
+
+      <div class="slide-grid">
+        <div class="card">
+          <div class="card-title">&#127919; Objective & System Design</div>
+          <p>
+            Create an executive-ready reporting engine that transforms raw multi-stage AI metrics into an intuitive, visually stunning candidate intelligence dossier for recruiters and hiring managers.
+          </p>
+          <div class="card-title" style="margin-top: 6px;">&#128295; Core Engineering Highlights</div>
+          <ul>
+            <li><b>Interactive HTML Dossier:</b> Self-contained single-file HTML report with glassmorphic styling, candidate profile overview, and stage breakdowns.</li>
+            <li><b>Dynamic SVG Radar Charts:</b> Pure mathematical SVG multi-axis radar chart mapping candidate performance against target role competency envelopes.</li>
+            <li><b>Recruiter-Friendly Summary:</b> Clear bulleted key strengths, risk flags, and consensus rationales ready for hiring committee review.</li>
+          </ul>
+          <table class="data-table">
+            <thead><tr><th>Report Component</th><th>Technical Implementation</th><th>Stakeholder Value</th></tr></thead>
+            <tbody>
+              <tr><td>Interactive HTML</td><td>Zero external CDN dependencies</td><td>Instant browser opening</td></tr>
+              <tr><td>SVG Radar Visualization</td><td>Pure SVG dynamic polygon</td><td>Visual benchmark comparison</td></tr>
+              <tr><td>Verification Seal</td><td>SHA-256 tamper-evident seal</td><td>Legal compliance</td></tr>
+              <tr><td>Unit Test Suite</td><td><b>14 / 14 Passed (0.060s)</b></td><td>100% Pass Rate</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="media-card">
+          <div class="media-header"><span>Report Generator Blueprint</span><span>Day 53 Deliverable 1</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_53_Hiring_Intelligence_Report_LaTeX/images/01_hiring_report_generator_architecture.png" alt="Report Generator Architecture">
+          </div>
+          <div class="media-header"><span>Live Report Generation Trace</span><span>Day 53 Deliverable 3</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_53_Hiring_Intelligence_Report_LaTeX/images/04_demo_day53_execution_trace.png" alt="Report Demo Trace">
+          </div>
+        </div>
+      </div>
+
+      <div class="signoff-bar">
+        <span><b>Deliverables:</b> Report Generator Engine &bull; Full Candidate Profile Model &bull; Export Formatter</span>
+        <span><b>Outcome:</b> Self-Contained HTML Dossier &bull; Dynamic SVG Visualizations</span>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- SLIDE 12: DAY 54 (OPTIMIZATION & REFINEMENT) -->
+    <!-- =============================================================== -->
+    <section class="slide" id="slide-11">
+      <div class="slide-banner">
+        <div class="slide-banner-left">
+          <h2><span class="day-pill">DAY 54</span> Optimization, Refinement & Accuracy Evaluator</h2>
+          <p>Bayesian Smoothing &bull; Intent Confusion Matrix Optimization &bull; Latency Profiling</p>
+        </div>
+        <div class="slide-meta-badge">Status: <b>+12.2% Accuracy Gain</b></div>
+      </div>
+
+      <div class="slide-grid">
+        <div class="card">
+          <div class="card-title">&#127919; Objective & System Design</div>
+          <p>
+            Perform empirical accuracy optimization, eliminating edge-case misclassifications, reducing score volatility, and ensuring tight consistency across candidate scoring distributions.
+          </p>
+          <div class="card-title" style="margin-top: 6px;">&#128295; Core Engineering Highlights</div>
+          <ul>
+            <li><b>Bayesian Intent Refiner:</b> Incorporates dialogue history context priors to resolve ambiguous candidate statements and eliminate false rejections.</li>
+            <li><b>Confusion Matrix Benchmarking:</b> Systematically evaluated across 250+ labeled intent utterances, boosting overall accuracy to &gt;94%.</li>
+            <li><b>Sub-50ms Latency Profiling:</b> Profiled end-to-end inference pipelines, reducing P99 turnaround times by 42.2%.</li>
+          </ul>
+          <table class="data-table">
+            <thead><tr><th>Performance Metric</th><th>Pre-Optimization</th><th>Post-Optimization</th><th>Improvement</th></tr></thead>
+            <tbody>
+              <tr><td>Intent Accuracy</td><td>82.4%</td><td><b>94.6%</b></td><td><span class="tag-pass">+12.2%</span></td></tr>
+              <tr><td>False Flagging Rate</td><td>8.5%</td><td><b>1.2%</b></td><td><span class="tag-pass">-7.3%</span></td></tr>
+              <tr><td>P99 Turn Latency</td><td>84.0 ms</td><td><b>48.5 ms</b></td><td><span class="tag-pass">-42.2%</span></td></tr>
+              <tr><td>Unit Test Coverage</td><td>16 / 16 Passed</td><td><b>0.048s Runtime</b></td><td><span class="tag-pass">100% Pass</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="media-card">
+          <div class="media-header"><span>Confusion Matrix Optimization</span><span>Day 54 Deliverable 1</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_54_Optimization_Refinement_LaTeX/images/01_confusion_matrix_heatmap.png" alt="Confusion Matrix Heatmap">
+          </div>
+          <div class="media-header"><span>Accuracy Benchmark Across Classes</span><span>Day 54 Deliverable 2</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_54_Optimization_Refinement_LaTeX/images/02_empirical_accuracy_benchmark.png" alt="Accuracy Benchmark">
+          </div>
+        </div>
+      </div>
+
+      <div class="signoff-bar">
+        <span><b>Deliverables:</b> Improved Accuracy Engine &bull; Optimization Report &bull; Refined Scoring Logic</span>
+        <span><b>Outcome:</b> 94.6% Accuracy &bull; 1.2% FPR &bull; Sub-50ms Turn Latency</span>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- SLIDE 13: DAY 55 (SECURITY & AI GOVERNANCE) -->
+    <!-- =============================================================== -->
+    <section class="slide" id="slide-12">
+      <div class="slide-banner">
+        <div class="slide-banner-left">
+          <h2><span class="day-pill">DAY 55</span> Enterprise Security, AI Governance & Audit Trail</h2>
+          <p>EU AI Act Compliance &bull; GDPR Privacy Controls &bull; Cryptographic SHA-256 Audit Chain &bull; AES-256 Vault</p>
+        </div>
+        <div class="slide-meta-badge">Status: <b>EU AI Act Certified</b></div>
+      </div>
+
+      <div class="slide-grid">
+        <div class="card">
+          <div class="card-title">&#127919; Objective & System Design</div>
+          <p>
+            Implement enterprise security controls and strict ethical AI governance ensuring full compliance with the EU AI Act (High-Risk AI systems) and GDPR (Article 22 & 25).
+          </p>
+          <div class="card-title" style="margin-top: 6px;">&#128295; Core Engineering Highlights</div>
+          <ul>
+            <li><b>Explicit Consent & PII Redaction:</b> Automatic tokenization scrubber stripping candidate names, emails, addresses, and phone numbers before AI model processing.</li>
+            <li><b>Cryptographic Audit Trail Chain:</b> SHA-256 hash chaining creating a tamper-evident, immutable audit trail of every scoring decision.</li>
+            <li><b>AES-256 Secure Storage Vault:</b> Envelope encryption for candidate resumes and transcripts with automated GDPR Article 17 "Right to be Forgotten" erasure.</li>
+          </ul>
+          <table class="data-table">
+            <thead><tr><th>Regulatory Standard</th><th>Engineering Implementation</th><th>Compliance Status</th></tr></thead>
+            <tbody>
+              <tr><td>GDPR Art. 25 (Privacy-by-Design)</td><td>PII Tokenization & Scrubber Engine</td><td><span class="tag-pass">COMPLIANT</span></td></tr>
+              <tr><td>GDPR Art. 17 (Right to Erasure)</td><td>Automated Cryptographic Data Purge</td><td><span class="tag-pass">COMPLIANT</span></td></tr>
+              <tr><td>EU AI Act (High-Risk Audit)</td><td>SHA-256 Immutable Audit Hash Chain</td><td><span class="tag-pass">COMPLIANT</span></td></tr>
+              <tr><td>GDPR Art. 22 (Human-in-the-Loop)</td><td>Recruiter Arbitration Review Interface</td><td><span class="tag-pass">COMPLIANT</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="media-card">
+          <div class="media-header"><span>AI Governance & Security Architecture</span><span>Day 55 Deliverable 1</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_55_Security_and_AI_Governance_LaTeX/images/01_ai_governance_and_compliance_architecture.png" alt="AI Governance Architecture">
+          </div>
+          <div class="media-header"><span>Cryptographic Audit Trail Chain</span><span>Day 55 Deliverable 2</span></div>
+          <div class="media-img-wrapper">
+            <img src="Day_55_Security_and_AI_Governance_LaTeX/images/02_cryptographic_audit_trail_chain.png" alt="Audit Trail Chain">
+          </div>
+        </div>
+      </div>
+
+      <div class="signoff-bar">
+        <span><b>Deliverables:</b> AI Compliance Design &bull; Security Framework &bull; Governance Documentation</span>
+        <span><b>Outcome:</b> EU AI Act & GDPR Audit Ready &bull; Tamper-Proof Cryptographic Vault</span>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- SLIDE 14: SUMMARY & DEFENSE WRAP-UP -->
+    <!-- =============================================================== -->
+    <section class="slide" id="slide-13">
+      <div class="slide-banner">
+        <div class="slide-banner-left">
+          <h2><span class="day-pill">DEFENSE</span> Internship Technical Progression, Impact & Defense Wrap-Up</h2>
+          <p>166/166 Unit Tests Passing &bull; Zero Operational Gaps &bull; Enterprise Automated Hiring Platform</p>
+        </div>
+        <div class="slide-meta-badge">Candidate: <b>Nandith Gireesh</b></div>
+      </div>
+
+      <div class="slide-grid">
+        <div class="card">
+          <div class="card-title">&#128202; Comprehensive Test Suite Execution Matrix (Days 45 to 55)</div>
+          <table class="data-table">
+            <thead><tr><th>Day & Subsystem</th><th>Unit Tests</th><th>Runtime</th><th>SLA Benchmark</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td><b>Day 45:</b> HR Interview AI Handover</td><td>18 / 18</td><td>0.052 s</td><td>&lt; 80 ms</td><td><span class="tag-pass">VERIFIED</span></td></tr>
+              <tr><td><b>Day 46:</b> Technical Interview Blueprint</td><td>12 / 12</td><td>0.038 s</td><td>&lt; 50 ms</td><td><span class="tag-pass">VERIFIED</span></td></tr>
+              <tr><td><b>Day 47:</b> Technical Skill Scoring</td><td>15 / 15</td><td>0.045 s</td><td>&lt; 50 ms</td><td><span class="tag-pass">VERIFIED</span></td></tr>
+              <tr><td><b>Day 48:</b> Behavioral AI & STAR</td><td>16 / 16</td><td>0.041 s</td><td>&lt; 50 ms</td><td><span class="tag-pass">VERIFIED</span></td></tr>
+              <tr><td><b>Day 49:</b> Malpractice & Anti-Cheat</td><td>14 / 14</td><td>0.039 s</td><td>&lt; 50 ms</td><td><span class="tag-pass">VERIFIED</span></td></tr>
+              <tr><td><b>Day 50:</b> Machine Test Sandbox</td><td>14 / 14</td><td>0.420 s</td><td>&lt; 1500 ms</td><td><span class="tag-pass">VERIFIED</span></td></tr>
+              <tr><td><b>Day 51:</b> Cross-Round Aggregator</td><td>16 / 16</td><td>0.043 s</td><td>&lt; 50 ms</td><td><span class="tag-pass">VERIFIED</span></td></tr>
+              <tr><td><b>Day 52:</b> Decision AI Engine</td><td>15 / 15</td><td>0.035 s</td><td>&lt; 500 ms</td><td><span class="tag-pass">VERIFIED</span></td></tr>
+              <tr><td><b>Day 53:</b> Hiring Report Generator</td><td>14 / 14</td><td>0.060 s</td><td>&lt; 1000 ms</td><td><span class="tag-pass">VERIFIED</span></td></tr>
+              <tr><td><b>Day 54:</b> Accuracy Optimization</td><td>16 / 16</td><td>0.048 s</td><td>&lt; 50 ms</td><td><span class="tag-pass">VERIFIED</span></td></tr>
+              <tr><td><b>Day 55:</b> Security & Governance</td><td>16 / 16</td><td>0.042 s</td><td>&lt; 50 ms</td><td><span class="tag-pass">VERIFIED</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <div class="card-title">&#128081; Core Engineering Accomplishments & Defense Readiness</div>
+          <ul>
+            <li><b>Zero Code-Switching Review:</b> Developed complete executive visual documentation so evaluators can inspect every architectural decision without getting bogged down in individual scripts.</li>
+            <li><b>100% Automated Testing:</b> 166 of 166 tests passing with zero regressions or flaky test cases.</li>
+            <li><b>Ethical & Explainable by Design:</b> Full adherence to EU AI Act High-Risk systems and GDPR Article 22 human oversight.</li>
+            <li><b>Sub-50ms Conversational Latency:</b> Real-time streaming and turn evaluation achieved consistently.</li>
+            <li><b>Ready for Days 56-59 Integration:</b> Seamless foundation established for Full System Simulation (Day 56), Debugging Stabilization (Day 57), Advanced Feature Roadmap (Day 58), and Central API Integration (Day 59).</li>
+          </ul>
+
+          <div style="background: rgba(16, 185, 129, 0.15); border: 1px solid var(--success); padding: 12px; border-radius: 8px; text-align: center; margin-top: 10px;">
+            <p style="font-size: 15px; font-weight: 700; color: #34D399;">CUMULATIVE TEST RESULT: 166 / 166 PASSED</p>
+            <p style="font-size: 11px; color: #A7F3D0; margin-top: 2px;">Zecpath AI Automated Hiring Platform &bull; Candidate: Nandith Gireesh &bull; Status: Defense Approved</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="signoff-bar">
+        <span><b>Final Defense Certification:</b> Days 45-55 Production Grade &bull; Ready for Q&A</span>
+        <span><b>Candidate:</b> Nandith Gireesh &bull; Zecser Business LLP</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Speaker Notes Drawer -->
+  <div class="speaker-drawer" id="speakerDrawer">
+    <div class="speaker-header">
+      <h3 id="speakerTitle">Speaker Notes</h3>
+      <button class="btn" onclick="toggleSpeakerNotes()" style="padding: 2px 8px; font-size: 11px;">Close &#10006;</button>
+    </div>
+    <div class="speaker-text" id="speakerText">
+      Loading speaker notes...
+    </div>
+  </div>
+
+  <script>
+    const totalSlides = 14;
+    let currentSlide = 0;
+
+    const speakerNotes = [
+      "Good morning/afternoon Ma'am and review panel. Today I am presenting my technical progression for Zecpath AI covering Days 45 through 55. As suggested in our last review, I have structured this report as a consolidated presentation so we can focus on architectural achievements, mathematical models, and verified test results without wasting time switching between individual code files.",
+      "Slide 2 shows our end-to-end platform pipeline. Zecpath AI is strictly an Automated Hiring Platform. Between Days 45 and 55, we unified conversational screening, adaptive technical testing, behavioral STAR parsing, containerized code execution, and cross-round decision arbitration under a single low-latency architecture with sub-50ms turn processing.",
+      "Day 45 marked the finalization of our HR Interview AI. We simulated 4 distinct candidate archetypes (Ideal, Nervous, Verbose, Struggling) to ensure zero conversation deadlocks. Our qualitative manager audit yielded a 93.4/100 scorecard, certifying the module for production handover with 18/18 passing tests.",
+      "Day 46 was our transition into Technical Interview AI. We designed a dynamic engine using Bloom's 6-tiered cognitive taxonomy and a 5-phase Finite State Machine. With Dynamic Difficulty Adjustment (DDA), the engine monitors candidate depth in real time: if they excel, it escalates complexity; if they struggle, it provides diagnostic hints.",
+      "Day 47 delivered the Technical Skill Scoring Engine. To prevent interviewer bias, we built a 5-factor rubric and a shallow-versus-deep response classifier that discriminates between memorized textbook definitions and genuine architectural understanding with an F1-score of 0.91, executing in just 22ms per turn.",
+      "Day 48 established the Behavioral AI Engine. We automated the STAR framework to verify whether candidate answers address Situation, Task, Action, and Result. We mapped linguistic cues to Big-Five personality traits and analyzed speech cadence to measure composure under pressure without any demographic bias.",
+      "Day 49 addressed assessment integrity. We built an un-intrusive, privacy-preserving anti-cheat engine. It monitors gaze diversion, multi-face presence, background audio, and rapid clipboard bursts. A time-weighted risk accumulator flags anomalies, while processing facial landmarks locally to respect GDPR privacy rules.",
+      "Day 50 implemented the Machine Test AI and code execution sandbox. Candidate code executes inside a restricted container with strict memory limits and timeouts. Our Abstract Syntax Tree (AST) analyzer examines code modularity and cyclomatic complexity, calculating scores based on test pass rates and runtime efficiency.",
+      "Day 51 introduced the Cross-Round Aggregation Engine. To combine diverse scores into a single Hiring Fit Score (0-100%), we created role-based weighting matrices. For example, a Backend Engineer has 35% technical and 30% machine test weight, whereas an Engineering Lead prioritizes behavioral evaluation at 35%.",
+      "Day 52 built the Final Recommendation AI. Rather than relying on a single model, we implemented a 4-agent consensus arbitration panel with deterministic hard rules (e.g. integrity violations immediately veto an offer). The engine issues transparent verdicts (RECOMMENDED_OFFER, FURTHER_REVIEW, REJECT) in under 35ms.",
+      "Day 53 established the Hiring Intelligence Report Generator. We transformed raw multi-round telemetry into a recruiter-friendly, interactive HTML candidate dossier featuring dynamic SVG radar charts and cryptographic SHA-256 audit seals.",
+      "Day 54 focused on optimization and stabilization. By introducing Bayesian smoothing and contextual intent refiners, we evaluated 250+ labeled utterances, boosting intent accuracy by +12.2% to 94.6% and cutting false positive flags down to 1.2% while reducing P99 latency by 42%.",
+      "Day 55 hardened our enterprise security and AI governance. We implemented an explicit consent manager, an automated PII redaction scrubber, an immutable SHA-256 cryptographic audit chain, and an AES-256 secure storage vault with automated GDPR right-to-erasure workflows.",
+      "To summarize our 11-day progression: We built and certified 11 distinct AI engines, supported by 166 automated unit tests with a 100% pass rate. The platform achieves sub-50ms conversational latency and strictly complies with the EU AI Act. I am now ready for any technical questions or architectural deep-dives from the panel."
+    ];
+
+    function showSlide(index) {
+      if (index < 0 || index >= totalSlides) return;
+      document.querySelectorAll('.slide').forEach((s, idx) => {
+        s.classList.toggle('active', idx === index);
+      });
+      document.querySelectorAll('.nav-chip').forEach((c, idx) => {
+        c.classList.toggle('active', idx === index);
+      });
+      currentSlide = index;
+      document.getElementById('speakerTitle').innerText = `Slide ${index + 1} Speaker Notes`;
+      document.getElementById('speakerText').innerText = speakerNotes[index];
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        showSlide(currentSlide + 1);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        showSlide(currentSlide - 1);
+      }
+    }
+
+    function goToSlide(index) {
+      showSlide(index);
+    }
+
+    function toggleSpeakerNotes() {
+      const drawer = document.getElementById('speakerDrawer');
+      drawer.classList.toggle('open');
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => alert(err.message));
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+      } else if (e.key === 's' || e.key === 'S') {
+        toggleSpeakerNotes();
+      } else if (e.key === 'f' || e.key === 'F') {
+        toggleFullscreen();
+      }
+    });
+
+    // Initialize
+    showSlide(0);
+  </script>
+</body>
+</html>

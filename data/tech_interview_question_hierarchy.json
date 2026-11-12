@@ -1,0 +1,255 @@
+{
+  "metadata": {
+    "schema_version": "3.0.0",
+    "total_questions": 10,
+    "author": "Nandith Gireesh",
+    "organization": "Zecser Business LLP",
+    "supported_tracks": [
+      "MERN_FULLSTACK",
+      "JAVA_BACKEND",
+      "PYTHON_FASTAPI",
+      "DEVOPS_CLOUD",
+      "MACHINE_LEARNING",
+      "DATA_ENGINEERING"
+    ]
+  },
+  "questions": [
+    {
+      "question_id": "TQ-MERN-L1-001",
+      "role_track": "MERN_FULLSTACK",
+      "interview_phase": "EXPERIENCE_BASED",
+      "difficulty_level": "L1_FOUNDATIONAL",
+      "target_experience_band": "0_2_YEARS_BASIC",
+      "core_topic": "React State & Props Lifecycle",
+      "prompt": "Walk me through how state differs from props in React, and describe how changes in state trigger re-rendering in a functional component.",
+      "expected_key_concepts": [
+        "immutable props",
+        "useState hook",
+        "component re-render",
+        "virtual DOM diffing"
+      ],
+      "diagnostic_hint": "Think about what data is owned locally by the component versus data passed from a parent component.",
+      "followup_deep_dive": "How does React optimize this re-rendering process using the reconciliation algorithm or React.memo?",
+      "evaluation_rubric_weights": {
+        "technical_accuracy": 0.4,
+        "architectural_reasoning": 0.3,
+        "tradeoff_analysis": 0.2,
+        "problem_solving": 0.1
+      }
+    },
+    {
+      "question_id": "TQ-MERN-L2-002",
+      "role_track": "MERN_FULLSTACK",
+      "interview_phase": "CONCEPTUAL_DRILL",
+      "difficulty_level": "L2_APPLIED_SYNTAX",
+      "target_experience_band": "0_2_YEARS_BASIC",
+      "core_topic": "Node.js Event Loop & Non-Blocking I/O",
+      "prompt": "Explain how the Node.js event loop handles asynchronous operations despite JavaScript being single-threaded.",
+      "expected_key_concepts": [
+        "call stack",
+        "libuv thread pool",
+        "event loop phases",
+        "microtask queue (Promise)",
+        "macrotask queue (setTimeout)"
+      ],
+      "diagnostic_hint": "Consider what component handles network and file system calls outside the main V8 execution thread.",
+      "followup_deep_dive": "What happens if a synchronous CPU-heavy loop runs in your Express controller while 1,000 HTTP requests arrive?",
+      "evaluation_rubric_weights": {
+        "technical_accuracy": 0.4,
+        "architectural_reasoning": 0.3,
+        "tradeoff_analysis": 0.2,
+        "problem_solving": 0.1
+      }
+    },
+    {
+      "question_id": "TQ-MERN-L3-003",
+      "role_track": "MERN_FULLSTACK",
+      "interview_phase": "CONCEPTUAL_DRILL",
+      "difficulty_level": "L3_INTERMEDIATE_INTERNALS",
+      "target_experience_band": "3_5_YEARS_INTERMEDIATE",
+      "core_topic": "MongoDB Indexing & Aggregation Pipelines",
+      "prompt": "In MongoDB, how do compound indexes work, and why does the Equality-Sort-Range (ESR) rule dictate field ordering in high-throughput query workloads?",
+      "expected_key_concepts": [
+        "B-tree index structure",
+        "ESR rule",
+        "covered queries",
+        "index prefix scanning",
+        "explain('executionStats')"
+      ],
+      "diagnostic_hint": "Consider how a B-tree search narrows the index bounds when equality criteria precede range criteria.",
+      "followup_deep_dive": "If your query scans 100,000 index keys but returns 10 documents, what specific bottleneck does that indicate in your compound index?",
+      "evaluation_rubric_weights": {
+        "technical_accuracy": 0.4,
+        "architectural_reasoning": 0.3,
+        "tradeoff_analysis": 0.2,
+        "problem_solving": 0.1
+      }
+    },
+    {
+      "question_id": "TQ-MERN-L3-004",
+      "role_track": "MERN_FULLSTACK",
+      "interview_phase": "SCENARIO_SYSTEM_DESIGN",
+      "difficulty_level": "L3_INTERMEDIATE_INTERNALS",
+      "target_experience_band": "3_5_YEARS_INTERMEDIATE",
+      "core_topic": "Real-Time WebSocket State Synchronization",
+      "prompt": "Design a real-time collaborative dashboard where 10,000 concurrent users receive live notification feeds without exhausting server socket connections.",
+      "expected_key_concepts": [
+        "WebSocket clustering",
+        "Redis Pub/Sub adapter",
+        "horizontal scaling",
+        "sticky sessions vs stateless",
+        "heartbeat pings"
+      ],
+      "diagnostic_hint": "How do multiple Node.js instances communicate with each other when a message arrives on instance A but the user is connected to instance B?",
+      "followup_deep_dive": "How would you handle automatic client reconnection with backoff jitter if a network partition drops 3,000 connections at once?",
+      "evaluation_rubric_weights": {
+        "technical_accuracy": 0.4,
+        "architectural_reasoning": 0.3,
+        "tradeoff_analysis": 0.2,
+        "problem_solving": 0.1
+      }
+    },
+    {
+      "question_id": "TQ-MERN-L4-005",
+      "role_track": "MERN_FULLSTACK",
+      "interview_phase": "EXPERIENCE_BASED",
+      "difficulty_level": "L4_ADVANCED_ARCHITECTURE",
+      "target_experience_band": "5_PLUS_ADVANCED",
+      "core_topic": "High-Throughput Distributed Microservice Decoupling",
+      "prompt": "In your past architectural leadership, describe a scenario where you decoupled a monolithic Node/Express service into asynchronous microservices. How did you maintain transaction consistency across service boundaries?",
+      "expected_key_concepts": [
+        "Saga pattern (orchestration vs choreography)",
+        "outbox pattern",
+        "idempotent consumers",
+        "eventual consistency",
+        "dead-letter queues"
+      ],
+      "diagnostic_hint": "Think about what happens when a database commit succeeds in Service A but the subsequent HTTP call or message publish to Service B fails.",
+      "followup_deep_dive": "How did you handle compensating transactions when a downstream shipping service failed after credit card debit succeeded?",
+      "evaluation_rubric_weights": {
+        "technical_accuracy": 0.4,
+        "architectural_reasoning": 0.3,
+        "tradeoff_analysis": 0.2,
+        "problem_solving": 0.1
+      }
+    },
+    {
+      "question_id": "TQ-MERN-L5-006",
+      "role_track": "MERN_FULLSTACK",
+      "interview_phase": "SCENARIO_SYSTEM_DESIGN",
+      "difficulty_level": "L5_DISTRIBUTED_SCALE",
+      "target_experience_band": "5_PLUS_ADVANCED",
+      "core_topic": "Distributed Multi-Region Cache Invalidation & CAP Trade-offs",
+      "prompt": "Design a globally distributed e-commerce inventory reservation system with multi-region replication. How do you prevent overselling while maintaining sub-50ms checkout latency during flash sales?",
+      "expected_key_concepts": [
+        "CAP theorem trade-off",
+        "distributed locking (Redlock / Redis Lua)",
+        "optimistic locking with versioning",
+        "partition tolerance",
+        "two-phase commit vs Saga"
+      ],
+      "diagnostic_hint": "Can you split inventory reservation into regional buckets, or do you need a single source of truth for the final stock count?",
+      "followup_deep_dive": "What happens during a split-brain scenario where region US-East loses connectivity to EU-West for 120 seconds?",
+      "evaluation_rubric_weights": {
+        "technical_accuracy": 0.4,
+        "architectural_reasoning": 0.3,
+        "tradeoff_analysis": 0.2,
+        "problem_solving": 0.1
+      }
+    },
+    {
+      "question_id": "TQ-JAVA-L1-007",
+      "role_track": "JAVA_BACKEND",
+      "interview_phase": "CONCEPTUAL_DRILL",
+      "difficulty_level": "L1_FOUNDATIONAL",
+      "target_experience_band": "0_2_YEARS_BASIC",
+      "core_topic": "Java Memory Model & Garbage Collection Basics",
+      "prompt": "Explain the difference between the Stack and the Heap memory spaces in the Java Virtual Machine (JVM). How are object references stored?",
+      "expected_key_concepts": [
+        "stack frames",
+        "heap allocation",
+        "garbage collection roots",
+        "OutOfMemoryError vs StackOverflowError"
+      ],
+      "diagnostic_hint": "Which space holds local primitive variables and method call frames versus instantiated objects?",
+      "followup_deep_dive": "What happens under the hood when you pass an object reference as a parameter into another method in Java?",
+      "evaluation_rubric_weights": {
+        "technical_accuracy": 0.4,
+        "architectural_reasoning": 0.3,
+        "tradeoff_analysis": 0.2,
+        "problem_solving": 0.1
+      }
+    },
+    {
+      "question_id": "TQ-JAVA-L3-008",
+      "role_track": "JAVA_BACKEND",
+      "interview_phase": "CONCEPTUAL_DRILL",
+      "difficulty_level": "L3_INTERMEDIATE_INTERNALS",
+      "target_experience_band": "3_5_YEARS_INTERMEDIATE",
+      "core_topic": "Spring Transaction Management & Isolation Levels",
+      "prompt": "How does the @Transactional annotation work in Spring using AOP proxies, and what causes the 'self-invocation' pitfall where transactions fail to roll back?",
+      "expected_key_concepts": [
+        "CGLIB / JDK dynamic proxy",
+        "self-invocation bypass",
+        "transaction propagation (REQUIRED vs REQUIRES_NEW)",
+        "rollbackOn RuntimeException"
+      ],
+      "diagnostic_hint": "What happens when method A calls method B in the exact same class instance when method B has @Transactional?",
+      "followup_deep_dive": "Under what circumstances would you choose SERIALIZABLE isolation over READ_COMMITTED, and what performance penalty does it incur?",
+      "evaluation_rubric_weights": {
+        "technical_accuracy": 0.4,
+        "architectural_reasoning": 0.3,
+        "tradeoff_analysis": 0.2,
+        "problem_solving": 0.1
+      }
+    },
+    {
+      "question_id": "TQ-JAVA-L4-009",
+      "role_track": "JAVA_BACKEND",
+      "interview_phase": "SCENARIO_SYSTEM_DESIGN",
+      "difficulty_level": "L4_ADVANCED_ARCHITECTURE",
+      "target_experience_band": "5_PLUS_ADVANCED",
+      "core_topic": "Kafka Exactly-Once Semantics & Consumer Lag",
+      "prompt": "Design a financial payment ingestion pipeline using Apache Kafka and Spring Boot that guarantees exactly-once processing (EOS) even under pod restarts and network rebalances.",
+      "expected_key_concepts": [
+        "Kafka transactional producer",
+        "read_committed consumer isolation",
+        "idempotent producer",
+        "consumer rebalance listener",
+        "offset commit synchronization"
+      ],
+      "diagnostic_hint": "How do you link the database state update and Kafka offset commit so they succeed or fail atomically?",
+      "followup_deep_dive": "How do you monitor and auto-scale consumer group lag without triggering continuous stop-the-world partition rebalances?",
+      "evaluation_rubric_weights": {
+        "technical_accuracy": 0.4,
+        "architectural_reasoning": 0.3,
+        "tradeoff_analysis": 0.2,
+        "problem_solving": 0.1
+      }
+    },
+    {
+      "question_id": "TQ-DEVOPS-L5-010",
+      "role_track": "DEVOPS_CLOUD",
+      "interview_phase": "SCENARIO_SYSTEM_DESIGN",
+      "difficulty_level": "L5_DISTRIBUTED_SCALE",
+      "target_experience_band": "5_PLUS_ADVANCED",
+      "core_topic": "Kubernetes Multi-Cluster Zero-Downtime DR & Ingress",
+      "prompt": "Architect an active-active multi-region Kubernetes deployment spanning AWS and GCP with automated traffic failover, zero downtime database sync, and unified observability.",
+      "expected_key_concepts": [
+        "Anycast / GeoDNS routing",
+        "Istio multi-cluster service mesh",
+        "Cross-region database replication",
+        "etcd quorum backup",
+        "Prometheus Thanos / Cortex federation"
+      ],
+      "diagnostic_hint": "How do you prevent split-brain routing if the health check probe to one cloud provider fails due to transit fiber degradation?",
+      "followup_deep_dive": "Describe your automated rollback and canary deployment gate verification strategy in ArgoCD when 0.1% HTTP 500 errors are detected.",
+      "evaluation_rubric_weights": {
+        "technical_accuracy": 0.4,
+        "architectural_reasoning": 0.3,
+        "tradeoff_analysis": 0.2,
+        "problem_solving": 0.1
+      }
+    }
+  ]
+}

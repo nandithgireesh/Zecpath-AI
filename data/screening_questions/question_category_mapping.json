@@ -1,0 +1,130 @@
+{
+    "version": "1.0.0",
+    "description": "Formal HR Screening Question Category Mapping, Evaluation Weights, and Intent Taxonomy.",
+    "categories": {
+        "Introduction": {
+            "display_name": "Candidate Introduction & Motivation",
+            "order": 1,
+            "weight_in_screening": 0.10,
+            "description": "Assesses candidate self-presentation, verbal clarity, communication style, and role interest.",
+            "primary_intents": [
+                "candidate_self_introduction",
+                "role_motivation_check",
+                "communication_fluency_assessment"
+            ],
+            "typical_answer_types": ["text"],
+            "target_entities": ["name", "recent_role", "domain_experience", "motivation_points"],
+            "evaluation_criteria": [
+                "Clarity and confidence in verbal delivery",
+                "Conciseness of career summary",
+                "Alignment with company and role culture"
+            ]
+        },
+        "Education": {
+            "display_name": "Academic Background & Qualifications",
+            "order": 2,
+            "weight_in_screening": 0.10,
+            "description": "Verifies academic credentials, graduation status, major discipline, and relevant computer science coursework.",
+            "primary_intents": [
+                "verify_highest_degree",
+                "academic_performance_coursework",
+                "certifications_validation"
+            ],
+            "typical_answer_types": ["text", "choice"],
+            "target_entities": ["degree", "specialization", "graduation_year", "institution", "gpa"],
+            "evaluation_criteria": [
+                "Fulfillment of role educational qualification prerequisites",
+                "Relevance of specialization to required engineering discipline"
+            ]
+        },
+        "Experience": {
+            "display_name": "Professional Experience & Architecture",
+            "order": 3,
+            "weight_in_screening": 0.20,
+            "description": "Verifies duration of relevant industry work, current employer context, and hands-on system architecture contributions.",
+            "primary_intents": [
+                "total_relevant_experience",
+                "current_role_and_responsibilities",
+                "project_architecture_contribution"
+            ],
+            "typical_answer_types": ["duration", "text"],
+            "target_entities": ["experience_years", "current_title", "current_company", "system_contributions"],
+            "evaluation_criteria": [
+                "Consistency between stated experience and resume dates",
+                "Depth of technical involvement in recent engineering initiatives",
+                "Familiarity with production environments and development lifecycle"
+            ]
+        },
+        "Skills": {
+            "display_name": "Technical & Domain Competencies",
+            "order": 4,
+            "weight_in_screening": 0.25,
+            "description": "Assesses candidate hands-on depth in role-specific frameworks, databases, libraries, and engineering best practices.",
+            "primary_intents": [
+                "ml_framework_experience",
+                "react_frontend_depth",
+                "nodejs_mongodb_backend_depth",
+                "python_async_frameworks",
+                "database_sql_nosql_expertise"
+            ],
+            "typical_answer_types": ["rating", "duration", "text"],
+            "target_entities": ["primary_languages", "frameworks", "databases", "proficiency_rating"],
+            "evaluation_criteria": [
+                "Accurate self-assessment and practical knowledge of core stack",
+                "Ability to discuss technical challenges and optimizations",
+                "Coverage of mandatory technical requirements"
+            ]
+        },
+        "Location": {
+            "display_name": "Location & Relocation Flexibility",
+            "order": 5,
+            "weight_in_screening": 0.10,
+            "description": "Validates current residence, work model preference (on-site, hybrid, remote), and relocation availability.",
+            "primary_intents": [
+                "verify_current_location",
+                "relocation_willingness",
+                "work_mode_preference"
+            ],
+            "typical_answer_types": ["text", "choice"],
+            "target_entities": ["current_city", "relocation_choice", "remote_preference"],
+            "evaluation_criteria": [
+                "Compatibility with hiring team location / office policy",
+                "Realistic relocation timeline if required"
+            ]
+        },
+        "Salary": {
+            "display_name": "Compensation & CTC Expectations",
+            "order": 6,
+            "weight_in_screening": 0.10,
+            "description": "Captures current CTC breakdown (Fixed + Variable) and candidate expected CTC in LPA for budget alignment.",
+            "primary_intents": [
+                "current_ctc_inquiry",
+                "expected_ctc_inquiry",
+                "competing_offers_status"
+            ],
+            "typical_answer_types": ["currency_range", "number"],
+            "target_entities": ["current_fixed_lpa", "current_total_lpa", "expected_lpa", "is_negotiable"],
+            "evaluation_criteria": [
+                "Alignment of expected CTC with designated role salary band",
+                "Reasonableness of salary hike expectation relative to industry standards"
+            ]
+        },
+        "Notice period": {
+            "display_name": "Notice Period & Joining Availability",
+            "order": 7,
+            "weight_in_screening": 0.15,
+            "description": "Confirms official notice duration with current company, buyout possibilities, and earliest joining date.",
+            "primary_intents": [
+                "official_notice_period_days",
+                "notice_buyout_earliest_joining",
+                "serving_notice_status"
+            ],
+            "typical_answer_types": ["duration", "text"],
+            "target_entities": ["notice_period_days", "can_buyout", "earliest_joining_date", "is_serving_notice"],
+            "evaluation_criteria": [
+                "Notice period within hiring urgency constraints (<= 30 or 60 days)",
+                "Clarity on last working day if currently serving notice"
+            ]
+        }
+    }
+}

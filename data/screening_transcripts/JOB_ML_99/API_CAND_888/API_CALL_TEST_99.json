@@ -1,0 +1,96 @@
+{
+  "session_id": "API_CALL_TEST_99",
+  "metadata": {
+    "candidate_id": "API_CAND_888",
+    "candidate_name": "Jane Doe",
+    "job_id": "JOB_ML_99",
+    "role_name": "Machine Learning Engineer",
+    "call_id": "API_CALL_TEST_99",
+    "session_id": null,
+    "timestamp_utc": "2026-10-19T18:40:52.625777+00:00",
+    "duration_seconds": 320.0,
+    "audio_format": "wav",
+    "sample_rate": 16000,
+    "language": "en",
+    "avg_confidence": 0.92,
+    "call_status": "COMPLETED"
+  },
+  "turns": [
+    {
+      "turn_id": "T_01",
+      "speaker": "BOT",
+      "raw_text": "Hello Jane, what is your official notice period?",
+      "normalized_text": "Hello Jane, what is your official notice period?",
+      "start_time_ms": 0,
+      "end_time_ms": 0,
+      "confidence": 0.99,
+      "word_confidences": [],
+      "audio_segment_url": null,
+      "is_low_confidence": false
+    },
+    {
+      "turn_id": "T_02",
+      "speaker": "CANDIDATE",
+      "raw_text": "Uh, like my notice period is two months with current employer.",
+      "normalized_text": "my notice period is 2 months with current employer",
+      "start_time_ms": 0,
+      "end_time_ms": 0,
+      "confidence": 0.91,
+      "word_confidences": [],
+      "audio_segment_url": null,
+      "is_low_confidence": false
+    }
+  ],
+  "question_interactions": [
+    {
+      "interaction_id": "QI_01",
+      "question_id": "NP_01",
+      "category": "Notice period",
+      "prompt_text": "What is your official notice period?",
+      "response_raw": "Uh, like my notice period is two months.",
+      "response_normalized": "my notice period is 2 months",
+      "confidence": 0.91,
+      "extracted_entities": {
+        "experience_years": null,
+        "skills_confirmed": [],
+        "notice_period_days": 60,
+        "is_immediate_joiner": false,
+        "current_ctc_lpa": null,
+        "expected_ctc_lpa": null,
+        "ctc_negotiable": null,
+        "current_location": null,
+        "relocation_willingness": null,
+        "remote_preferred": null,
+        "highest_degree": null,
+        "raw_entities": {}
+      },
+      "validation_status": "VALID"
+    },
+    {
+      "interaction_id": "QI_02",
+      "question_id": "SAL_02",
+      "category": "Salary",
+      "prompt_text": "What is your expected compensation?",
+      "response_raw": "My expected CTC is around 18 LPA, negotiable.",
+      "response_normalized": "My expected CTC is around 18 LPA, negotiable",
+      "confidence": 0.89,
+      "extracted_entities": {
+        "experience_years": null,
+        "skills_confirmed": [],
+        "notice_period_days": null,
+        "is_immediate_joiner": null,
+        "current_ctc_lpa": null,
+        "expected_ctc_lpa": 18.0,
+        "ctc_negotiable": true,
+        "current_location": null,
+        "relocation_willingness": null,
+        "remote_preferred": null,
+        "highest_degree": null,
+        "raw_entities": {}
+      },
+      "validation_status": "VALID"
+    }
+  ],
+  "full_raw_text": "",
+  "full_normalized_text": ""
+}

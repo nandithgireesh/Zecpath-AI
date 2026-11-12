@@ -1,0 +1,41 @@
+Position : Machine Learning Engineer
+
+Company : ABC Technologies
+
+Location : Kochi, Kerala
+
+Job Description
+
+We are looking for a Machine Learning Engineer with experience in developing AI models.
+
+Required Skills
+
+Python
+Machine Learning
+Deep Learning
+TensorFlow
+SQL
+Git
+Docker
+
+Experience : 2 Years
+
+Qualification
+
+B.Tech
+M.Tech
+MCA
+
+Responsibilities
+
+Develop machine learning models.
+Optimize AI algorithms.
+Collaborate with software development teams.
+Deploy ML solutions into production.
+
+Preferred Skills
+
+Computer Vision
+Natural Language Processing
+
+Employment Type : Full Time

@@ -1,0 +1,366 @@
+[
+    {
+        "jd": "JD1.json",
+        "role": "Machine Learning Engineer",
+        "top_candidate": {
+            "resume": "Resume 1.json",
+            "score": 45.8,
+            "level": "Poor"
+        },
+        "candidates": [
+            {
+                "resume": "Resume 1.json",
+                "jd": "JD1.json",
+                "role": "Machine Learning Engineer",
+                "skill_score": 51.0,
+                "experience_score": 4.0,
+                "education_score": 68.0,
+                "semantic_score": 71.0,
+                "final_ats_score": 45.8,
+                "level": "Poor",
+                "education_match": "Medium",
+                "strengths": [
+                    "Moderate skill match",
+                    "Moderate education match",
+                    "Moderate semantic similarity with the JD"
+                ],
+                "areas_to_improve": [
+                    "Experience does not strongly match the JD"
+                ],
+                "rank": 1
+            },
+            {
+                "resume": "Resume 2.json",
+                "jd": "JD1.json",
+                "role": "Machine Learning Engineer",
+                "skill_score": 25.0,
+                "experience_score": 2.0,
+                "education_score": 68.0,
+                "semantic_score": 18.0,
+                "final_ats_score": 24.3,
+                "level": "Poor",
+                "education_match": "Medium",
+                "strengths": [
+                    "Moderate education match"
+                ],
+                "areas_to_improve": [
+                    "Improve alignment with required skills",
+                    "Experience does not strongly match the JD",
+                    "Resume content has low semantic similarity with the JD"
+                ],
+                "rank": 2
+            },
+            {
+                "resume": "Resume 3.json",
+                "jd": "JD1.json",
+                "role": "Machine Learning Engineer",
+                "skill_score": 0.0,
+                "experience_score": 5.0,
+                "education_score": 56.0,
+                "semantic_score": 22.0,
+                "final_ats_score": 14.05,
+                "level": "Poor",
+                "education_match": "Medium",
+                "strengths": [
+                    "Moderate education match"
+                ],
+                "areas_to_improve": [
+                    "Improve alignment with required skills",
+                    "Experience does not strongly match the JD",
+                    "Resume content has low semantic similarity with the JD"
+                ],
+                "rank": 3
+            }
+        ]
+    },
+    {
+        "jd": "JD2.json",
+        "role": "JOB DESCRIPTION: JUNIOR LINUX SYSTEM ADMINISTRATOR",
+        "top_candidate": {
+            "resume": "Resume 1.json",
+            "score": 20.8,
+            "level": "Poor"
+        },
+        "candidates": [
+            {
+                "resume": "Resume 1.json",
+                "jd": "JD2.json",
+                "role": "JOB DESCRIPTION: JUNIOR LINUX SYSTEM ADMINISTRATOR",
+                "skill_score": 4.0,
+                "experience_score": 27.0,
+                "education_score": 35.0,
+                "semantic_score": 36.0,
+                "final_ats_score": 20.8,
+                "level": "Poor",
+                "education_match": "Low",
+                "strengths": [],
+                "areas_to_improve": [
+                    "Improve alignment with required skills",
+                    "Experience does not strongly match the JD",
+                    "Education has low similarity to the requirement",
+                    "Resume content has low semantic similarity with the JD"
+                ],
+                "rank": 1
+            },
+            {
+                "resume": "Resume 3.json",
+                "jd": "JD2.json",
+                "role": "JOB DESCRIPTION: JUNIOR LINUX SYSTEM ADMINISTRATOR",
+                "skill_score": 4.0,
+                "experience_score": 21.0,
+                "education_score": 35.0,
+                "semantic_score": 30.0,
+                "final_ats_score": 18.1,
+                "level": "Poor",
+                "education_match": "Low",
+                "strengths": [],
+                "areas_to_improve": [
+                    "Improve alignment with required skills",
+                    "Experience does not strongly match the JD",
+                    "Education has low similarity to the requirement",
+                    "Resume content has low semantic similarity with the JD"
+                ],
+                "rank": 2
+            },
+            {
+                "resume": "Resume 2.json",
+                "jd": "JD2.json",
+                "role": "JOB DESCRIPTION: JUNIOR LINUX SYSTEM ADMINISTRATOR",
+                "skill_score": 0.0,
+                "experience_score": 29.0,
+                "education_score": 35.0,
+                "semantic_score": 24.0,
+                "final_ats_score": 17.3,
+                "level": "Poor",
+                "education_match": "Low",
+                "strengths": [],
+                "areas_to_improve": [
+                    "Improve alignment with required skills",
+                    "Experience does not strongly match the JD",
+                    "Education has low similarity to the requirement",
+                    "Resume content has low semantic similarity with the JD"
+                ],
+                "rank": 3
+            }
+        ]
+    },
+    {
+        "jd": "JD3.json",
+        "role": "Associate - Product Marketer",
+        "top_candidate": {
+            "resume": "Resume 3.json",
+            "score": 31.15,
+            "level": "Poor"
+        },
+        "candidates": [
+            {
+                "resume": "Resume 3.json",
+                "jd": "JD3.json",
+                "role": "Associate - Product Marketer",
+                "skill_score": 40.0,
+                "experience_score": 7.0,
+                "education_score": 56.0,
+                "semantic_score": 25.0,
+                "final_ats_score": 31.15,
+                "level": "Poor",
+                "education_match": "Medium",
+                "strengths": [
+                    "Moderate education match"
+                ],
+                "areas_to_improve": [
+                    "Improve alignment with required skills",
+                    "Experience does not strongly match the JD",
+                    "Resume content has low semantic similarity with the JD"
+                ],
+                "rank": 1
+            },
+            {
+                "resume": "Resume 2.json",
+                "jd": "JD3.json",
+                "role": "Associate - Product Marketer",
+                "skill_score": 17.0,
+                "experience_score": 15.0,
+                "education_score": 81.0,
+                "semantic_score": 23.0,
+                "final_ats_score": 27.3,
+                "level": "Poor",
+                "education_match": "High",
+                "strengths": [
+                    "Strong education match"
+                ],
+                "areas_to_improve": [
+                    "Improve alignment with required skills",
+                    "Experience does not strongly match the JD",
+                    "Resume content has low semantic similarity with the JD"
+                ],
+                "rank": 2
+            },
+            {
+                "resume": "Resume 1.json",
+                "jd": "JD3.json",
+                "role": "Associate - Product Marketer",
+                "skill_score": 7.0,
+                "experience_score": 9.0,
+                "education_score": 81.0,
+                "semantic_score": 44.0,
+                "final_ats_score": 26.0,
+                "level": "Poor",
+                "education_match": "High",
+                "strengths": [
+                    "Strong education match"
+                ],
+                "areas_to_improve": [
+                    "Improve alignment with required skills",
+                    "Experience does not strongly match the JD",
+                    "Resume content has low semantic similarity with the JD"
+                ],
+                "rank": 3
+            }
+        ]
+    },
+    {
+        "jd": "JD4.json",
+        "role": "Business Analyst",
+        "top_candidate": {
+            "resume": "Resume 2.json",
+            "score": 39.25,
+            "level": "Poor"
+        },
+        "candidates": [
+            {
+                "resume": "Resume 2.json",
+                "jd": "JD4.json",
+                "role": "Business Analyst",
+                "skill_score": 48.0,
+                "experience_score": 33.0,
+                "education_score": 39.0,
+                "semantic_score": 32.0,
+                "final_ats_score": 39.25,
+                "level": "Poor",
+                "education_match": "Low",
+                "strengths": [],
+                "areas_to_improve": [
+                    "Improve alignment with required skills",
+                    "Experience does not strongly match the JD",
+                    "Education has low similarity to the requirement",
+                    "Resume content has low semantic similarity with the JD"
+                ],
+                "rank": 1
+            },
+            {
+                "resume": "Resume 1.json",
+                "jd": "JD4.json",
+                "role": "Business Analyst",
+                "skill_score": 12.0,
+                "experience_score": 31.0,
+                "education_score": 39.0,
+                "semantic_score": 42.0,
+                "final_ats_score": 28.15,
+                "level": "Poor",
+                "education_match": "Low",
+                "strengths": [],
+                "areas_to_improve": [
+                    "Improve alignment with required skills",
+                    "Experience does not strongly match the JD",
+                    "Education has low similarity to the requirement",
+                    "Resume content has low semantic similarity with the JD"
+                ],
+                "rank": 2
+            },
+            {
+                "resume": "Resume 3.json",
+                "jd": "JD4.json",
+                "role": "Business Analyst",
+                "skill_score": 14.0,
+                "experience_score": 23.0,
+                "education_score": 27.0,
+                "semantic_score": 23.0,
+                "final_ats_score": 20.65,
+                "level": "Poor",
+                "education_match": "Low",
+                "strengths": [],
+                "areas_to_improve": [
+                    "Improve alignment with required skills",
+                    "Experience does not strongly match the JD",
+                    "Education has low similarity to the requirement",
+                    "Resume content has low semantic similarity with the JD"
+                ],
+                "rank": 3
+            }
+        ]
+    },
+    {
+        "jd": "JD5.json",
+        "role": "Staff Nurse",
+        "top_candidate": {
+            "resume": "Resume 3.json",
+            "score": 43.75,
+            "level": "Poor"
+        },
+        "candidates": [
+            {
+                "resume": "Resume 3.json",
+                "jd": "JD5.json",
+                "role": "Staff Nurse",
+                "skill_score": 23.0,
+                "experience_score": 39.0,
+                "education_score": 78.0,
+                "semantic_score": 45.0,
+                "final_ats_score": 43.75,
+                "level": "Poor",
+                "education_match": "High",
+                "strengths": [
+                    "Strong education match"
+                ],
+                "areas_to_improve": [
+                    "Improve alignment with required skills",
+                    "Experience does not strongly match the JD",
+                    "Resume content has low semantic similarity with the JD"
+                ],
+                "rank": 1
+            },
+            {
+                "resume": "Resume 1.json",
+                "jd": "JD5.json",
+                "role": "Staff Nurse",
+                "skill_score": 0.0,
+                "experience_score": 13.0,
+                "education_score": 53.0,
+                "semantic_score": 39.0,
+                "final_ats_score": 21.05,
+                "level": "Poor",
+                "education_match": "Medium",
+                "strengths": [
+                    "Moderate education match"
+                ],
+                "areas_to_improve": [
+                    "Improve alignment with required skills",
+                    "Experience does not strongly match the JD",
+                    "Resume content has low semantic similarity with the JD"
+                ],
+                "rank": 2
+            },
+            {
+                "resume": "Resume 2.json",
+                "jd": "JD5.json",
+                "role": "Staff Nurse",
+                "skill_score": 9.0,
+                "experience_score": 9.0,
+                "education_score": 53.0,
+                "semantic_score": 14.0,
+                "final_ats_score": 20.5,
+                "level": "Poor",
+                "education_match": "Medium",
+                "strengths": [
+                    "Moderate education match"
+                ],
+                "areas_to_improve": [
+                    "Improve alignment with required skills",
+                    "Experience does not strongly match the JD",
+                    "Resume content has low semantic similarity with the JD"
+                ],
+                "rank": 3
+            }
+        ]
+    }
+]

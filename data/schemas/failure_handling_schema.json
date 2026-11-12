@@ -1,0 +1,108 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EdgeCaseFailureHandlingTelemetrySchema",
+  "description": "Zecpath-AI Telephony & ATS Schema for Day 31 Edge Case Diagnostics, Hinglish Code-Switching, and Failure Recoveries",
+  "type": "object",
+  "required": [
+    "session_id",
+    "turn_id",
+    "audio_telemetry",
+    "code_switch_analysis",
+    "safety_tier",
+    "is_safe_to_advance",
+    "system_response"
+  ],
+  "properties": {
+    "session_id": {
+      "type": "string",
+      "description": "Unique telephonic screening session identifier"
+    },
+    "candidate_id": {
+      "type": "string",
+      "description": "Unique candidate identifier"
+    },
+    "turn_id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "original_transcript": {
+      "type": "string"
+    },
+    "normalized_transcript": {
+      "type": "string"
+    },
+    "audio_telemetry": {
+      "type": "object",
+      "required": ["snr_db", "estimated_noise_type", "estimated_audio_degradation"],
+      "properties": {
+        "snr_db": { "type": "number" },
+        "peak_amplitude_dbfs": { "type": "number" },
+        "packet_loss_rate": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "clipping_events": { "type": "integer", "minimum": 0 },
+        "codec_bitrate_kbps": { "type": "number" },
+        "estimated_noise_type": {
+          "type": "string",
+          "enum": ["QUIET", "STATIONARY_HUM", "TRAFFIC_HONKING", "OFFICE_BABBLE", "KEYBOARD_TYPING", "DYNAMIC_SPIKE"]
+        },
+        "estimated_audio_degradation": {
+          "type": "string",
+          "enum": ["NORMAL", "LOW_AMPLITUDE_WHISPER", "CLIPPING_DISTORTION", "PACKET_LOSS_BURST", "LOW_BITRATE_CODEC"]
+        },
+        "acoustic_confidence_discount": { "type": "number" }
+      }
+    },
+    "code_switch_analysis": {
+      "type": "object",
+      "required": ["detected_category", "detected_languages"],
+      "properties": {
+        "detected_category": {
+          "type": "string",
+          "enum": ["MONOLINGUAL_ENGLISH", "HINGLISH_CODE_SWITCH", "BILINGUAL_TECHNICAL", "REGIONAL_IDIOMATIC"]
+        },
+        "detected_languages": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "extracted_entities": {
+          "type": "object"
+        },
+        "confidence_score": { "type": "number" }
+      }
+    },
+    "missing_answer_assessment": {
+      "type": "object",
+      "properties": {
+        "is_silence": { "type": "boolean" },
+        "is_empty_filler": { "type": "boolean" },
+        "is_explicit_pass": { "type": "boolean" },
+        "is_evasive": { "type": "boolean" },
+        "category": { "type": "string" },
+        "recovery_tier": { "type": "integer" }
+      }
+    },
+    "retry_decision": {
+      "type": "object",
+      "properties": {
+        "action": { "type": "string" },
+        "attempt_number": { "type": "integer" },
+        "retry_budget_remaining": { "type": "integer" },
+        "prompt_message": { "type": "string" },
+        "escalation_required": { "type": "boolean" }
+      }
+    },
+    "safety_tier": {
+      "type": "string",
+      "enum": ["NORMAL_FLOW", "SIMPLIFIED_QUESTIONING", "STRUCTURED_VERIFICATION", "EMERGENCY_HUMAN_HANDOFF", "SAFE_TERMINATION"]
+    },
+    "is_safe_to_advance": {
+      "type": "boolean"
+    },
+    "system_response": {
+      "type": "string"
+    },
+    "audit_flags": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

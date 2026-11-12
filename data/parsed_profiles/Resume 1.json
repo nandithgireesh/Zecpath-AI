@@ -1,0 +1,28 @@
+{
+    "skills": [
+        "artificial intelligence",
+        "c",
+        "css",
+        "deep learning",
+        "flask",
+        "git",
+        "github",
+        "html",
+        "java",
+        "javascript",
+        "machine learning",
+        "matplotlib",
+        "nlp",
+        "numpy",
+        "pandas",
+        "python",
+        "sql",
+        "tensorflow",
+        "transformers"
+    ],
+    "experience": "",
+    "education": "",
+    "projects": "MULTI-OMIC PATHWAY BASED DRUG REPURPOSINGApril 2025 Objective:Developed a deep learning model integrating gene and miRNA expression data to identify disease-relevant biological pathways for accurate phenotype prediction. Used Layer-Wise Relevance Propagation (LRP) and Random Walk with Restart (RWR) on a biomedical knowledge graph to prioritize repurposable drugs, improving interpretability and clinical relevance. Tech:Python, Flask, Deep Learning, HTML, CSS, JavaScript LOST AND FOUND TRACKER 2024 Objective:A platform for users to track lost items efficiently through a centralized database management system (DBMS). Features include user authentication, inventory management for updating lost items , automatic notifications for reported/found items, search functionality for locating items, and a user-friendly interface for reporting and claiming items. Tech:MySQL, HTML, JavaScript AI SNAKE NAVIGATORA 2024 Objective:NAVIGATORA novel approach to enhancing the classic Snake game using advanced AI techniques,specifically focusing on pathfinding algorithms. Tech:Python, A*Star Algorithm, CSP",
+    "raw_text": "JISTO C S\njistocs1570@gmail.com|+91 8330077832|Thrissur, Kerala\nlinkedin.com/jisto-c-s|github.com/JISTO-C-S\nPROFILE SUMMARY\nComputer Science Engineering student specializing in Artificial Intelligence and Machine Learning. Experienced in\ndeveloping AI solutions using machine learning, deep learning, NLP, and optimization techniques. A proactive learner\nand problem-solver, with solid skills in debugging, and database management.\nACADEMIC QUALIFICATIONS\nBachelor of Technology – Artificial Intelligence and Machine LearningPresent\nHigher Secondary Education – Science Computer\nCGPA: 9.7 / 10 2021\nSecondary Education\nCGPA: 9.3 / 10 2019\nPROJECTS\nMULTI-OMIC PATHWAY BASED DRUG REPURPOSINGApril 2025\nObjective:Developed a deep learning model integrating gene and miRNA expression data to identify disease-relevant\nbiological pathways for accurate phenotype prediction. Used Layer-Wise Relevance Propagation (LRP) and Random\nWalk with Restart (RWR) on a biomedical knowledge graph to prioritize repurposable drugs, improving interpretability\nand clinical relevance.\nTech:Python, Flask, Deep Learning, HTML, CSS, JavaScript\nLOST AND FOUND TRACKER 2024\nObjective:A platform for users to track lost items efficiently through a centralized database management system\n(DBMS). Features include user authentication, inventory management for updating lost items , automatic notifications\nfor reported/found items, search functionality for locating items, and a user-friendly interface for reporting and claiming\nitems.\nTech:MySQL, HTML, JavaScript\nAI SNAKE NAVIGATORA 2024\nObjective:NAVIGATORA novel approach to enhancing the classic Snake game using advanced AI techniques,specifically\nfocusing on pathfinding algorithms.\nTech:Python, A*Star Algorithm, CSP\nCORE COMPETENCIES\nTechnical Skills:Python, C, SQL, NumPy, Pandas, Transformers, Data Analysis, Matplotlib, TensorFlow,\nSoft Skills:Efficient team collaborator with strong coordination skills. , Time Management\nCERTIFICATIONS AND WORKSHOPS\n– The Joy of Computing Using Python – NPTEL, 2023\n– The Fundamentals of Digital Marketing, 2021\n– Generative AI Workshop – ISTE MACE, 2024\n– Gen AI and Prompt Engineering Workshop, 2024\nPOSITION OF RESPONSIBILITY\nDocumentation Crew – Takshak 24(College Tech Fest) 2024",
+    "resume_id": "Resume 1"
+}

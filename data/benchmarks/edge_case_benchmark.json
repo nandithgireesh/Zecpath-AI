@@ -1,0 +1,356 @@
+{
+  "benchmark_metadata": {
+    "version": "1.0.0",
+    "track": "Day 31 - Edge Case & Failure Handling",
+    "total_scenarios": 16,
+    "categories": [
+      "poor_audio",
+      "language_mixing",
+      "missing_answers",
+      "background_noise"
+    ]
+  },
+  "scenarios": [
+    {
+      "scenario_id": "edge_poor_audio_whisper",
+      "category": "poor_audio",
+      "candidate_name": "Ritu Verma",
+      "target_question_id": "q_cloud_architecture",
+      "question_topic": "Kubernetes and cloud deployment",
+      "next_topic": "database scaling",
+      "utterance": "we used kubernetes clusters with ingress controllers",
+      "telemetry": {
+        "snr_db": 22.0,
+        "peak_amplitude_dbfs": -32.5,
+        "packet_loss_rate": 0.0,
+        "clipping_events": 0,
+        "codec_bitrate_kbps": 64.0,
+        "noise_hints": {}
+      },
+      "expected_degradation": "LOW_AMPLITUDE_WHISPER",
+      "expected_action": "ACOUSTIC_REPEAT",
+      "expected_prompt_keyword": "faint",
+      "should_advance": false
+    },
+    {
+      "scenario_id": "edge_poor_audio_packet_loss",
+      "category": "poor_audio",
+      "candidate_name": "Siddharth Mehta",
+      "target_question_id": "q_distributed_caching",
+      "question_topic": "distributed caching with Redis",
+      "next_topic": "API security",
+      "utterance": "we implemented redis... [packet drop] ...eviction policy",
+      "telemetry": {
+        "snr_db": 24.0,
+        "peak_amplitude_dbfs": -14.0,
+        "packet_loss_rate": 0.14,
+        "clipping_events": 0,
+        "codec_bitrate_kbps": 64.0,
+        "noise_hints": {}
+      },
+      "expected_degradation": "PACKET_LOSS_BURST",
+      "expected_action": "ACOUSTIC_REPEAT",
+      "expected_prompt_keyword": "glitch",
+      "should_advance": false
+    },
+    {
+      "scenario_id": "edge_poor_audio_clipping",
+      "category": "poor_audio",
+      "candidate_name": "Kunal Kapoor",
+      "target_question_id": "q_microservices",
+      "question_topic": "microservices inter-service communication",
+      "next_topic": "container orchestration",
+      "utterance": "YES WE USED GRPC FOR HIGH PERFORMANCE RPC CALLS",
+      "telemetry": {
+        "snr_db": 26.0,
+        "peak_amplitude_dbfs": -0.2,
+        "packet_loss_rate": 0.0,
+        "clipping_events": 9,
+        "codec_bitrate_kbps": 64.0,
+        "noise_hints": {}
+      },
+      "expected_degradation": "CLIPPING_DISTORTION",
+      "expected_action": "ACOUSTIC_REPEAT",
+      "expected_prompt_keyword": "distorted",
+      "should_advance": false
+    },
+    {
+      "scenario_id": "edge_poor_audio_low_bitrate",
+      "category": "poor_audio",
+      "candidate_name": "Priya Nambiar",
+      "target_question_id": "q_message_queues",
+      "question_topic": "message queues with Kafka",
+      "next_topic": "observability and monitoring",
+      "utterance": "We used Kafka consumer groups with partitioned topics for streaming events.",
+      "telemetry": {
+        "snr_db": 20.0,
+        "peak_amplitude_dbfs": -16.0,
+        "packet_loss_rate": 0.02,
+        "clipping_events": 0,
+        "codec_bitrate_kbps": 12.2,
+        "noise_hints": {}
+      },
+      "expected_degradation": "LOW_BITRATE_CODEC",
+      "expected_action": null,
+      "expected_prompt_keyword": "proceed",
+      "should_advance": true
+    },
+    {
+      "scenario_id": "edge_hinglish_salary_negotiation",
+      "category": "language_mixing",
+      "candidate_name": "Harish Patel",
+      "target_question_id": "q_compensation",
+      "question_topic": "salary expectations",
+      "next_topic": "notice period and availability",
+      "utterance": "Current CTC bees lakh hai aur expected pachees LPA hai, but negotiable hai.",
+      "telemetry": {
+        "snr_db": 26.0,
+        "peak_amplitude_dbfs": -12.0,
+        "packet_loss_rate": 0.0,
+        "clipping_events": 0,
+        "codec_bitrate_kbps": 64.0,
+        "noise_hints": {}
+      },
+      "expected_entities": {
+        "salary_lpa": 25.0
+      },
+      "expected_code_switch": "HINGLISH_CODE_SWITCH",
+      "should_advance": true
+    },
+    {
+      "scenario_id": "edge_hinglish_tech_architecture",
+      "category": "language_mixing",
+      "candidate_name": "Aditya Shinde",
+      "target_question_id": "q_background_workers",
+      "question_topic": "asynchronous task processing",
+      "next_topic": "database schema design",
+      "utterance": "Humne Celery aur Redis use kiya tha async processing ke liye kyunki scale high tha aur latency kam thi.",
+      "telemetry": {
+        "snr_db": 25.0,
+        "peak_amplitude_dbfs": -14.0,
+        "packet_loss_rate": 0.0,
+        "clipping_events": 0,
+        "codec_bitrate_kbps": 64.0,
+        "noise_hints": {}
+      },
+      "expected_entities": {
+        "technologies": ["celery", "redis", "latency"]
+      },
+      "expected_code_switch": "BILINGUAL_TECHNICAL",
+      "should_advance": true
+    },
+    {
+      "scenario_id": "edge_bilingual_notice_buyout",
+      "category": "language_mixing",
+      "candidate_name": "Meera Joshi",
+      "target_question_id": "q_notice_period",
+      "question_topic": "notice period and join date",
+      "next_topic": "role fit and team preferences",
+      "utterance": "Mera notice period do mahine ka hai lekin manager se baat hui thi aur buyout possible hai.",
+      "telemetry": {
+        "snr_db": 27.0,
+        "peak_amplitude_dbfs": -13.0,
+        "packet_loss_rate": 0.0,
+        "clipping_events": 0,
+        "codec_bitrate_kbps": 64.0,
+        "noise_hints": {}
+      },
+      "expected_entities": {
+        "notice_days": 60,
+        "buyout_flexible": true
+      },
+      "expected_code_switch": "HINGLISH_CODE_SWITCH",
+      "should_advance": true
+    },
+    {
+      "scenario_id": "edge_regional_idiomatic_experience",
+      "category": "language_mixing",
+      "candidate_name": "Gaurav Kulkarni",
+      "target_question_id": "q_hands_on_experience",
+      "question_topic": "years of experience and daily tech stack",
+      "next_topic": "system design principles",
+      "utterance": "Mujhe paanch saal ka experience hai Python aur Docker mein, daily microservices pe kaam karte hain.",
+      "telemetry": {
+        "snr_db": 26.0,
+        "peak_amplitude_dbfs": -11.0,
+        "packet_loss_rate": 0.0,
+        "clipping_events": 0,
+        "codec_bitrate_kbps": 64.0,
+        "noise_hints": {}
+      },
+      "expected_entities": {
+        "technologies": ["python", "docker", "microservices"]
+      },
+      "expected_code_switch": "BILINGUAL_TECHNICAL",
+      "should_advance": true
+    },
+    {
+      "scenario_id": "edge_missing_total_silence",
+      "category": "missing_answers",
+      "candidate_name": "Naveen Rao",
+      "target_question_id": "q_sql_indexing",
+      "question_topic": "database indexing and query optimization",
+      "next_topic": "caching architectures",
+      "utterance": "",
+      "telemetry": {
+        "snr_db": 25.0,
+        "peak_amplitude_dbfs": -45.0,
+        "packet_loss_rate": 0.0,
+        "clipping_events": 0,
+        "codec_bitrate_kbps": 64.0,
+        "noise_hints": {}
+      },
+      "expected_missing_type": "COMPLETE_SILENCE",
+      "expected_recovery_tier": 1,
+      "should_advance": false
+    },
+    {
+      "scenario_id": "edge_missing_empty_filler",
+      "category": "missing_answers",
+      "candidate_name": "Tanvi Chawla",
+      "target_question_id": "q_concurrency",
+      "question_topic": "concurrency control and race conditions",
+      "next_topic": "REST API design",
+      "utterance": "Uh... hello? Am I audible? Can you hear me?",
+      "telemetry": {
+        "snr_db": 22.0,
+        "peak_amplitude_dbfs": -14.0,
+        "packet_loss_rate": 0.0,
+        "clipping_events": 0,
+        "codec_bitrate_kbps": 64.0,
+        "noise_hints": {}
+      },
+      "expected_missing_type": "EMPTY_FILLER",
+      "expected_recovery_tier": 1,
+      "should_advance": false
+    },
+    {
+      "scenario_id": "edge_missing_explicit_pass",
+      "category": "missing_answers",
+      "candidate_name": "Alok Mishra",
+      "target_question_id": "q_kubernetes_internals",
+      "question_topic": "Kubernetes etcd consensus",
+      "next_topic": "Docker container lifecycle",
+      "utterance": "I have not worked with etcd internals, can we skip this question?",
+      "telemetry": {
+        "snr_db": 26.0,
+        "peak_amplitude_dbfs": -12.0,
+        "packet_loss_rate": 0.0,
+        "clipping_events": 0,
+        "codec_bitrate_kbps": 64.0,
+        "noise_hints": {}
+      },
+      "expected_missing_type": "EXPLICIT_PASS",
+      "expected_recovery_tier": 3,
+      "should_advance": true
+    },
+    {
+      "scenario_id": "edge_missing_evasive_deflection",
+      "category": "missing_answers",
+      "candidate_name": "Rajesh Nair",
+      "target_question_id": "q_security_practices",
+      "question_topic": "OWASP top 10 vulnerabilities",
+      "next_topic": "code review workflows",
+      "utterance": "Why are you asking me security questions? Let's talk about the stock market instead.",
+      "telemetry": {
+        "snr_db": 25.0,
+        "peak_amplitude_dbfs": -11.0,
+        "packet_loss_rate": 0.0,
+        "clipping_events": 0,
+        "codec_bitrate_kbps": 64.0,
+        "noise_hints": {}
+      },
+      "expected_missing_type": "EVASIVE_DEFLECTION",
+      "expected_recovery_tier": 2,
+      "should_advance": false
+    },
+    {
+      "scenario_id": "edge_noise_traffic_honking",
+      "category": "background_noise",
+      "candidate_name": "Suresh Bhat",
+      "target_question_id": "q_system_design",
+      "question_topic": "rate limiting architecture",
+      "next_topic": "logging and metrics",
+      "utterance": "We used token bucket algorithm with Redis... [horn honk]",
+      "telemetry": {
+        "snr_db": 10.5,
+        "peak_amplitude_dbfs": -10.0,
+        "packet_loss_rate": 0.0,
+        "clipping_events": 0,
+        "codec_bitrate_kbps": 64.0,
+        "noise_hints": {
+          "traffic_detected": true
+        }
+      },
+      "expected_noise_type": "TRAFFIC_HONKING",
+      "expected_action": "ENVIRONMENTAL_RETRY",
+      "should_advance": false
+    },
+    {
+      "scenario_id": "edge_noise_office_babble",
+      "category": "background_noise",
+      "candidate_name": "Divya Reddy",
+      "target_question_id": "q_ci_cd",
+      "question_topic": "continuous integration pipelines",
+      "next_topic": "cloud infrastructure",
+      "utterance": "We configured GitHub Actions with automated unit tests and Docker image builds.",
+      "telemetry": {
+        "snr_db": 11.0,
+        "peak_amplitude_dbfs": -12.0,
+        "packet_loss_rate": 0.0,
+        "clipping_events": 0,
+        "codec_bitrate_kbps": 64.0,
+        "noise_hints": {
+          "babble_detected": true
+        }
+      },
+      "expected_noise_type": "OFFICE_BABBLE",
+      "expected_action": "ENVIRONMENTAL_RETRY",
+      "should_advance": false
+    },
+    {
+      "scenario_id": "edge_noise_stationary_ac_hum",
+      "category": "background_noise",
+      "candidate_name": "Manoj Tiwari",
+      "target_question_id": "q_rest_apis",
+      "question_topic": "idempotency in REST APIs",
+      "next_topic": "database transactions",
+      "utterance": "We implemented idempotency keys stored in Redis with 24 hour TTL for payment APIs.",
+      "telemetry": {
+        "snr_db": 15.0,
+        "peak_amplitude_dbfs": -13.0,
+        "packet_loss_rate": 0.0,
+        "clipping_events": 0,
+        "codec_bitrate_kbps": 64.0,
+        "noise_hints": {
+          "stationary_ratio": 0.92
+        }
+      },
+      "expected_noise_type": "STATIONARY_HUM",
+      "expected_action": null,
+      "should_advance": true
+    },
+    {
+      "scenario_id": "edge_noise_keyboard_typing",
+      "category": "background_noise",
+      "candidate_name": "Rohit Pillai",
+      "target_question_id": "q_nosql_vs_sql",
+      "question_topic": "SQL vs NoSQL trade-offs",
+      "next_topic": "cloud storage",
+      "utterance": "We used PostgreSQL for transactional data and MongoDB for dynamic product catalog schemas.",
+      "telemetry": {
+        "snr_db": 16.5,
+        "peak_amplitude_dbfs": -11.0,
+        "packet_loss_rate": 0.0,
+        "clipping_events": 0,
+        "codec_bitrate_kbps": 64.0,
+        "noise_hints": {
+          "keyboard_detected": true
+        }
+      },
+      "expected_noise_type": "KEYBOARD_TYPING",
+      "expected_action": null,
+      "should_advance": true
+    }
+  ]
+}

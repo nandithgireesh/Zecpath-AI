@@ -1,0 +1,112 @@
+{
+  "report_id": "REP-CAND-PRIYA-01-1792435928",
+  "candidate_id": "CAND-PRIYA-01",
+  "candidate_name": "Priya Sharma",
+  "target_role": "Principal Distributed Systems Architect",
+  "experience_tier": "PRINCIPAL_ARCHITECT",
+  "generated_at": "2026-10-19T18:52:08.071671+00:00",
+  "generator_version": "1.0.0-PROD",
+  "ats_summary": {
+    "ats_score": 92.5,
+    "keyword_match_rate": 91.0,
+    "experience_years": 8.5,
+    "education_tier": "Master of Technology",
+    "matched_skills": [
+      "Raft",
+      "Distributed Consensus",
+      "Kubernetes",
+      "Rust"
+    ],
+    "missing_skills": [],
+    "summary_notes": "Resume demonstrates baseline domain alignment with core requirements verified."
+  },
+  "screening_results": {
+    "screening_score": 88.0,
+    "communication_clarity": "EXEMPLARY",
+    "qualification_fit": "STRONG_ALIGNMENT",
+    "availability_timeline": "Immediate (2 Weeks)",
+    "screening_notes": "Candidate articulated background effectively and confirmed role prerequisites."
+  },
+  "hr_insights": {
+    "hr_score": 89.5,
+    "star_method_rating": 90.0,
+    "leadership_teamwork_index": 92.0,
+    "cultural_values_alignment": "ROLE_MODEL",
+    "motivation_and_adaptability": "EXCEPTIONAL",
+    "hr_interview_notes": "Demonstrated constructive conflict resolution and structured situational reasoning."
+  },
+  "technical_performance": {
+    "technical_interview_score": 93.0,
+    "machine_test_sandbox_score": 100.0,
+    "architecture_design_score": 95.0,
+    "test_suite_pass_rate": 100.0,
+    "code_quality_and_cleanliness": "PRODUCTION_GRADE",
+    "technical_notes": "Hands-on execution verified core algorithmic competence and clean design principles."
+  },
+  "behavioral_and_risk": {
+    "stress_index": 12.0,
+    "hesitation_pause_count": 0,
+    "speech_fluency_rating": "IMPECCABLE",
+    "integrity_penalty_points": 0.0,
+    "malpractice_breaches_detected": 0,
+    "cross_round_std_dev": 4.14,
+    "overall_risk_level": "LOW"
+  },
+  "strengths": [
+    {
+      "highlight_id": "STR-ATS-01",
+      "highlight_type": "STRENGTH",
+      "pillar": "ATS_RESUME",
+      "title": "Exceptional Resume & Skill Match",
+      "description": "Candidate resume aligns strongly with requirements (92.5% fit, 91.0% keyword match).",
+      "impact": "HIGH"
+    },
+    {
+      "highlight_id": "STR-TECH-02",
+      "highlight_type": "STRENGTH",
+      "pillar": "TECHNICAL_EVALUATION",
+      "title": "Mastery in Practical Sandbox Coding",
+      "description": "Achieved 100.0% in automated coding with 100.0% test pass rate.",
+      "impact": "CRITICAL"
+    },
+    {
+      "highlight_id": "STR-TECH-03",
+      "highlight_type": "STRENGTH",
+      "pillar": "TECHNICAL_EVALUATION",
+      "title": "Advanced Distributed Architecture Skills",
+      "description": "Demonstrated superior system design capabilities (95.0 pts).",
+      "impact": "HIGH"
+    },
+    {
+      "highlight_id": "STR-HR-04",
+      "highlight_type": "STRENGTH",
+      "pillar": "HR_INTERVIEW",
+      "title": "Exemplary Behavioral & STAR Articulation",
+      "description": "Candidate provided structured, outcome-driven responses (90.0% STAR adherence).",
+      "impact": "HIGH"
+    },
+    {
+      "highlight_id": "STR-BEH-05",
+      "highlight_type": "STRENGTH",
+      "pillar": "BEHAVIORAL_INTEGRITY",
+      "title": "High Composure Under Tough Questions",
+      "description": "Maintained calm vocal pitch stability with minimal stress (12.0/100 index).",
+      "impact": "MEDIUM"
+    }
+  ],
+  "weaknesses": [],
+  "risk_indicators": [],
+  "final_recommendation": {
+    "decision_category": "SELECTED",
+    "decision_substatus": "OFFER_IMMEDIATE_FAST_TRACK",
+    "hiring_fit_score": 93.22,
+    "confidence_score": 96.5,
+    "confidence_band": "VERY_HIGH",
+    "executive_rationale": "Candidate Priya Sharma decisively cleared all technical and cultural bars.",
+    "recommended_action": "Extend formal employment offer immediately. Fast-track executive leveling if fit >= 92%.",
+    "counterfactual_advice": null
+  },
+  "recruiter_tldr": "Priya Sharma is decisively recommended for [SELECTED] (OFFER_IMMEDIATE_FAST_TRACK) for Principal Distributed Systems Architect with an exceptional 93.2% fit and 96.5% certainty (VERY_HIGH). Standout factor: Exceptional Resume & Skill Match. Next Action: Extend formal employment offer immediately. Fast-track executive leveling if fit >= 92%.",
+  "generation_latency_ms": 0.471,
+  "audit_hash": "311eef4d6b65a426c46c2861145310b2d8e0da9fd56c2a094311cc0125fc51d5"
+}

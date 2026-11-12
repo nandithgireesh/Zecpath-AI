@@ -1,0 +1,117 @@
+{
+  "summary_id": "SUM-SIM-HES-02-202610151322",
+  "candidate_id": "SIM-HES-02",
+  "candidate_name": "Siddharth Verma",
+  "job_role": "Data Infrastructure Engineer",
+  "experience_years": 4.0,
+  "session_id": "SESS-SIM-HES-02-2026",
+  "generated_at": "2026-10-15T13:22:17.080372",
+  "overall_performance": {
+    "composite_score": 65.0,
+    "behavioral_competency_score": 71.0,
+    "communication_clarity_score": 68.0,
+    "confidence_composure_score": 47.5,
+    "cognitive_aptitude_score": 69.0,
+    "recommendation": "LEAN_HIRE",
+    "readiness_level": "Requires Targeted Technical Probing in Onsite Round",
+    "calibrated_role_tier": "Associate / Developing Data Infrastructure Engineer",
+    "executive_verdict": "Displays foundational competencies but exhibited notable hedging or borderline inconsistencies requiring manager debrief."
+  },
+  "candidate_strengths": [
+    "Demonstrated cooperative demeanor and foundational role comprehension."
+  ],
+  "candidate_weaknesses": [
+    "Limited Deductive Depth: Scored 68.0/100 in premise-to-conclusion causal chains.",
+    "Elevated Filler Word Density: Candidate exhibited a 7.5% filler word frequency.",
+    "Vulnerability to Pressure: Elevated stress markers (Stress Index: 70.0/100) and increased hesitation under deep probing.",
+    "Contradictory Narrative Claims: Detected 2 cross-turn or factual discrepancies requiring verification."
+  ],
+  "cultural_fit_indicators": [
+    {
+      "dimension": "ownership_and_accountability",
+      "score": 72.0,
+      "alignment_level": "STRONG",
+      "evidence_excerpts": [
+        "Followed team escalation protocols appropriately."
+      ],
+      "observations": "Adequate personal accountability; accepts task responsibilities without friction."
+    },
+    {
+      "dimension": "collaboration_and_teamwork",
+      "score": 75.0,
+      "alignment_level": "STRONG",
+      "evidence_excerpts": [
+        "Collaborated with teammates during sprint delivery."
+      ],
+      "observations": "Standard team player; collaborates effectively within structured team boundaries."
+    },
+    {
+      "dimension": "customer_centricity",
+      "score": 70.0,
+      "alignment_level": "STRONG",
+      "evidence_excerpts": [
+        "Addressed infrastructure telemetry to restore service."
+      ],
+      "observations": "Recognizes end-user importance but defaults to purely technical operational metrics."
+    },
+    {
+      "dimension": "adaptability_and_growth",
+      "score": 74.0,
+      "alignment_level": "STRONG",
+      "evidence_excerpts": [
+        "Adjusted project scope within defined parameters."
+      ],
+      "observations": "Standard adaptability; comfortable in structured environments with clear requirements."
+    },
+    {
+      "dimension": "transparency_and_ethics",
+      "score": 78.0,
+      "alignment_level": "STRONG",
+      "evidence_excerpts": [
+        "Followed company data handling practices."
+      ],
+      "observations": "Adheres to standard organizational security guidelines."
+    }
+  ],
+  "risk_flags": [
+    "NOTABLE DISCREPANCY: In Turn 1, candidate projected absolute verbal certainty, but acoustic and behavioral telemetry revealed severe physiological tension (Stress Index: 68.0) and hesitation.",
+    "NOTABLE DISCREPANCY: In Turn 2, candidate projected absolute verbal certainty, but acoustic and behavioral telemetry revealed severe physiological tension (Stress Index: 72.0) and hesitation.",
+    "COMPOSURE RISK: Severe stress spikes (70.0/100) and prolonged hesitation under architectural failure scenarios."
+  ],
+  "inconsistencies": [
+    {
+      "inconsistency_id": "INC-01",
+      "inconsistency_type": "verbal_affect_discordance",
+      "severity": "MODERATE",
+      "claim_source": "Turn 1 Verbal Claim",
+      "contradicting_source": "Turn 1 Multi-Modal Telemetry",
+      "claimed_statement": "um... well, maybe i guess we started by setting up dual-write replication... um, you know, we were not completely sure a...",
+      "contradicting_statement": "Stress Index: 68.0/100, Hesitation Latency: 3.90s, Filler Rate: 7.8%",
+      "explanation": "In Turn 1, candidate projected absolute verbal certainty, but acoustic and behavioral telemetry revealed severe physiological tension (Stress Index: 68.0) and hesitation.",
+      "recommended_probing_question": "When faced with unexpected production outages in this domain, what specific telemetry checkpoints do you examine first before committing a fix?"
+    },
+    {
+      "inconsistency_id": "INC-02",
+      "inconsistency_type": "verbal_affect_discordance",
+      "severity": "MODERATE",
+      "claim_source": "Turn 2 Verbal Claim",
+      "contradicting_source": "Turn 2 Multi-Modal Telemetry",
+      "claimed_statement": "i am 100% absolutely certain and completely confident that kafka consumer lag is trivial to resolve without doubt. thoug...",
+      "contradicting_statement": "Stress Index: 72.0/100, Hesitation Latency: 3.60s, Filler Rate: 7.2%",
+      "explanation": "In Turn 2, candidate projected absolute verbal certainty, but acoustic and behavioral telemetry revealed severe physiological tension (Stress Index: 72.0) and hesitation.",
+      "recommended_probing_question": "When faced with unexpected production outages in this domain, what specific telemetry checkpoints do you examine first before committing a fix?"
+    }
+  ],
+  "natural_language_report": {
+    "executive_overview": "Siddharth Verma was evaluated for the Data Infrastructure Engineer position (4.0 years claimed experience). Following comprehensive multi-modal assessment across behavioral competencies, communication clarity, acoustic stress resilience, and situational judgment, the candidate earned a composite score of 65.0/100, resulting in an executive recommendation of **Lean Hire (Targeted Probing Recommended)**. The candidate is classified under the **Associate / Developing Data Infrastructure Engineer** band with readiness level 'Requires Targeted Technical Probing in Onsite Round'. Displays foundational competencies but exhibited notable hedging or borderline inconsistencies requiring manager debrief.",
+    "communication_persona": "The candidate's communication profile achieved a calibrated score of 68.0/100. Delivery is characterized by structured progression and articulate vocabulary. Delivery exhibited occasional conversational filler density and rambling under open-ended prompts. In interpersonal exchanges, Siddharth Verma maintains professional composure and balanced pacing.",
+    "behavioral_and_cultural_fit": "Across organizational cultural benchmarks, the candidate scored 71.0/100 in STAR behavioral execution. The candidate's strongest cultural dimension is **Transparency And Ethics** (78.0/100 - STRONG), demonstrating adheres to standard organizational security guidelines. Conversely, **Customer Centricity** represents the lowest alignment dimension (70.0/100 - STRONG), noting: Recognizes end-user importance but defaults to purely technical operational metrics.",
+    "cognitive_and_technical_maturity": "In situational judgment and logical reasoning evaluations, the candidate achieved 69.0/100. Problem-solving was evaluated on real-world operational dilemmas, including production outages and technical trade-offs. Analysis remained largely superficial, prioritizing immediate short-term fixes over root-cause isolation and systematic trade-off analysis.",
+    "inconsistency_and_risk_analysis": "Evaluation flagged 2 notable inconsistencyies. [VERBAL_AFFECT_DISCORDANCE] In Turn 1, candidate projected absolute verbal certainty, but acoustic and behavioral telemetry revealed severe physiological tension (Stress Index: 68.0) and hesitation. [VERBAL_AFFECT_DISCORDANCE] In Turn 2, candidate projected absolute verbal certainty, but acoustic and behavioral telemetry revealed severe physiological tension (Stress Index: 72.0) and hesitation. Recruiter review identified 3 operational or behavioral alert(s).",
+    "hiring_manager_action_plan": "For the upcoming Hiring Manager debrief round, the interview panel should focus specifically on validating the flagged narrative discrepancies and trade-off depth. Recommended next step: Proceed to **Targeted Follow-up Verification or Rejection**.",
+    "targeted_interview_probes": [
+      "When faced with unexpected production outages in this domain, what specific telemetry checkpoints do you examine first before committing a fix?",
+      "When faced with unexpected production outages in this domain, what specific telemetry checkpoints do you examine first before committing a fix?"
+    ]
+  }
+}

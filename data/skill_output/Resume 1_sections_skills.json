@@ -1,0 +1,51 @@
+{
+    "technical_skills": [
+        {
+            "skill": "artificial intelligence",
+            "confidence": 1.0
+        },
+        {
+            "skill": "css",
+            "confidence": 1.0
+        },
+        {
+            "skill": "deep learning",
+            "confidence": 1.0
+        },
+        {
+            "skill": "flask",
+            "confidence": 1.0
+        },
+        {
+            "skill": "html",
+            "confidence": 1.0
+        },
+        {
+            "skill": "javascript",
+            "confidence": 1.0
+        },
+        {
+            "skill": "machine learning",
+            "confidence": 1.0
+        },
+        {
+            "skill": "mysql",
+            "confidence": 1.0
+        },
+        {
+            "skill": "nlp",
+            "confidence": 1.0
+        },
+        {
+            "skill": "python",
+            "confidence": 1.0
+        }
+    ],
+    "business_skills": [
+        {
+            "skill": "time management",
+            "confidence": 1.0
+        }
+    ],
+    "creative_skills": []
+}

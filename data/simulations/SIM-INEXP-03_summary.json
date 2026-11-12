@@ -1,0 +1,87 @@
+{
+  "summary_id": "SUM-SIM-INEXP-03-202610151322",
+  "candidate_id": "SIM-INEXP-03",
+  "candidate_name": "Kavita Patel",
+  "job_role": "Senior Systems Engineer",
+  "experience_years": 1.2,
+  "session_id": "SESS-SIM-INEXP-03-2026",
+  "generated_at": "2026-10-15T13:22:17.135766",
+  "overall_performance": {
+    "composite_score": 55.8,
+    "behavioral_competency_score": 50.0,
+    "communication_clarity_score": 62.0,
+    "confidence_composure_score": 68.9,
+    "cognitive_aptitude_score": 46.0,
+    "recommendation": "LEAN_NO_HIRE",
+    "readiness_level": "Significant Skill Gaps - Recommend Skill Upskilling",
+    "calibrated_role_tier": "Sub-Threshold for Senior Systems Engineer",
+    "executive_verdict": "Fails to meet senior autonomy expectations; showed superficial trade-offs and hesitation under stress."
+  },
+  "candidate_strengths": [
+    "High Narrative Integrity: Zero factual or cross-turn contradictions identified across the entire session."
+  ],
+  "candidate_weaknesses": [
+    "Limited Deductive Depth: Scored 44.0/100 in premise-to-conclusion causal chains."
+  ],
+  "cultural_fit_indicators": [
+    {
+      "dimension": "ownership_and_accountability",
+      "score": 72.0,
+      "alignment_level": "STRONG",
+      "evidence_excerpts": [
+        "Followed team escalation protocols appropriately."
+      ],
+      "observations": "Adequate personal accountability; accepts task responsibilities without friction."
+    },
+    {
+      "dimension": "collaboration_and_teamwork",
+      "score": 75.0,
+      "alignment_level": "STRONG",
+      "evidence_excerpts": [
+        "Collaborated with teammates during sprint delivery."
+      ],
+      "observations": "Standard team player; collaborates effectively within structured team boundaries."
+    },
+    {
+      "dimension": "customer_centricity",
+      "score": 70.0,
+      "alignment_level": "STRONG",
+      "evidence_excerpts": [
+        "Addressed infrastructure telemetry to restore service."
+      ],
+      "observations": "Recognizes end-user importance but defaults to purely technical operational metrics."
+    },
+    {
+      "dimension": "adaptability_and_growth",
+      "score": 74.0,
+      "alignment_level": "STRONG",
+      "evidence_excerpts": [
+        "Adjusted project scope within defined parameters."
+      ],
+      "observations": "Standard adaptability; comfortable in structured environments with clear requirements."
+    },
+    {
+      "dimension": "transparency_and_ethics",
+      "score": 78.0,
+      "alignment_level": "STRONG",
+      "evidence_excerpts": [
+        "Followed company data handling practices."
+      ],
+      "observations": "Adheres to standard organizational security guidelines."
+    }
+  ],
+  "risk_flags": [],
+  "inconsistencies": [],
+  "natural_language_report": {
+    "executive_overview": "Kavita Patel was evaluated for the Senior Systems Engineer position (1.2 years claimed experience). Following comprehensive multi-modal assessment across behavioral competencies, communication clarity, acoustic stress resilience, and situational judgment, the candidate earned a composite score of 55.8/100, resulting in an executive recommendation of **Lean No Hire (Sub-Threshold)**. The candidate is classified under the **Sub-Threshold for Senior Systems Engineer** band with readiness level 'Significant Skill Gaps - Recommend Skill Upskilling'. Fails to meet senior autonomy expectations; showed superficial trade-offs and hesitation under stress.",
+    "communication_persona": "The candidate's communication profile achieved a calibrated score of 62.0/100. Delivery is characterized by structured progression and articulate vocabulary. Delivery exhibited occasional conversational filler density and rambling under open-ended prompts. In interpersonal exchanges, Kavita Patel maintains professional composure and balanced pacing.",
+    "behavioral_and_cultural_fit": "Across organizational cultural benchmarks, the candidate scored 50.0/100 in STAR behavioral execution. The candidate's strongest cultural dimension is **Transparency And Ethics** (78.0/100 - STRONG), demonstrating adheres to standard organizational security guidelines. Conversely, **Customer Centricity** represents the lowest alignment dimension (70.0/100 - STRONG), noting: Recognizes end-user importance but defaults to purely technical operational metrics.",
+    "cognitive_and_technical_maturity": "In situational judgment and logical reasoning evaluations, the candidate achieved 46.0/100. Problem-solving was evaluated on real-world operational dilemmas, including production outages and technical trade-offs. Analysis remained largely superficial, prioritizing immediate short-term fixes over root-cause isolation and systematic trade-off analysis.",
+    "inconsistency_and_risk_analysis": "Cross-turn factual verification and multi-modal telemetry confirmed high narrative integrity. Candidate statements remained internally consistent across experience claims, technical methodologies, and acoustic stress signals.",
+    "hiring_manager_action_plan": "For the upcoming Hiring Manager debrief round, the interview panel should focus specifically on validating long-term system architecture scalability and cross-functional leadership. Recommended next step: Proceed to **Targeted Follow-up Verification or Rejection**.",
+    "targeted_interview_probes": [
+      "Describe a scenario where a production rollout failed unexpectedly despite passing all CI/CD integration tests. What was your containment strategy?",
+      "How do you handle architectural disagreements when a cross-functional partner insists on technical debt to hit a marketing deadline?"
+    ]
+  }
+}

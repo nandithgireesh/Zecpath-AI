@@ -1,0 +1,151 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AIScreeningReportSchema",
+  "description": "Standard schema for exportable, recruiter-ready AI screening reports.",
+  "type": "object",
+  "required": [
+    "report_id",
+    "candidate_id",
+    "candidate_name",
+    "job_id",
+    "role_name",
+    "recommendation",
+    "executive_summary",
+    "scores",
+    "salary_highlight",
+    "availability_highlight",
+    "skills_highlight",
+    "strengths",
+    "risks",
+    "missing_data_gaps",
+    "key_answers"
+  ],
+  "properties": {
+    "report_id": { "type": "string" },
+    "candidate_id": { "type": "string" },
+    "candidate_name": { "type": "string" },
+    "job_id": { "type": "string" },
+    "role_name": { "type": "string" },
+    "generated_at": { "type": "string" },
+    "recommendation": {
+      "type": "string",
+      "enum": ["STRONG_HIRE", "HIRE", "PROCEED_WITH_CAUTION", "NO_HIRE"]
+    },
+    "recommendation_badge": { "type": "string" },
+    "executive_summary": { "type": "string" },
+    "scores": {
+      "type": "object",
+      "required": ["overall_score", "technical_score", "communication_score", "overall_grade"],
+      "properties": {
+        "overall_score": { "type": "number", "minimum": 0.0, "maximum": 100.0 },
+        "technical_score": { "type": "number", "minimum": 0.0, "maximum": 100.0 },
+        "communication_score": { "type": "number", "minimum": 0.0, "maximum": 100.0 },
+        "relevance_score": { "type": "number", "minimum": 0.0, "maximum": 100.0 },
+        "confidence_score": { "type": "number", "minimum": 0.0, "maximum": 100.0 },
+        "overall_grade": { "type": "string" }
+      }
+    },
+    "salary_highlight": {
+      "type": "object",
+      "required": ["is_within_budget", "status", "summary"],
+      "properties": {
+        "current_ctc_lpa": { "type": ["number", "null"] },
+        "expected_ctc_lpa": { "type": ["number", "null"] },
+        "budget_max_lpa": { "type": ["number", "null"] },
+        "budget_min_lpa": { "type": ["number", "null"] },
+        "is_within_budget": { "type": "boolean" },
+        "is_negotiable": { "type": "boolean" },
+        "budget_variance_pct": { "type": ["number", "null"] },
+        "status": { "type": "string" },
+        "summary": { "type": "string" }
+      }
+    },
+    "availability_highlight": {
+      "type": "object",
+      "required": ["is_immediate_joiner", "is_acceptable", "status", "summary"],
+      "properties": {
+        "notice_period_days": { "type": ["integer", "null"] },
+        "is_immediate_joiner": { "type": "boolean" },
+        "earliest_start_date": { "type": ["string", "null"] },
+        "max_acceptable_notice_days": { "type": ["integer", "null"] },
+        "is_acceptable": { "type": "boolean" },
+        "buyout_possible": { "type": "boolean" },
+        "status": { "type": "string" },
+        "summary": { "type": "string" }
+      }
+    },
+    "skills_highlight": {
+      "type": "object",
+      "required": ["confirmed_skills", "skill_match_percentage", "status", "summary"],
+      "properties": {
+        "confirmed_skills": { "type": "array", "items": { "type": "string" } },
+        "missing_mandatory_skills": { "type": "array", "items": { "type": "string" } },
+        "bonus_skills_found": { "type": "array", "items": { "type": "string" } },
+        "skill_match_percentage": { "type": "number", "minimum": 0.0, "maximum": 100.0 },
+        "strongest_areas": { "type": "array", "items": { "type": "string" } },
+        "areas_for_validation": { "type": "array", "items": { "type": "string" } },
+        "status": { "type": "string" },
+        "summary": { "type": "string" }
+      }
+    },
+    "strengths": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["risk_id", "category", "severity", "title", "description", "mitigation_or_probe"],
+        "properties": {
+          "risk_id": { "type": "string" },
+          "category": { "type": "string" },
+          "severity": { "type": "string" },
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "evidence": { "type": ["string", "null"] },
+          "mitigation_or_probe": { "type": "string" }
+        }
+      }
+    },
+    "missing_data_gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["gap_id", "field_name", "impact", "description", "suggested_action"],
+        "properties": {
+          "gap_id": { "type": "string" },
+          "field_name": { "type": "string" },
+          "impact": { "type": "string" },
+          "description": { "type": "string" },
+          "suggested_action": { "type": "string" }
+        }
+      }
+    },
+    "key_answers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["question_id", "category", "question_text", "candidate_answer", "answer_summary", "score", "grade"],
+        "properties": {
+          "question_id": { "type": "string" },
+          "category": { "type": "string" },
+          "question_text": { "type": "string" },
+          "candidate_answer": { "type": "string" },
+          "answer_summary": { "type": "string" },
+          "score": { "type": "number", "minimum": 0.0, "maximum": 100.0 },
+          "grade": { "type": "string" },
+          "key_takeaways": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "behavioral_summary": {
+      "type": ["object", "null"]
+    },
+    "recommended_interviewer_probes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "report_version": { "type": "string" }
+  }
+}

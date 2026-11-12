@@ -1,0 +1,18 @@
+{
+    "skills": [
+        "artificial intelligence",
+        "c",
+        "machine learning",
+        "numpy",
+        "pandas",
+        "python",
+        "pytorch",
+        "sql",
+        "tensorflow"
+    ],
+    "experience": "Machine Learning Engineer, TechNova Solutions, 2023–2025. Developed and evaluated machine learning models using Python and TensorFlow. Worked with SQL databases for data extraction and analysis. Projects Customer Churn Prediction using TensorFlow and Python; Sales Forecasting Pipeline using SQL and machine learning.",
+    "education": "B.Tech in Artificial Intelligence and Machine Learning, 2023 Technical Skills Python, Machine Learning, SQL, TensorFlow, PyTorch, Pandas, NumPy Experience Machine Learning Engineer, TechNova Solutions, 2023–2025. Developed and evaluated machine learning models using Python and TensorFlow. Worked with SQL databases for data extraction and analysis. Projects Customer Churn Prediction using TensorFlow and Python; Sales Forecasting Pipeline using SQL and machine learning.",
+    "projects": "Customer Churn Prediction using TensorFlow and Python; Sales Forecasting Pipeline using SQL and machine learning.",
+    "raw_text": "ARJUN MENON\narjun.menon@example.com | +91 9876543210\nProfessional Summary\nAI and Machine Learning Engineer with 2 years of experience developing machine learning solutions and\ndata-driven applications. Experienced in Python, machine learning, SQL, and TensorFlow.\nEducation\nB.Tech in Artificial Intelligence and Machine Learning, 2023\nTechnical Skills\nPython, Machine Learning, SQL, TensorFlow, PyTorch, Pandas, NumPy\nExperience\nMachine Learning Engineer, TechNova Solutions, 2023–2025. Developed and evaluated machine learning\nmodels using Python and TensorFlow. Worked with SQL databases for data extraction and analysis.\nProjects\nCustomer Churn Prediction using TensorFlow and Python; Sales Forecasting Pipeline using SQL and\nmachine learning.",
+    "resume_id": "strong_candidate"
+}

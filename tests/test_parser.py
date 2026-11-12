@@ -1,5 +1,6 @@
 import os
 import sys
+
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from utils.logger import logger
 
@@ -28,12 +29,21 @@ def main():
 
         try:
 
+            # Extract and clean resume text
             text = parser.extract_text(file_path)
 
+            # Save cleaned text
             output = parser.save_output(text, file_path)
 
+            # Build structured resume profile
+            profile = parser.build_resume_profile(text)
+
+            # Save JSON profile
+            profile_output = parser.save_profile(profile, file_path)
+
             print("✔ Extraction Successful")
-            print(f"✔ Output Saved: {output}")
+            print(f"✔ Text Output Saved : {output}")
+            print(f"✔ JSON Output Saved : {profile_output}")
 
             success += 1
 

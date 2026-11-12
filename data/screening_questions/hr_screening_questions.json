@@ -1,0 +1,436 @@
+{
+    "version": "1.0.0",
+    "dataset_name": "HR_Screening_Question_Bank",
+    "description": "Structured AI-ready question bank for automated candidate screening calls across 7 standard HR categories with multilingual localization.",
+    "categories": [
+        "Introduction",
+        "Education",
+        "Experience",
+        "Skills",
+        "Location",
+        "Salary",
+        "Notice period"
+    ],
+    "supported_languages": [
+        "en",
+        "hi",
+        "ml",
+        "ta"
+    ],
+    "questions": [
+        {
+            "id": "INTRO_01",
+            "category": "Introduction",
+            "role": "General",
+            "intent": "candidate_self_introduction",
+            "template": "Hello {candidate_name}, could you briefly introduce yourself and highlight your recent professional background?",
+            "expected_answer_type": "text",
+            "is_mandatory": true,
+            "scoring_importance": "HIGH",
+            "weight": 0.8,
+            "validation_rules": {
+                "min_word_count": 10,
+                "extract_entities": ["name", "recent_role", "domain"]
+            },
+            "multilingual": {
+                "en": "Hello {candidate_name}, could you briefly introduce yourself and highlight your recent professional background?",
+                "hi": "नमस्ते {candidate_name}, क्या आप संक्षेप में अपना परिचय दे सकते हैं और अपनी हालिया कार्य पृष्ठभूमि बता सकते हैं?",
+                "ml": "നമസ്കാരം {candidate_name}, താങ്കളെക്കുറിച്ച് ലഘുവായി പരിചയപ്പെടുത്താമോ, ഒപ്പം താങ്കളുടെ തൊഴിൽ പരിചയം വ്യക്തമാക്കാമോ?",
+                "ta": "வணக்கம் {candidate_name}, உங்களை பற்றி சுருக்கமாக அறிமுகம் செய்து உங்கள் சமீபத்திய பணி அனுபவத்தை கூற முடியுமா?"
+            },
+            "follow_up_prompt": "What motivates you to apply for the {role_name} position at our company?"
+        },
+        {
+            "id": "INTRO_02",
+            "category": "Introduction",
+            "role": "General",
+            "intent": "role_motivation_check",
+            "template": "What sparked your interest in applying for the {role_name} opening with us?",
+            "expected_answer_type": "text",
+            "is_mandatory": false,
+            "scoring_importance": "MEDIUM",
+            "weight": 0.5,
+            "validation_rules": {
+                "min_word_count": 5
+            },
+            "multilingual": {
+                "en": "What sparked your interest in applying for the {role_name} opening with us?",
+                "hi": "हमारे यहाँ {role_name} पद के लिए आवेदन करने में आपकी रुचि किस वजह से हुई?",
+                "ml": "ഞങ്ങളുടെ കമ്പനിയിലെ {role_name} തസ്തികയിലേക്ക് അപേക്ഷിക്കാൻ താങ്കൾക്ക് എന്താണ് പ്രചോദനമായത്?",
+                "ta": "எங்கள் நிறுவனத்தில் {role_name} பணிக்காக விண்ணப்பிக்க உங்களுக்கு என்ன காரணம்?"
+            },
+            "follow_up_prompt": "Are you currently interviewing with other organizations?"
+        },
+        {
+            "id": "EDU_01",
+            "category": "Education",
+            "role": "General",
+            "intent": "verify_highest_degree",
+            "template": "What is your highest educational qualification, your major specialization, and graduation year?",
+            "expected_answer_type": "text",
+            "is_mandatory": true,
+            "scoring_importance": "HIGH",
+            "weight": 0.7,
+            "validation_rules": {
+                "extract_entities": ["degree", "specialization", "graduation_year"]
+            },
+            "multilingual": {
+                "en": "What is your highest educational qualification, your major specialization, and graduation year?",
+                "hi": "आपकी उच्चतम शैक्षणिक योग्यता, विशेषज्ञता और स्नातक वर्ष क्या है?",
+                "ml": "താങ്കളുടെ ഏറ്റവും ഉയർന്ന വിദ്യാഭ്യാസ യോഗ്യതയും, പഠിച്ച വിഷയവും, പാസായ വർഷവും ഏതാണ്?",
+                "ta": "உங்கள் உயர் கல்வி தகுதி, துறை மற்றும் பட்டம் பெற்ற வருடம் என்ன?"
+            },
+            "follow_up_prompt": "Did you undertake any major capstone project or internship during your studies?"
+        },
+        {
+            "id": "EDU_02",
+            "category": "Education",
+            "role": "Fresher Software Engineer",
+            "intent": "academic_performance_coursework",
+            "template": "Could you share your approximate graduation GPA or percentage, and any key software engineering courses you completed?",
+            "expected_answer_type": "text",
+            "is_mandatory": false,
+            "scoring_importance": "MEDIUM",
+            "weight": 0.5,
+            "validation_rules": {
+                "extract_entities": ["gpa", "percentage", "key_courses"]
+            },
+            "multilingual": {
+                "en": "Could you share your approximate graduation GPA or percentage, and any key software engineering courses you completed?",
+                "hi": "क्या आप अपना अनुमानित स्नातक GPA या प्रतिशत और अपने द्वारा किए गए प्रमुख सॉफ्टवेयर कोर्सेज साझा कर सकते हैं?",
+                "ml": "താങ്കളുടെ ഏകദേശ ജി.പി.എ (GPA) അല്ലെങ്കിൽ ശതമാനവും, പഠിച്ച പ്രധാന കമ്പ്യൂട്ടർ കോഴ്‌സുകളും പങ്കുവെക്കാമോ?",
+                "ta": "உங்கள் தோராயமான GPA அல்லது மதிப்பெண் சதவீதம் மற்றும் நீங்கள் படித்த முக்கியமான சாஃப்ட்வேர் பாடங்களை பகிர முடியுமா?"
+            },
+            "follow_up_prompt": "Have you completed any recognized certifications in computer science or programming?"
+        },
+        {
+            "id": "EXP_01",
+            "category": "Experience",
+            "role": "General",
+            "intent": "total_relevant_experience",
+            "template": "How many total years of relevant professional experience do you have in the software development industry?",
+            "expected_answer_type": "duration",
+            "is_mandatory": true,
+            "scoring_importance": "CRITICAL",
+            "weight": 1.0,
+            "validation_rules": {
+                "extract_entities": ["experience_years", "months"],
+                "min_expected_value": 0.0
+            },
+            "multilingual": {
+                "en": "How many total years of relevant professional experience do you have in the software development industry?",
+                "hi": "सॉफ्टवेयर विकास उद्योग में आपके पास कुल कितने वर्षों का प्रासंगिक पेशेवर अनुभव है?",
+                "ml": "സോഫ്റ്റ്‌വെയർ രംഗത്ത് താങ്കൾക്ക് എത്ര വർഷത്തെ പ്രവൃത്തിപരിചയമുണ്ട്?",
+                "ta": "மென்பொருள் துறையில் உங்களுக்கு எத்தனை வருட பணி அனுபவம் உள்ளது?"
+            },
+            "follow_up_prompt": "Could you briefly mention the primary tech stack you used in your latest role?"
+        },
+        {
+            "id": "EXP_02",
+            "category": "Experience",
+            "role": "General",
+            "intent": "current_role_and_responsibilities",
+            "template": "Could you summarize your current or most recent job title, company, and primary day-to-day responsibilities?",
+            "expected_answer_type": "text",
+            "is_mandatory": true,
+            "scoring_importance": "HIGH",
+            "weight": 0.8,
+            "validation_rules": {
+                "extract_entities": ["current_title", "current_company", "core_responsibilities"]
+            },
+            "multilingual": {
+                "en": "Could you summarize your current or most recent job title, company, and primary day-to-day responsibilities?",
+                "hi": "क्या आप अपने वर्तमान पद, कंपनी और अपनी मुख्य दैनिक जिम्मेदारियों का संक्षेप में वर्णन कर सकते हैं?",
+                "ml": "താങ്കളുടെ ഇപ്പോഴത്തെ തസ്തിക, കമ്പനി, പ്രധാന ഉത്തരവാദിത്തങ്ങൾ എന്നിവ ചുരുക്കമായി വിവരിക്കാമോ?",
+                "ta": "உங்கள் தற்போதைய பதவி, நிறுவனம் மற்றும் உங்கள் முக்கிய பொறுப்புகளை சுருக்கமாக கூற முடியுமா?"
+            },
+            "follow_up_prompt": "What was the most challenging technical problem you solved in that role?"
+        },
+        {
+            "id": "EXP_03",
+            "category": "Experience",
+            "role": "General",
+            "intent": "project_architecture_contribution",
+            "template": "Describe a production project you contributed to recently. What was your specific architectural or coding contribution?",
+            "expected_answer_type": "text",
+            "is_mandatory": false,
+            "scoring_importance": "HIGH",
+            "weight": 0.7,
+            "validation_rules": {
+                "min_word_count": 15
+            },
+            "multilingual": {
+                "en": "Describe a production project you contributed to recently. What was your specific architectural or coding contribution?",
+                "hi": "हाल ही में आपके द्वारा किए गए किसी प्रोडक्शन प्रोजेक्ट का वर्णन करें। उसमें आपका मुख्य तकनीकी योगदान क्या था?",
+                "ml": "അടുത്തിടെ താങ്കൾ പങ്കെടുത്ത ഒരു പ്രൊഡക്ഷൻ പ്രൊജക്റ്റിനെക്കുറിച്ചും അതിൽ താങ്കൾ ചെയ്ത കോഡിംഗ് അല്ലെങ്കിൽ ആർക്കിടെക്ചർ പങ്കിനെക്കുറിച്ചും പറയാമോ?",
+                "ta": "சமீபத்தில் நீங்கள் பணியாற்றிய ஒரு புராஜெக்ட் பற்றி சொல்லுங்கள். அதில் உங்கள் பங்களிப்பு என்ன?"
+            },
+            "follow_up_prompt": "What tools or practices did you use for CI/CD, testing, or code review in that project?"
+        },
+        {
+            "id": "SKILL_ML_01",
+            "category": "Skills",
+            "role": "Machine Learning Engineer",
+            "intent": "ml_framework_experience",
+            "template": "How many years of hands-on experience do you have with Python and deep learning frameworks like TensorFlow or PyTorch?",
+            "expected_answer_type": "duration",
+            "is_mandatory": true,
+            "scoring_importance": "CRITICAL",
+            "weight": 1.0,
+            "validation_rules": {
+                "extract_entities": ["frameworks", "experience_years"],
+                "required_keywords": ["python", "tensorflow", "pytorch", "keras"]
+            },
+            "multilingual": {
+                "en": "How many years of hands-on experience do you have with Python and deep learning frameworks like TensorFlow or PyTorch?",
+                "hi": "पायथन और टेंसरफ्लो या पायटॉर्च जैसे डीप लर्निंग फ्रेमवर्क के साथ आपका कितने वर्षों का व्यावहारिक अनुभव है?",
+                "ml": "പൈത്തൺ (Python), ടെൻസർഫ്ലോ (TensorFlow) അല്ലെങ്കിൽ പൈടോർച്ച് (PyTorch) എന്നിവയിൽ താങ്കൾക്ക് എത്ര വർഷത്തെ പ്രവൃത്തിപരിചയമുണ്ട്?",
+                "ta": "பைதான் மற்றும் டென்சர்ஃப்ளோ அல்லது பைடார்ச் போன்ற டீப் லேர்னிங் கட்டமைப்புகளில் உங்களுக்கு எத்தனை வருட நேரடி அனுபவம் உள்ளது?"
+            },
+            "follow_up_prompt": "Have you deployed ML models to production using FastAPI, Docker, or Triton inference server?"
+        },
+        {
+            "id": "SKILL_ML_02",
+            "category": "Skills",
+            "role": "Machine Learning Engineer",
+            "intent": "nlp_llm_transformer_expertise",
+            "template": "Have you worked with NLP models, Hugging Face Transformers, or Large Language Models (LLMs)? If so, in what context?",
+            "expected_answer_type": "text",
+            "is_mandatory": true,
+            "scoring_importance": "HIGH",
+            "weight": 0.9,
+            "validation_rules": {
+                "extract_entities": ["nlp_techniques", "model_architectures"]
+            },
+            "multilingual": {
+                "en": "Have you worked with NLP models, Hugging Face Transformers, or Large Language Models (LLMs)? If so, in what context?",
+                "hi": "क्या आपने एनएलपी मॉडल, हगिंग फेस ट्रांसफॉर्मर या एलएलएम पर काम किया है? यदि हाँ, तो किस तरह के प्रोजेक्ट में?",
+                "ml": "എൻ.എൽ.പി (NLP) മോഡലുകൾ, ട്രാൻസ്ഫോർമേഴ്സ് അല്ലെങ്കിൽ ലാർജ് ലാംഗ്വേജ് മോഡലുകളിൽ (LLM) താങ്കൾ പ്രവർത്തിച്ചിട്ടുണ്ടോ? ഏത് പ്രൊജക്റ്റിലാണ്?",
+                "ta": "நீங்கள் NLP மாடல்கள், Hugging Face Transformers அல்லது LLM மாடல்களில் பணிபுரிந்துள்ளீர்களா? எந்த மாதிரியான பயன்பாட்டில்?"
+            },
+            "follow_up_prompt": "What metrics did you use to evaluate your model performance (e.g. F1-score, BLEU, latency)?"
+        },
+        {
+            "id": "SKILL_MERN_01",
+            "category": "Skills",
+            "role": "MERN Stack Developer",
+            "intent": "react_frontend_depth",
+            "template": "How proficient are you in React.js, React Hooks, and state management libraries like Redux Toolkit or Zustand? Please rate yourself on a scale of 1 to 5.",
+            "expected_answer_type": "rating",
+            "is_mandatory": true,
+            "scoring_importance": "CRITICAL",
+            "weight": 1.0,
+            "validation_rules": {
+                "min_rating": 1,
+                "max_rating": 5,
+                "extract_entities": ["rating", "state_management_tools"]
+            },
+            "multilingual": {
+                "en": "How proficient are you in React.js, React Hooks, and state management libraries like Redux Toolkit or Zustand? Please rate yourself on a scale of 1 to 5.",
+                "hi": "आप React.js, React Hooks और Redux/Zustand में कितने कुशल हैं? कृपया 1 से 5 के पैमाने पर खुद को रेट करें।",
+                "ml": "റിയാക്റ്റ് (React.js), ഹുക്ക്സ്, റിഡക്സ് (Redux) എന്നിവയിൽ താങ്കൾക്ക് എത്രത്തോളം പ്രാവീണ്യമുണ്ട്? 1 മുതൽ 5 വരെയുള്ള സ്കെയിലിൽ സ്വയം റേറ്റ് ചെയ്യാമോ?",
+                "ta": "React.js, React Hooks மற்றும் Redux ஆகியவற்றில் உங்களுக்கு எந்தளவு தேர்ச்சி உள்ளது? 1 முதல் 5 வரையான அளவில் உங்களை மதிப்பிடுங்கள்."
+            },
+            "follow_up_prompt": "How do you optimize rendering performance in a large-scale React application?"
+        },
+        {
+            "id": "SKILL_MERN_02",
+            "category": "Skills",
+            "role": "MERN Stack Developer",
+            "intent": "nodejs_mongodb_backend_depth",
+            "template": "Describe your experience building scalable REST APIs or microservices using Node.js, Express, and MongoDB.",
+            "expected_answer_type": "text",
+            "is_mandatory": true,
+            "scoring_importance": "CRITICAL",
+            "weight": 1.0,
+            "validation_rules": {
+                "extract_entities": ["database_tools", "api_protocols"]
+            },
+            "multilingual": {
+                "en": "Describe your experience building scalable REST APIs or microservices using Node.js, Express, and MongoDB.",
+                "hi": "Node.js, Express और MongoDB का उपयोग करके स्केलेबल REST API बनाने के अपने अनुभव का वर्णन करें।",
+                "ml": "Node.js, Express, MongoDB എന്നിവ ഉപയോഗിച്ച് REST API നിർമ്മിച്ചതിലെ താങ്കളുടെ അനുഭവം വിവരിക്കാമോ?",
+                "ta": "Node.js, Express மற்றும் MongoDB பயன்படுத்தி REST API உருவாக்கிய உங்கள் அனுபவத்தை விவரிக்கவும்."
+            },
+            "follow_up_prompt": "How do you handle authentication and database indexing in MongoDB?"
+        },
+        {
+            "id": "SKILL_PY_01",
+            "category": "Skills",
+            "role": "Backend Python Developer",
+            "intent": "python_async_frameworks",
+            "template": "Which Python web frameworks (such as FastAPI, Django, or Flask) have you built production services with, and what is your experience with asynchronous programming (async/await)?",
+            "expected_answer_type": "text",
+            "is_mandatory": true,
+            "scoring_importance": "CRITICAL",
+            "weight": 1.0,
+            "validation_rules": {
+                "extract_entities": ["frameworks", "async_experience"]
+            },
+            "multilingual": {
+                "en": "Which Python web frameworks (such as FastAPI, Django, or Flask) have you built production services with, and what is your experience with asynchronous programming (async/await)?",
+                "hi": "आपने किन पायथन वेब फ्रेमवर्क (जैसे FastAPI, Django या Flask) के साथ काम किया है, और async/await प्रोग्रामिंग में आपका अनुभव क्या है?",
+                "ml": "FastAPI, Django അല്ലെങ്കിൽ Flask പോലുള്ള പൈത്തൺ ഫ്രെയിംവർക്കുകളിൽ താങ്കളുടെ പരിചയം എങ്ങനെയുള്ളതാണ്? ഒപ്പം async/await പരിചയമുണ്ടോ?",
+                "ta": "FastAPI, Django அல்லது Flask போன்ற எந்த பைதான் கட்டமைப்புகளில் நீங்கள் பணிபுரிந்துள்ளீர்கள்? மேலும் async/await அனுபவம் உள்ளதா?"
+            },
+            "follow_up_prompt": "How do you handle background jobs and message queues like Celery, Redis, or Kafka?"
+        },
+        {
+            "id": "SKILL_GEN_01",
+            "category": "Skills",
+            "role": "General",
+            "intent": "database_sql_nosql_expertise",
+            "template": "What relational (e.g. PostgreSQL, MySQL) or NoSQL databases have you used, and how comfortable are you writing complex queries and schema designs?",
+            "expected_answer_type": "text",
+            "is_mandatory": true,
+            "scoring_importance": "HIGH",
+            "weight": 0.8,
+            "validation_rules": {
+                "extract_entities": ["sql_dbs", "nosql_dbs", "query_complexity"]
+            },
+            "multilingual": {
+                "en": "What relational (e.g. PostgreSQL, MySQL) or NoSQL databases have you used, and how comfortable are you writing complex queries and schema designs?",
+                "hi": "आपने किन रिलेशनल (जैसे PostgreSQL, MySQL) या NoSQL डेटाबेस का उपयोग किया है, और आप जटिल क्वेरी लिखने में कितने सहज हैं?",
+                "ml": "PostgreSQL, MySQL അല്ലെങ്കിൽ NoSQL ഡാറ്റാബേസുകളിൽ താങ്കൾക്ക് എത്രത്തോളം പ്രാവീണ്യമുണ്ട്?",
+                "ta": "PostgreSQL, MySQL அல்லது NoSQL டேட்டாபேஸ்களில் உங்கள் அனுபவம் என்ன? கடினமான SQL queries எழுத முடியுமா?"
+            },
+            "follow_up_prompt": "Can you explain how database indexing improves search queries?"
+        },
+        {
+            "id": "LOC_01",
+            "category": "Location",
+            "role": "General",
+            "intent": "verify_current_location",
+            "template": "What is your current city of residence?",
+            "expected_answer_type": "text",
+            "is_mandatory": true,
+            "scoring_importance": "HIGH",
+            "weight": 0.8,
+            "validation_rules": {
+                "extract_entities": ["current_city", "state", "country"]
+            },
+            "multilingual": {
+                "en": "What is your current city of residence?",
+                "hi": "आपका वर्तमान निवास शहर कौन सा है?",
+                "ml": "താങ്കൾ ഇപ്പോൾ താമസിക്കുന്നത് ഏത് നഗരത്തിലാണ്?",
+                "ta": "நீங்கள் தற்போது வசிக்கும் நகரம் எது?"
+            },
+            "follow_up_prompt": "Are you currently working from home, hybrid, or on-site?"
+        },
+        {
+            "id": "LOC_02",
+            "category": "Location",
+            "role": "General",
+            "intent": "relocation_willingness",
+            "template": "Are you open to relocating to {job_location} if required, or are you strictly looking for a remote position?",
+            "expected_answer_type": "choice",
+            "is_mandatory": true,
+            "scoring_importance": "CRITICAL",
+            "weight": 0.9,
+            "validation_rules": {
+                "valid_choices": [
+                    "Willing to relocate",
+                    "Already in location",
+                    "Remote only",
+                    "Hybrid acceptable"
+                ],
+                "extract_entities": ["relocation_choice", "remote_preference"]
+            },
+            "multilingual": {
+                "en": "Are you open to relocating to {job_location} if required, or are you strictly looking for a remote position?",
+                "hi": "यदि आवश्यक हो, तो क्या आप {job_location} में स्थानांतरित होने के लिए तैयार हैं, या आप केवल रिमोट काम देख रहे हैं?",
+                "ml": "ആവശ്യമാണെങ്കിൽ {job_location}-ലേക്ക് മാറാൻ താങ്കൾക്ക് സമ്മതമാണോ, അതോ റിമോട്ട് ജോലി മാത്രമാണോ നോക്കുന്നത്?",
+                "ta": "தேவைப்பட்டால் {job_location} இடத்திற்கு மாற நீங்கள் தயாரா, அல்லது ரிமோட் பணியை மட்டும் எதிர்பார்க்கிறீர்களா?"
+            },
+            "follow_up_prompt": "How much time would you need to relocate if offered the role?"
+        },
+        {
+            "id": "SAL_01",
+            "category": "Salary",
+            "role": "General",
+            "intent": "current_ctc_inquiry",
+            "template": "What is your current annual Fixed and Total CTC in LPA (Lakhs Per Annum)?",
+            "expected_answer_type": "currency_range",
+            "is_mandatory": true,
+            "scoring_importance": "HIGH",
+            "weight": 0.8,
+            "validation_rules": {
+                "extract_entities": ["current_fixed_lpa", "current_total_lpa", "currency"],
+                "min_expected_value": 0.0
+            },
+            "multilingual": {
+                "en": "What is your current annual Fixed and Total CTC in LPA (Lakhs Per Annum)?",
+                "hi": "आपका वर्तमान वार्षिक फिक्स्ड और कुल सीटीसी (LPA) क्या है?",
+                "ml": "താങ്കളുടെ ഇപ്പോഴത്തെ വാർഷിക ശമ്പളം (Current CTC in LPA) എത്രയാണ്?",
+                "ta": "உங்கள் தற்போதைய வருடாந்திர சம்பளம் (Current CTC in LPA) என்ன?"
+            },
+            "follow_up_prompt": "Do you have any variable pay or stock options (ESOPs) included in this amount?"
+        },
+        {
+            "id": "SAL_02",
+            "category": "Salary",
+            "role": "General",
+            "intent": "expected_ctc_inquiry",
+            "template": "What is your expected CTC (in LPA) for this {role_name} position, and is it negotiable?",
+            "expected_answer_type": "currency_range",
+            "is_mandatory": true,
+            "scoring_importance": "CRITICAL",
+            "weight": 1.0,
+            "validation_rules": {
+                "extract_entities": ["expected_lpa", "is_negotiable"],
+                "min_expected_value": 0.0
+            },
+            "multilingual": {
+                "en": "What is your expected CTC (in LPA) for this {role_name} position, and is it negotiable?",
+                "hi": "इस {role_name} पद के लिए आपकी अपेक्षित सीटीसी (LPA में) क्या है, और क्या यह परक्राम्य (negotiable) है?",
+                "ml": "ഈ {role_name} തസ്തികയിലേക്ക് താങ്കൾ പ്രതീക്ഷിക്കുന്ന ശമ്പളം (Expected CTC) എത്രയാണ്? ഇതിൽ വിട്ടുവീഴ്ച സാധ്യമാണോ?",
+                "ta": "இந்த {role_name} பணிக்கு நீங்கள் எதிர்பார்க்கும் சம்பளம் (Expected CTC) என்ன? இதில் சமரசம் செய்ய வாய்ப்பு உள்ளதா?"
+            },
+            "follow_up_prompt": "Do you currently hold any other competing job offers in hand?"
+        },
+        {
+            "id": "NP_01",
+            "category": "Notice period",
+            "role": "General",
+            "intent": "official_notice_period_days",
+            "template": "What is your official notice period duration with your current employer (in days)?",
+            "expected_answer_type": "duration",
+            "is_mandatory": true,
+            "scoring_importance": "CRITICAL",
+            "weight": 1.0,
+            "validation_rules": {
+                "extract_entities": ["notice_period_days"],
+                "min_expected_value": 0,
+                "max_expected_value": 180
+            },
+            "multilingual": {
+                "en": "What is your official notice period duration with your current employer (in days)?",
+                "hi": "आपके वर्तमान नियोक्ता के साथ आपकी आधिकारिक नोटिस अवधि (दिनों में) क्या है?",
+                "ml": "താങ്കളുടെ ഇപ്പോഴത്തെ കമ്പനിയിലെ ഒഫീഷ്യൽ നോട്ടീസ് പീരിയഡ് എത്ര ദിവസമാണ്?",
+                "ta": "உங்கள் தற்போதைய நிறுவனத்தில் அதிகாரப்பூர்வ நோட்டீஸ் காலம் எத்தனை நாட்கள்?"
+            },
+            "follow_up_prompt": "Are you currently serving your notice period, and if so, what is your last working day?"
+        },
+        {
+            "id": "NP_02",
+            "category": "Notice period",
+            "role": "General",
+            "intent": "notice_buyout_earliest_joining",
+            "template": "Is an early release or notice buyout possible, and what is the earliest date you can join us if selected?",
+            "expected_answer_type": "text",
+            "is_mandatory": true,
+            "scoring_importance": "HIGH",
+            "weight": 0.8,
+            "validation_rules": {
+                "extract_entities": ["can_buyout", "earliest_joining_date"]
+            },
+            "multilingual": {
+                "en": "Is an early release or notice buyout possible, and what is the earliest date you can join us if selected?",
+                "hi": "क्या जल्दी रिलीव होना या नोटिस बायआउट संभव है, और चयन होने पर आप जल्द से जल्द किस तारीख को जॉइन कर सकते हैं?",
+                "ml": "നോട്ടീസ് പീരിയഡ് ഒഴിവാക്കി നേരത്തെ റിലീവിങ് സാധ്യമാണോ? തിരഞ്ഞെടുക്കപ്പെട്ടാൽ എന്ന് മുതൽ ജോലിയിൽ പ്രവേശിക്കാം?",
+                "ta": "நோட்டீஸ் காலத்தை குறைத்து முன்கூட்டியே பணியில் சேர முடியுமா? எப்போது பணியில் இணைய முடியும்?"
+            },
+            "follow_up_prompt": "Have you already had this discussion with your current reporting manager or HR?"
+        }
+    ]
+}

@@ -1,0 +1,324 @@
+{
+    "summary": {
+        "role": "Machine Learning Engineer",
+        "total_candidates_evaluated": 6,
+        "eligible_count": 1,
+        "review_count": 1,
+        "rejected_count": 4,
+        "eligibility_rate_percentage": 16.67,
+        "rule_cutoffs_applied": {
+            "role_name": "Machine Learning Engineer",
+            "min_ats_score": 75.0,
+            "review_ats_score": 60.0,
+            "mandatory_skills": [
+                "Python",
+                "TensorFlow",
+                "Pandas",
+                "Machine Learning"
+            ],
+            "min_experience_years": 1.0,
+            "max_experience_years": 6.0,
+            "allowed_locations": [
+                "Bangalore",
+                "Hyderabad",
+                "Remote"
+            ],
+            "max_notice_period_days": 60,
+            "allow_remote": true,
+            "required_education_keywords": [
+                "B.Tech",
+                "M.Tech",
+                "Computer Science",
+                "Artificial Intelligence"
+            ]
+        }
+    },
+    "eligible_candidates": [
+        {
+            "candidate_id": "strong_candidate",
+            "status": "ELIGIBLE",
+            "call_priority": "HIGH",
+            "ats_score": 86.5,
+            "role_evaluated": "Machine Learning Engineer",
+            "checks": {
+                "mandatory_skills_passed": true,
+                "experience_range_passed": true,
+                "location_passed": true,
+                "notice_period_passed": true,
+                "ats_score_cutoff_met": true
+            },
+            "missing_mandatory_skills": [],
+            "matched_mandatory_skills": [
+                "Python",
+                "TensorFlow",
+                "Pandas",
+                "Machine Learning"
+            ],
+            "experience_years": 2.0,
+            "decision_reason": "Candidate meets all criteria with strong ATS score of 86.5%. Matched mandatory skills: Python, TensorFlow, Pandas, Machine Learning."
+        }
+    ],
+    "review_candidates": [
+        {
+            "candidate_id": "Resume 1",
+            "status": "REVIEW",
+            "call_priority": "LOW",
+            "ats_score": 86.5,
+            "role_evaluated": "Machine Learning Engineer",
+            "checks": {
+                "mandatory_skills_passed": true,
+                "experience_range_passed": false,
+                "location_passed": true,
+                "notice_period_passed": true,
+                "ats_score_cutoff_met": true
+            },
+            "missing_mandatory_skills": [],
+            "matched_mandatory_skills": [
+                "Python",
+                "TensorFlow",
+                "Pandas",
+                "Machine Learning"
+            ],
+            "experience_years": 0.0,
+            "decision_reason": "Experience (0.0 yrs) below minimum required (1.0 yrs)"
+        }
+    ],
+    "rejected_candidates": [
+        {
+            "candidate_id": "partial_candidate",
+            "status": "REJECTED",
+            "call_priority": "NONE",
+            "ats_score": 62.0,
+            "role_evaluated": "Machine Learning Engineer",
+            "checks": {
+                "mandatory_skills_passed": false,
+                "experience_range_passed": true,
+                "location_passed": true,
+                "notice_period_passed": true,
+                "ats_score_cutoff_met": false
+            },
+            "missing_mandatory_skills": [
+                "TensorFlow",
+                "Pandas"
+            ],
+            "matched_mandatory_skills": [
+                "Python",
+                "Machine Learning"
+            ],
+            "experience_years": 1.0,
+            "decision_reason": "Missing mandatory skills: TensorFlow, Pandas."
+        },
+        {
+            "candidate_id": "Resume 2",
+            "status": "REJECTED",
+            "call_priority": "NONE",
+            "ats_score": 62.0,
+            "role_evaluated": "Machine Learning Engineer",
+            "checks": {
+                "mandatory_skills_passed": false,
+                "experience_range_passed": true,
+                "location_passed": true,
+                "notice_period_passed": true,
+                "ats_score_cutoff_met": false
+            },
+            "missing_mandatory_skills": [
+                "Python",
+                "TensorFlow",
+                "Pandas",
+                "Machine Learning"
+            ],
+            "matched_mandatory_skills": [],
+            "experience_years": 5.0,
+            "decision_reason": "Missing mandatory skills: Python, TensorFlow, Pandas, Machine Learning."
+        },
+        {
+            "candidate_id": "Resume 3",
+            "status": "REJECTED",
+            "call_priority": "NONE",
+            "ats_score": 42.0,
+            "role_evaluated": "Machine Learning Engineer",
+            "checks": {
+                "mandatory_skills_passed": false,
+                "experience_range_passed": false,
+                "location_passed": true,
+                "notice_period_passed": true,
+                "ats_score_cutoff_met": false
+            },
+            "missing_mandatory_skills": [
+                "Python",
+                "TensorFlow",
+                "Pandas",
+                "Machine Learning"
+            ],
+            "matched_mandatory_skills": [],
+            "experience_years": 0.5,
+            "decision_reason": "ATS score (42.0%) below minimum cutoff threshold (60.0%). Missing mandatory skills: Python, TensorFlow, Pandas, Machine Learning. Experience (0.5 yrs) below minimum required (1.0 yrs)"
+        },
+        {
+            "candidate_id": "weak_candidate",
+            "status": "REJECTED",
+            "call_priority": "NONE",
+            "ats_score": 42.0,
+            "role_evaluated": "Machine Learning Engineer",
+            "checks": {
+                "mandatory_skills_passed": false,
+                "experience_range_passed": true,
+                "location_passed": true,
+                "notice_period_passed": true,
+                "ats_score_cutoff_met": false
+            },
+            "missing_mandatory_skills": [
+                "Python",
+                "TensorFlow",
+                "Pandas"
+            ],
+            "matched_mandatory_skills": [
+                "Machine Learning"
+            ],
+            "experience_years": 3.0,
+            "decision_reason": "ATS score (42.0%) below minimum cutoff threshold (60.0%). Missing mandatory skills: Python, TensorFlow, Pandas."
+        }
+    ],
+    "all_results": [
+        {
+            "candidate_id": "partial_candidate",
+            "status": "REJECTED",
+            "call_priority": "NONE",
+            "ats_score": 62.0,
+            "role_evaluated": "Machine Learning Engineer",
+            "checks": {
+                "mandatory_skills_passed": false,
+                "experience_range_passed": true,
+                "location_passed": true,
+                "notice_period_passed": true,
+                "ats_score_cutoff_met": false
+            },
+            "missing_mandatory_skills": [
+                "TensorFlow",
+                "Pandas"
+            ],
+            "matched_mandatory_skills": [
+                "Python",
+                "Machine Learning"
+            ],
+            "experience_years": 1.0,
+            "decision_reason": "Missing mandatory skills: TensorFlow, Pandas."
+        },
+        {
+            "candidate_id": "Resume 1",
+            "status": "REVIEW",
+            "call_priority": "LOW",
+            "ats_score": 86.5,
+            "role_evaluated": "Machine Learning Engineer",
+            "checks": {
+                "mandatory_skills_passed": true,
+                "experience_range_passed": false,
+                "location_passed": true,
+                "notice_period_passed": true,
+                "ats_score_cutoff_met": true
+            },
+            "missing_mandatory_skills": [],
+            "matched_mandatory_skills": [
+                "Python",
+                "TensorFlow",
+                "Pandas",
+                "Machine Learning"
+            ],
+            "experience_years": 0.0,
+            "decision_reason": "Experience (0.0 yrs) below minimum required (1.0 yrs)"
+        },
+        {
+            "candidate_id": "Resume 2",
+            "status": "REJECTED",
+            "call_priority": "NONE",
+            "ats_score": 62.0,
+            "role_evaluated": "Machine Learning Engineer",
+            "checks": {
+                "mandatory_skills_passed": false,
+                "experience_range_passed": true,
+                "location_passed": true,
+                "notice_period_passed": true,
+                "ats_score_cutoff_met": false
+            },
+            "missing_mandatory_skills": [
+                "Python",
+                "TensorFlow",
+                "Pandas",
+                "Machine Learning"
+            ],
+            "matched_mandatory_skills": [],
+            "experience_years": 5.0,
+            "decision_reason": "Missing mandatory skills: Python, TensorFlow, Pandas, Machine Learning."
+        },
+        {
+            "candidate_id": "Resume 3",
+            "status": "REJECTED",
+            "call_priority": "NONE",
+            "ats_score": 42.0,
+            "role_evaluated": "Machine Learning Engineer",
+            "checks": {
+                "mandatory_skills_passed": false,
+                "experience_range_passed": false,
+                "location_passed": true,
+                "notice_period_passed": true,
+                "ats_score_cutoff_met": false
+            },
+            "missing_mandatory_skills": [
+                "Python",
+                "TensorFlow",
+                "Pandas",
+                "Machine Learning"
+            ],
+            "matched_mandatory_skills": [],
+            "experience_years": 0.5,
+            "decision_reason": "ATS score (42.0%) below minimum cutoff threshold (60.0%). Missing mandatory skills: Python, TensorFlow, Pandas, Machine Learning. Experience (0.5 yrs) below minimum required (1.0 yrs)"
+        },
+        {
+            "candidate_id": "strong_candidate",
+            "status": "ELIGIBLE",
+            "call_priority": "HIGH",
+            "ats_score": 86.5,
+            "role_evaluated": "Machine Learning Engineer",
+            "checks": {
+                "mandatory_skills_passed": true,
+                "experience_range_passed": true,
+                "location_passed": true,
+                "notice_period_passed": true,
+                "ats_score_cutoff_met": true
+            },
+            "missing_mandatory_skills": [],
+            "matched_mandatory_skills": [
+                "Python",
+                "TensorFlow",
+                "Pandas",
+                "Machine Learning"
+            ],
+            "experience_years": 2.0,
+            "decision_reason": "Candidate meets all criteria with strong ATS score of 86.5%. Matched mandatory skills: Python, TensorFlow, Pandas, Machine Learning."
+        },
+        {
+            "candidate_id": "weak_candidate",
+            "status": "REJECTED",
+            "call_priority": "NONE",
+            "ats_score": 42.0,
+            "role_evaluated": "Machine Learning Engineer",
+            "checks": {
+                "mandatory_skills_passed": false,
+                "experience_range_passed": true,
+                "location_passed": true,
+                "notice_period_passed": true,
+                "ats_score_cutoff_met": false
+            },
+            "missing_mandatory_skills": [
+                "Python",
+                "TensorFlow",
+                "Pandas"
+            ],
+            "matched_mandatory_skills": [
+                "Machine Learning"
+            ],
+            "experience_years": 3.0,
+            "decision_reason": "ATS score (42.0%) below minimum cutoff threshold (60.0%). Missing mandatory skills: Python, TensorFlow, Pandas."
+        }
+    ]
+}

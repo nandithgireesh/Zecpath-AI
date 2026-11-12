@@ -1,0 +1,63 @@
+{
+  "total_tests": 144,
+  "overall_wer": 0.0232,
+  "overall_cer": 0.0139,
+  "mean_confidence": 0.743,
+  "mean_latency_ms": 136.2,
+  "accent_breakdown": {
+    "INDIAN_ENGLISH": {
+      "mean_wer": 0.0232,
+      "mean_cer": 0.0139,
+      "mean_confidence": 0.752
+    },
+    "US_ENGLISH": {
+      "mean_wer": 0.0232,
+      "mean_cer": 0.0139,
+      "mean_confidence": 0.763
+    },
+    "UK_ENGLISH": {
+      "mean_wer": 0.0232,
+      "mean_cer": 0.0139,
+      "mean_confidence": 0.763
+    },
+    "REGIONAL_HINDI": {
+      "mean_wer": 0.0232,
+      "mean_cer": 0.0139,
+      "mean_confidence": 0.733
+    },
+    "REGIONAL_MALAYALAM": {
+      "mean_wer": 0.0232,
+      "mean_cer": 0.0139,
+      "mean_confidence": 0.723
+    },
+    "REGIONAL_TAMIL": {
+      "mean_wer": 0.0232,
+      "mean_cer": 0.0139,
+      "mean_confidence": 0.723
+    }
+  },
+  "noise_breakdown": {
+    "CLEAN_STUDIO": {
+      "mean_wer": 0.0,
+      "mean_cer": 0.0,
+      "mean_confidence": 0.94
+    },
+    "OFFICE_BACKGROUND": {
+      "mean_wer": 0.0,
+      "mean_cer": 0.0,
+      "mean_confidence": 0.81
+    },
+    "TRAFFIC_AMBIENT": {
+      "mean_wer": 0.0928,
+      "mean_cer": 0.0557,
+      "mean_confidence": 0.66
+    },
+    "LOW_GAIN_MIC": {
+      "mean_wer": 0.0,
+      "mean_cer": 0.0,
+      "mean_confidence": 0.56
+    }
+  },
+  "generated_at": "2026-10-22T14:27:02.987117+00:00",
+  "status": "COMPLETED"
+}

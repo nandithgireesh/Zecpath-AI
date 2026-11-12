@@ -1,0 +1,28 @@
+{
+    "technical_skills": [
+        {
+            "skill": "azure",
+            "confidence": 1.0
+        },
+        {
+            "skill": "sql",
+            "confidence": 1.0
+        }
+    ],
+    "business_skills": [
+        {
+            "skill": "agile",
+            "confidence": 1.0
+        },
+        {
+            "skill": "communication",
+            "confidence": 1.0
+        }
+    ],
+    "creative_skills": [
+        {
+            "skill": "figma",
+            "confidence": 1.0
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "technical_skills": [],
+    "business_skills": [
+        {
+            "skill": "communication",
+            "confidence": 1.0
+        },
+        {
+            "skill": "leadership",
+            "confidence": 1.0
+        }
+    ],
+    "creative_skills": []
+}

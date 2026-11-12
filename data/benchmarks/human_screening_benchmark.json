@@ -1,0 +1,787 @@
+{
+  "benchmark_metadata": {
+    "version": "1.0.0",
+    "created_date": "2026-09-15",
+    "evaluator": "Senior Technical Recruiting Panel & NLP Calibration Team",
+    "total_profiles": 12,
+    "archetypes": [
+      "EXPERT_FLUENT",
+      "EXPERT_TERSE",
+      "NERVOUS_COMPETENT",
+      "BORDERLINE_NEGOTIABLE",
+      "NON_NATIVE_ACCENTED",
+      "UNDERQUALIFIED_EVASIVE",
+      "DEFLECTIVE_OFFTOPIC"
+    ]
+  },
+  "profiles": [
+    {
+      "candidate_id": "cand_expert_fluent",
+      "candidate_name": "Aarav Sharma",
+      "target_role": "Senior Cloud Architect",
+      "archetype": "EXPERT_FLUENT",
+      "turns": [
+        {
+          "question_id": "sys_arch_01",
+          "question_category": "Technical Skills",
+          "question_text": "How do you design a high-throughput microservices architecture with low latency?",
+          "candidate_response": "I implement an event-driven architecture using Kafka for asynchronous message streaming, with stateless Go microservices orchestrated via Kubernetes. For caching, I deploy Redis clusters with read replicas, reducing database load by seventy percent.",
+          "latency_ms": 1800,
+          "hesitation_count": 0,
+          "word_count": 35,
+          "human_intent": "CONFIRMING_SKILL",
+          "human_dimension_scores": {
+            "clarity": 95,
+            "relevance": 95,
+            "completeness": 92,
+            "consistency": 95
+          }
+        },
+        {
+          "question_id": "sal_exp_01",
+          "question_category": "Salary Expectation",
+          "question_text": "What is your current and expected CTC?",
+          "candidate_response": "My current CTC is 28 LPA fixed, and I am expecting around 34 LPA, which is within market standards for this role.",
+          "latency_ms": 1200,
+          "hesitation_count": 0,
+          "word_count": 22,
+          "human_intent": "STATING_SALARY",
+          "human_dimension_scores": {
+            "clarity": 95,
+            "relevance": 95,
+            "completeness": 95,
+            "consistency": 95
+          }
+        },
+        {
+          "question_id": "not_per_01",
+          "question_category": "Notice Period",
+          "question_text": "What is your notice period, and can it be negotiated?",
+          "candidate_response": "I have a 30-day notice period and my current manager has already approved an early release if needed.",
+          "latency_ms": 1100,
+          "hesitation_count": 0,
+          "word_count": 18,
+          "human_intent": "STATING_AVAILABILITY",
+          "human_dimension_scores": {
+            "clarity": 95,
+            "relevance": 95,
+            "completeness": 95,
+            "consistency": 95
+          }
+        }
+      ],
+      "human_ground_truth": {
+        "overall_score": 92.0,
+        "technical_score": 93.5,
+        "communication_score": 92.0,
+        "recommendation": "STRONG_HIRE",
+        "rationale": "Flawless technical articulation, high system architecture mastery, realistic compensation, and ready availability.",
+        "false_rejection_risk": "LOW"
+      }
+    },
+    {
+      "candidate_id": "cand_expert_terse",
+      "candidate_name": "Vikram Sethi",
+      "target_role": "Distributed Systems Engineer",
+      "archetype": "EXPERT_TERSE",
+      "turns": [
+        {
+          "question_id": "sys_arch_01",
+          "question_category": "Technical Skills",
+          "question_text": "How do you guarantee data consistency across distributed database shards?",
+          "candidate_response": "Two-phase commit for synchronous invariants. For high throughput, Raft consensus with idempotent saga transactions.",
+          "latency_ms": 1400,
+          "hesitation_count": 0,
+          "word_count": 16,
+          "human_intent": "CONFIRMING_SKILL",
+          "human_dimension_scores": {
+            "clarity": 90,
+            "relevance": 95,
+            "completeness": 88,
+            "consistency": 92
+          }
+        },
+        {
+          "question_id": "sal_exp_01",
+          "question_category": "Salary Expectation",
+          "question_text": "What are your salary expectations for this position?",
+          "candidate_response": "Currently drawing 22 LPA. Expecting 28 LPA.",
+          "latency_ms": 900,
+          "hesitation_count": 0,
+          "word_count": 7,
+          "human_intent": "STATING_SALARY",
+          "human_dimension_scores": {
+            "clarity": 92,
+            "relevance": 95,
+            "completeness": 90,
+            "consistency": 95
+          }
+        },
+        {
+          "question_id": "not_per_01",
+          "question_category": "Notice Period",
+          "question_text": "What is your official notice period?",
+          "candidate_response": "30 days. Ready immediately if buyout approved.",
+          "latency_ms": 800,
+          "hesitation_count": 0,
+          "word_count": 7,
+          "human_intent": "STATING_AVAILABILITY",
+          "human_dimension_scores": {
+            "clarity": 90,
+            "relevance": 95,
+            "completeness": 90,
+            "consistency": 95
+          }
+        }
+      ],
+      "human_ground_truth": {
+        "overall_score": 87.5,
+        "technical_score": 91.0,
+        "communication_score": 80.0,
+        "recommendation": "HIRE",
+        "rationale": "Extremely concise yet deeply accurate technical answers. Demonstrates direct mastery without fluff.",
+        "false_rejection_risk": "HIGH_DUE_TO_BREVITY"
+      }
+    },
+    {
+      "candidate_id": "cand_nervous_qualified",
+      "candidate_name": "Pooja Hegde",
+      "target_role": "Fullstack Software Engineer",
+      "archetype": "NERVOUS_COMPETENT",
+      "turns": [
+        {
+          "question_id": "sys_arch_01",
+          "question_category": "Technical Skills",
+          "question_text": "Explain how you handle state management in large scale React applications.",
+          "candidate_response": "Um, so... basically we use Redux Toolkit. Uh, for server state we use React Query to handle caching and invalidation, which, you know, avoided duplicate API fetches across dashboards.",
+          "latency_ms": 3200,
+          "hesitation_count": 4,
+          "word_count": 28,
+          "human_intent": "CONFIRMING_SKILL",
+          "human_dimension_scores": {
+            "clarity": 78,
+            "relevance": 90,
+            "completeness": 85,
+            "consistency": 88
+          }
+        },
+        {
+          "question_id": "sal_exp_01",
+          "question_category": "Salary Expectation",
+          "question_text": "Could you share your current compensation and expectations?",
+          "candidate_response": "Uh, right now I make 14 LPA... um, I was hoping for around 18 LPA, but definitely flexible based on role growth.",
+          "latency_ms": 2800,
+          "hesitation_count": 3,
+          "word_count": 23,
+          "human_intent": "STATING_SALARY",
+          "human_dimension_scores": {
+            "clarity": 80,
+            "relevance": 92,
+            "completeness": 88,
+            "consistency": 90
+          }
+        },
+        {
+          "question_id": "not_per_01",
+          "question_category": "Notice Period",
+          "question_text": "How much notice do you need to serve?",
+          "candidate_response": "It is, um, 15 days because I am already on official notice right now.",
+          "latency_ms": 2100,
+          "hesitation_count": 2,
+          "word_count": 14,
+          "human_intent": "STATING_AVAILABILITY",
+          "human_dimension_scores": {
+            "clarity": 82,
+            "relevance": 92,
+            "completeness": 92,
+            "consistency": 92
+          }
+        }
+      ],
+      "human_ground_truth": {
+        "overall_score": 81.0,
+        "technical_score": 85.0,
+        "communication_score": 74.0,
+        "recommendation": "HIRE",
+        "rationale": "High technical accuracy and realistic expectations. Vocal hesitations are minor behavioral anxiety and should not disqualify her.",
+        "false_rejection_risk": "HIGH_DUE_TO_HESITATION"
+      }
+    },
+    {
+      "candidate_id": "cand_borderline_negotiable",
+      "candidate_name": "Rohan Deshmukh",
+      "target_role": "Backend Engineer",
+      "archetype": "BORDERLINE_NEGOTIABLE",
+      "turns": [
+        {
+          "question_id": "sys_arch_01",
+          "question_category": "Technical Skills",
+          "question_text": "How do you optimize slow database queries in PostgreSQL?",
+          "candidate_response": "I analyze the EXPLAIN ANALYZE execution plan to detect sequential table scans, add composite B-tree or GIN indexes, and rewrite nested joins with window functions or partitioning.",
+          "latency_ms": 2100,
+          "hesitation_count": 1,
+          "word_count": 28,
+          "human_intent": "CONFIRMING_SKILL",
+          "human_dimension_scores": {
+            "clarity": 86,
+            "relevance": 90,
+            "completeness": 86,
+            "consistency": 88
+          }
+        },
+        {
+          "question_id": "sal_exp_01",
+          "question_category": "Salary Expectation",
+          "question_text": "What are your salary expectations for this position?",
+          "candidate_response": "My current is 19 LPA and I'm targeting 26 LPA, though if the tech stack and bonus structure are compelling, 23 to 24 LPA is negotiable.",
+          "latency_ms": 1900,
+          "hesitation_count": 1,
+          "word_count": 27,
+          "human_intent": "STATING_SALARY",
+          "human_dimension_scores": {
+            "clarity": 85,
+            "relevance": 90,
+            "completeness": 88,
+            "consistency": 85
+          }
+        },
+        {
+          "question_id": "not_per_01",
+          "question_category": "Notice Period",
+          "question_text": "What is your official notice duration?",
+          "candidate_response": "Standard notice is 45 days, but buyout is explicitly permitted by my employer.",
+          "latency_ms": 1500,
+          "hesitation_count": 0,
+          "word_count": 13,
+          "human_intent": "STATING_AVAILABILITY",
+          "human_dimension_scores": {
+            "clarity": 88,
+            "relevance": 90,
+            "completeness": 88,
+            "consistency": 88
+          }
+        }
+      ],
+      "human_ground_truth": {
+        "overall_score": 76.5,
+        "technical_score": 82.0,
+        "communication_score": 80.0,
+        "recommendation": "HIRE",
+        "rationale": "Competent technical fundamentals. Compensation and notice period are slightly above target but explicitly negotiable.",
+        "false_rejection_risk": "MEDIUM_BORDERLINE"
+      }
+    },
+    {
+      "candidate_id": "cand_non_native_accent",
+      "candidate_name": "Karthik Subramanian",
+      "target_role": "DevOps Specialist",
+      "archetype": "NON_NATIVE_ACCENTED",
+      "turns": [
+        {
+          "question_id": "sys_arch_01",
+          "question_category": "Technical Skills",
+          "question_text": "Describe your CI/CD deployment pipeline on AWS.",
+          "candidate_response": "Actually what we do is, GitHub Actions trigger the build, docker container we push to ECR, and ArgoCD will automatically sync changes to EKS cluster with helm charts.",
+          "latency_ms": 2400,
+          "hesitation_count": 1,
+          "word_count": 28,
+          "human_intent": "CONFIRMING_SKILL",
+          "human_dimension_scores": {
+            "clarity": 82,
+            "relevance": 92,
+            "completeness": 88,
+            "consistency": 88
+          }
+        },
+        {
+          "question_id": "sal_exp_01",
+          "question_category": "Salary Expectation",
+          "question_text": "What is your current and expected salary package?",
+          "candidate_response": "Presently I am drawing 16 lakhs per annum. I am expecting twenty lakhs package.",
+          "latency_ms": 1400,
+          "hesitation_count": 0,
+          "word_count": 14,
+          "human_intent": "STATING_SALARY",
+          "human_dimension_scores": {
+            "clarity": 88,
+            "relevance": 90,
+            "completeness": 90,
+            "consistency": 90
+          }
+        },
+        {
+          "question_id": "not_per_01",
+          "question_category": "Notice Period",
+          "question_text": "How soon can you join our engineering team?",
+          "candidate_response": "Notice period is having thirty days, can join in thirty days definitely.",
+          "latency_ms": 1300,
+          "hesitation_count": 0,
+          "word_count": 12,
+          "human_intent": "STATING_AVAILABILITY",
+          "human_dimension_scores": {
+            "clarity": 84,
+            "relevance": 90,
+            "completeness": 90,
+            "consistency": 90
+          }
+        }
+      ],
+      "human_ground_truth": {
+        "overall_score": 83.0,
+        "technical_score": 88.0,
+        "communication_score": 78.0,
+        "recommendation": "HIRE",
+        "rationale": "High production Kubernetes and GitOps experience. Coloquial syntax is natural and does not impede professional effectiveness.",
+        "false_rejection_risk": "MEDIUM_LANGUAGE_VARIATION"
+      }
+    },
+    {
+      "candidate_id": "cand_underqualified_evasive",
+      "candidate_name": "Sameer Joshi",
+      "target_role": "Senior Cloud Architect",
+      "archetype": "UNDERQUALIFIED_EVASIVE",
+      "turns": [
+        {
+          "question_id": "sys_arch_01",
+          "question_category": "Technical Skills",
+          "question_text": "How do you design a high-throughput microservices architecture with low latency?",
+          "candidate_response": "I just use cloud servers and standard APIs. Mostly normal web development and database queries.",
+          "latency_ms": 4500,
+          "hesitation_count": 3,
+          "word_count": 15,
+          "human_intent": "VAGUE_ANSWER",
+          "human_dimension_scores": {
+            "clarity": 45,
+            "relevance": 40,
+            "completeness": 30,
+            "consistency": 50
+          }
+        },
+        {
+          "question_id": "sal_exp_01",
+          "question_category": "Salary Expectation",
+          "question_text": "What is your current and expected salary?",
+          "candidate_response": "It depends on company standards, whatever is fair.",
+          "latency_ms": 3800,
+          "hesitation_count": 2,
+          "word_count": 8,
+          "human_intent": "VAGUE_ANSWER",
+          "human_dimension_scores": {
+            "clarity": 50,
+            "relevance": 55,
+            "completeness": 40,
+            "consistency": 60
+          }
+        },
+        {
+          "question_id": "not_per_01",
+          "question_category": "Notice Period",
+          "question_text": "What is your notice period?",
+          "candidate_response": "Not sure right now, maybe two or three months.",
+          "latency_ms": 3200,
+          "hesitation_count": 1,
+          "word_count": 9,
+          "human_intent": "VAGUE_ANSWER",
+          "human_dimension_scores": {
+            "clarity": 45,
+            "relevance": 60,
+            "completeness": 45,
+            "consistency": 50
+          }
+        }
+      ],
+      "human_ground_truth": {
+        "overall_score": 42.0,
+        "technical_score": 38.0,
+        "communication_score": 50.0,
+        "recommendation": "NO_HIRE",
+        "rationale": "Complete absence of required architecture skills. Highly evasive on compensation and availability.",
+        "false_rejection_risk": "NONE_TRUE_NEGATIVE"
+      }
+    },
+    {
+      "candidate_id": "cand_deflective_offtopic",
+      "candidate_name": "Deepak Verma",
+      "target_role": "Backend Engineer",
+      "archetype": "DEFLECTIVE_OFFTOPIC",
+      "turns": [
+        {
+          "question_id": "sys_arch_01",
+          "question_category": "Technical Skills",
+          "question_text": "How do you optimize slow database queries in PostgreSQL?",
+          "candidate_response": "Honestly I prefer talking about the stock market or cricket. Have you checked the latest cricket match scores?",
+          "latency_ms": 2800,
+          "hesitation_count": 0,
+          "word_count": 18,
+          "human_intent": "OFF_TOPIC",
+          "human_dimension_scores": {
+            "clarity": 35,
+            "relevance": 10,
+            "completeness": 10,
+            "consistency": 20
+          }
+        },
+        {
+          "question_id": "sal_exp_01",
+          "question_category": "Salary Expectation",
+          "question_text": "What are your salary expectations for this role?",
+          "candidate_response": "Can you transfer me to a human recruiter right now? Are you an AI bot?",
+          "latency_ms": 2200,
+          "hesitation_count": 0,
+          "word_count": 15,
+          "human_intent": "OFF_TOPIC",
+          "human_dimension_scores": {
+            "clarity": 40,
+            "relevance": 15,
+            "completeness": 10,
+            "consistency": 30
+          }
+        },
+        {
+          "question_id": "not_per_01",
+          "question_category": "Notice Period",
+          "question_text": "What is your official notice duration?",
+          "candidate_response": "I don't have to answer that until I speak to a real manager.",
+          "latency_ms": 1900,
+          "hesitation_count": 0,
+          "word_count": 13,
+          "human_intent": "OFF_TOPIC",
+          "human_dimension_scores": {
+            "clarity": 40,
+            "relevance": 10,
+            "completeness": 10,
+            "consistency": 30
+          }
+        }
+      ],
+      "human_ground_truth": {
+        "overall_score": 25.0,
+        "technical_score": 15.0,
+        "communication_score": 30.0,
+        "recommendation": "NO_HIRE",
+        "rationale": "Deflective, uncooperative, and completely off-topic.",
+        "false_rejection_risk": "NONE_TRUE_NEGATIVE"
+      }
+    },
+    {
+      "candidate_id": "cand_terse_python_backend",
+      "candidate_name": "Sneha Iyer",
+      "target_role": "Python Backend Developer",
+      "archetype": "EXPERT_TERSE",
+      "turns": [
+        {
+          "question_id": "sys_arch_01",
+          "question_category": "Technical Skills",
+          "question_text": "How do you handle asynchronous concurrency and background tasks in Python?",
+          "candidate_response": "Asyncio event loop with FastAPI endpoints. For CPU-bound tasks, Celery workers backed by Redis broker.",
+          "latency_ms": 1100,
+          "hesitation_count": 0,
+          "word_count": 16,
+          "human_intent": "CONFIRMING_SKILL",
+          "human_dimension_scores": {
+            "clarity": 90,
+            "relevance": 95,
+            "completeness": 88,
+            "consistency": 92
+          }
+        },
+        {
+          "question_id": "sal_exp_01",
+          "question_category": "Salary Expectation",
+          "question_text": "What are your compensation expectations?",
+          "candidate_response": "Current is 15 LPA. Target 20 LPA.",
+          "latency_ms": 800,
+          "hesitation_count": 0,
+          "word_count": 7,
+          "human_intent": "STATING_SALARY",
+          "human_dimension_scores": {
+            "clarity": 90,
+            "relevance": 95,
+            "completeness": 90,
+            "consistency": 95
+          }
+        },
+        {
+          "question_id": "not_per_01",
+          "question_category": "Notice Period",
+          "question_text": "What is your availability to start?",
+          "candidate_response": "15 days notice. Immediately available if required.",
+          "latency_ms": 750,
+          "hesitation_count": 0,
+          "word_count": 7,
+          "human_intent": "STATING_AVAILABILITY",
+          "human_dimension_scores": {
+            "clarity": 90,
+            "relevance": 95,
+            "completeness": 92,
+            "consistency": 95
+          }
+        }
+      ],
+      "human_ground_truth": {
+        "overall_score": 86.0,
+        "technical_score": 90.0,
+        "communication_score": 79.0,
+        "recommendation": "HIRE",
+        "rationale": "High caliber engineer with laser precision. Concise style is an asset, not a gap.",
+        "false_rejection_risk": "HIGH_DUE_TO_BREVITY"
+      }
+    },
+    {
+      "candidate_id": "cand_anxious_fast_speaker",
+      "candidate_name": "Arjun Nair",
+      "target_role": "Backend Engineer",
+      "archetype": "NERVOUS_COMPETENT",
+      "turns": [
+        {
+          "question_id": "sys_arch_01",
+          "question_category": "Technical Skills",
+          "question_text": "How do you prevent race conditions in concurrent database updates?",
+          "candidate_response": "Uh, we can use optimistic locking with version column or pessimistic SELECT FOR UPDATE, and Redis distributed locks with Redlock algorithm.",
+          "latency_ms": 1900,
+          "hesitation_count": 2,
+          "word_count": 22,
+          "human_intent": "CONFIRMING_SKILL",
+          "human_dimension_scores": {
+            "clarity": 82,
+            "relevance": 92,
+            "completeness": 88,
+            "consistency": 88
+          }
+        },
+        {
+          "question_id": "sal_exp_01",
+          "question_category": "Salary Expectation",
+          "question_text": "What is your expected CTC?",
+          "candidate_response": "Um, current is 18 LPA, expecting 22 LPA, definitely open to negotiate based on responsibilities.",
+          "latency_ms": 1600,
+          "hesitation_count": 1,
+          "word_count": 16,
+          "human_intent": "STATING_SALARY",
+          "human_dimension_scores": {
+            "clarity": 84,
+            "relevance": 90,
+            "completeness": 90,
+            "consistency": 90
+          }
+        },
+        {
+          "question_id": "not_per_01",
+          "question_category": "Notice Period",
+          "question_text": "What is your official notice duration?",
+          "candidate_response": "Official notice is 30 days, buyout possible.",
+          "latency_ms": 1100,
+          "hesitation_count": 0,
+          "word_count": 7,
+          "human_intent": "STATING_AVAILABILITY",
+          "human_dimension_scores": {
+            "clarity": 88,
+            "relevance": 90,
+            "completeness": 90,
+            "consistency": 90
+          }
+        }
+      ],
+      "human_ground_truth": {
+        "overall_score": 82.5,
+        "technical_score": 87.0,
+        "communication_score": 76.0,
+        "recommendation": "HIRE",
+        "rationale": "Accurate technical solutions on database locking. Minor hesitation does not impair delivery.",
+        "false_rejection_risk": "HIGH_DUE_TO_HESITATION"
+      }
+    },
+    {
+      "candidate_id": "cand_salary_rigid_overbudget",
+      "candidate_name": "Manish Gupta",
+      "target_role": "Backend Engineer",
+      "archetype": "UNDERQUALIFIED_EVASIVE",
+      "turns": [
+        {
+          "question_id": "sys_arch_01",
+          "question_category": "Technical Skills",
+          "question_text": "How do you optimize slow database queries in PostgreSQL?",
+          "candidate_response": "I add indexes on frequently queried columns and check explain analyze plans.",
+          "latency_ms": 1800,
+          "hesitation_count": 0,
+          "word_count": 13,
+          "human_intent": "CONFIRMING_SKILL",
+          "human_dimension_scores": {
+            "clarity": 80,
+            "relevance": 85,
+            "completeness": 75,
+            "consistency": 80
+          }
+        },
+        {
+          "question_id": "sal_exp_01",
+          "question_category": "Salary Expectation",
+          "question_text": "What are your salary expectations for this position?",
+          "candidate_response": "I strictly require 48 LPA fixed. Zero negotiation on CTC.",
+          "latency_ms": 1100,
+          "hesitation_count": 0,
+          "word_count": 10,
+          "human_intent": "STATING_SALARY",
+          "human_dimension_scores": {
+            "clarity": 90,
+            "relevance": 90,
+            "completeness": 90,
+            "consistency": 85
+          }
+        },
+        {
+          "question_id": "not_per_01",
+          "question_category": "Notice Period",
+          "question_text": "What is your official notice duration?",
+          "candidate_response": "60 days notice.",
+          "latency_ms": 900,
+          "hesitation_count": 0,
+          "word_count": 3,
+          "human_intent": "STATING_AVAILABILITY",
+          "human_dimension_scores": {
+            "clarity": 80,
+            "relevance": 85,
+            "completeness": 80,
+            "consistency": 80
+          }
+        }
+      ],
+      "human_ground_truth": {
+        "overall_score": 48.0,
+        "technical_score": 75.0,
+        "communication_score": 80.0,
+        "recommendation": "NO_HIRE",
+        "rationale": "Demands 48 LPA for a 22-26 LPA band role with non-negotiable rigidity and 60 days notice.",
+        "false_rejection_risk": "NONE_TRUE_NEGATIVE"
+      }
+    },
+    {
+      "candidate_id": "cand_long_notice_unbuyable",
+      "candidate_name": "Sunil Kulkarni",
+      "target_role": "Backend Engineer",
+      "archetype": "UNDERQUALIFIED_EVASIVE",
+      "turns": [
+        {
+          "question_id": "sys_arch_01",
+          "question_category": "Technical Skills",
+          "question_text": "How do you optimize slow database queries in PostgreSQL?",
+          "candidate_response": "I use indexes, partition large tables, and optimize join conditions.",
+          "latency_ms": 1700,
+          "hesitation_count": 0,
+          "word_count": 10,
+          "human_intent": "CONFIRMING_SKILL",
+          "human_dimension_scores": {
+            "clarity": 80,
+            "relevance": 85,
+            "completeness": 75,
+            "consistency": 80
+          }
+        },
+        {
+          "question_id": "sal_exp_01",
+          "question_category": "Salary Expectation",
+          "question_text": "What are your salary expectations for this position?",
+          "candidate_response": "Current is 20 LPA, expecting 24 LPA.",
+          "latency_ms": 1200,
+          "hesitation_count": 0,
+          "word_count": 7,
+          "human_intent": "STATING_SALARY",
+          "human_dimension_scores": {
+            "clarity": 85,
+            "relevance": 90,
+            "completeness": 90,
+            "consistency": 85
+          }
+        },
+        {
+          "question_id": "not_per_01",
+          "question_category": "Notice Period",
+          "question_text": "What is your notice period, and can it be bought out?",
+          "candidate_response": "I have a strict 90 days notice period and my current organization never allows buyout or early release under any circumstances.",
+          "latency_ms": 1500,
+          "hesitation_count": 0,
+          "word_count": 22,
+          "human_intent": "STATING_AVAILABILITY",
+          "human_dimension_scores": {
+            "clarity": 88,
+            "relevance": 90,
+            "completeness": 90,
+            "consistency": 85
+          }
+        }
+      ],
+      "human_ground_truth": {
+        "overall_score": 46.0,
+        "technical_score": 76.0,
+        "communication_score": 82.0,
+        "recommendation": "NO_HIRE",
+        "rationale": "90 days non-negotiable notice without buyout violates immediate requirement.",
+        "false_rejection_risk": "NONE_TRUE_NEGATIVE"
+      }
+    },
+    {
+      "candidate_id": "cand_polyglot_generalist",
+      "candidate_name": "Ananya Sen",
+      "target_role": "Fullstack Software Engineer",
+      "archetype": "EXPERT_FLUENT",
+      "turns": [
+        {
+          "question_id": "sys_arch_01",
+          "question_category": "Technical Skills",
+          "question_text": "Explain how you handle state management in large scale React applications.",
+          "candidate_response": "We combine Zustand for client-side transient state with TanStack React Query for async server data, keeping bundle size minimal and avoiding boilerplate.",
+          "latency_ms": 1800,
+          "hesitation_count": 0,
+          "word_count": 24,
+          "human_intent": "CONFIRMING_SKILL",
+          "human_dimension_scores": {
+            "clarity": 92,
+            "relevance": 95,
+            "completeness": 90,
+            "consistency": 92
+          }
+        },
+        {
+          "question_id": "sal_exp_01",
+          "question_category": "Salary Expectation",
+          "question_text": "What is your current and expected salary?",
+          "candidate_response": "Current is 17 LPA, expecting 22 LPA.",
+          "latency_ms": 1100,
+          "hesitation_count": 0,
+          "word_count": 7,
+          "human_intent": "STATING_SALARY",
+          "human_dimension_scores": {
+            "clarity": 92,
+            "relevance": 95,
+            "completeness": 92,
+            "consistency": 95
+          }
+        },
+        {
+          "question_id": "not_per_01",
+          "question_category": "Notice Period",
+          "question_text": "How much notice do you need to serve?",
+          "candidate_response": "30 days notice, and buyout is approved by policy.",
+          "latency_ms": 1000,
+          "hesitation_count": 0,
+          "word_count": 9,
+          "human_intent": "STATING_AVAILABILITY",
+          "human_dimension_scores": {
+            "clarity": 92,
+            "relevance": 95,
+            "completeness": 95,
+            "consistency": 95
+          }
+        }
+      ],
+      "human_ground_truth": {
+        "overall_score": 89.0,
+        "technical_score": 91.0,
+        "communication_score": 88.0,
+        "recommendation": "STRONG_HIRE",
+        "rationale": "Modern stack knowledge, clean articulate communication, reasonable expectations.",
+        "false_rejection_risk": "LOW"
+      }
+    }
+  ]
+}

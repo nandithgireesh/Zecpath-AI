@@ -1,0 +1,92 @@
+{
+  "summary_id": "SUM-SIM-OVER-04-202610151322",
+  "candidate_id": "SIM-OVER-04",
+  "candidate_name": "Dr. Rajesh Sundaram",
+  "job_role": "DevOps Engineer",
+  "experience_years": 14.0,
+  "session_id": "SESS-SIM-OVER-04-2026",
+  "generated_at": "2026-10-15T13:22:17.140161",
+  "overall_performance": {
+    "composite_score": 92.2,
+    "behavioral_competency_score": 94.0,
+    "communication_clarity_score": 92.0,
+    "confidence_composure_score": 87.2,
+    "cognitive_aptitude_score": 94.0,
+    "recommendation": "STRONG_HIRE",
+    "readiness_level": "Immediate Production Ready - Fast Track",
+    "calibrated_role_tier": "Senior / Lead DevOps Engineer",
+    "executive_verdict": "DevOps Engineer candidate demonstrates elite technical rigor, structured problem solving, and zero operational fallacies."
+  },
+  "candidate_strengths": [
+    "High-Rigor Logical Deduction: Achieved 95.0/100 in causal chain reasoning without fallacies.",
+    "Structured Problem-Solving Signposting: Scored 93.0/100 in clear sequential delivery.",
+    "Disciplined Framework Execution: 100% adherence to IDEA/CARL problem-solving methodology.",
+    "Articulate Executive Communication: Strong vocabulary depth and high clarity score (92.0/100).",
+    "Exceptional Stress Resilience: Maintained low physiological tension (Stress Index: 17.0/100) under pressure.",
+    "High Narrative Integrity: Zero factual or cross-turn contradictions identified across the entire session."
+  ],
+  "candidate_weaknesses": [
+    "Continue deepening quantitative Fermi estimation bounds under time-constrained architectural discussions."
+  ],
+  "cultural_fit_indicators": [
+    {
+      "dimension": "ownership_and_accountability",
+      "score": 92.0,
+      "alignment_level": "EXEMPLARY",
+      "evidence_excerpts": [
+        "Took full ownership of the production incident and instituted preventative safeguards."
+      ],
+      "observations": "Demonstrates radical ownership, blameless post-mortem methodology, and proactive mitigation."
+    },
+    {
+      "dimension": "collaboration_and_teamwork",
+      "score": 90.0,
+      "alignment_level": "EXEMPLARY",
+      "evidence_excerpts": [
+        "Engaged stakeholders and engineering peers to achieve collective consensus."
+      ],
+      "observations": "High empathy and team multiplier mindset; actively mentors peers and bridges cross-functional silos."
+    },
+    {
+      "dimension": "customer_centricity",
+      "score": 88.0,
+      "alignment_level": "STRONG",
+      "evidence_excerpts": [
+        "Maintained customer communication bridges and preserved core transactional SLAs."
+      ],
+      "observations": "Prioritizes user experience, data availability, and business continuity during technical trade-offs."
+    },
+    {
+      "dimension": "adaptability_and_growth",
+      "score": 74.0,
+      "alignment_level": "STRONG",
+      "evidence_excerpts": [
+        "Adjusted project scope within defined parameters."
+      ],
+      "observations": "Standard adaptability; comfortable in structured environments with clear requirements."
+    },
+    {
+      "dimension": "transparency_and_ethics",
+      "score": 95.0,
+      "alignment_level": "EXEMPLARY",
+      "evidence_excerpts": [
+        "Refused to log unmasked credentials and instituted automated scrubbing policies."
+      ],
+      "observations": "Uncompromising ethical standards; actively flags security, compliance, and PII hazards."
+    }
+  ],
+  "risk_flags": [],
+  "inconsistencies": [],
+  "natural_language_report": {
+    "executive_overview": "Dr. Rajesh Sundaram was evaluated for the DevOps Engineer position (14.0 years claimed experience). Following comprehensive multi-modal assessment across behavioral competencies, communication clarity, acoustic stress resilience, and situational judgment, the candidate earned a composite score of 92.2/100, resulting in an executive recommendation of **Strong Hire (Fast Track)**. The candidate is classified under the **Senior / Lead DevOps Engineer** band with readiness level 'Immediate Production Ready - Fast Track'. DevOps Engineer candidate demonstrates elite technical rigor, structured problem solving, and zero operational fallacies.",
+    "communication_persona": "The candidate's communication profile achieved a calibrated score of 92.0/100. Delivery is characterized by structured progression and articulate vocabulary. Responses incorporated sequential signposting and disciplined IDEA framework adherence. In interpersonal exchanges, Dr. Rajesh Sundaram maintains professional composure and balanced pacing.",
+    "behavioral_and_cultural_fit": "Across organizational cultural benchmarks, the candidate scored 94.0/100 in STAR behavioral execution. The candidate's strongest cultural dimension is **Transparency And Ethics** (95.0/100 - EXEMPLARY), demonstrating uncompromising ethical standards; actively flags security, compliance, and pii hazards. Conversely, **Adaptability And Growth** represents the lowest alignment dimension (74.0/100 - STRONG), noting: Standard adaptability; comfortable in structured environments with clear requirements.",
+    "cognitive_and_technical_maturity": "In situational judgment and logical reasoning evaluations, the candidate achieved 94.0/100. Problem-solving was evaluated on real-world operational dilemmas, including production outages and technical trade-offs. The candidate demonstrated robust causal deductions, weighing CAP theorem trade-offs and proposing telemetry-driven safeguards.",
+    "inconsistency_and_risk_analysis": "Cross-turn factual verification and multi-modal telemetry confirmed high narrative integrity. Candidate statements remained internally consistent across experience claims, technical methodologies, and acoustic stress signals.",
+    "hiring_manager_action_plan": "For the upcoming Hiring Manager debrief round, the interview panel should focus specifically on validating long-term system architecture scalability and cross-functional leadership. Recommended next step: Proceed to **Final Architectural / Culture Alignment Round**.",
+    "targeted_interview_probes": [
+      "Describe a scenario where a production rollout failed unexpectedly despite passing all CI/CD integration tests. What was your containment strategy?",
+      "How do you handle architectural disagreements when a cross-functional partner insists on technical debt to hit a marketing deadline?"
+    ]
+  }
+}

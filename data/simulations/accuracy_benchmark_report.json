@@ -1,0 +1,72 @@
+{
+  "total_sessions_simulated": 5,
+  "archetypes_evaluated": [
+    "CONFIDENT",
+    "HESITANT",
+    "INEXPERIENCED",
+    "OVERQUALIFIED",
+    "INCONSISTENT"
+  ],
+  "mean_absolute_error": 2.58,
+  "root_mean_squared_error": 2.77,
+  "pearson_correlation": 0.9921,
+  "spearman_rank_correlation": 0.9,
+  "exact_decision_concordance_pct": 80.0,
+  "adjacent_decision_concordance_pct": 100.0,
+  "precision_macro": 0.7,
+  "recall_macro": 0.8,
+  "f1_macro": 0.733,
+  "identified_discrepancies": [
+    {
+      "candidate_id": "SIM-CONF-01",
+      "archetype": "CONFIDENT",
+      "ai_score": 90.3,
+      "human_score": 89.7,
+      "delta": 0.6,
+      "discrepancy_type": "BENCHMARK_CONCORDANCE",
+      "root_cause": "Flawless alignment between AI score (90.3) and human panel (89.7). Candidate demonstrated end-to-end STAR adherence, optimal response pacing, and high composure.",
+      "remediation_recommendation": "Use this profile as golden calibration reference for automated regression testing."
+    },
+    {
+      "candidate_id": "SIM-HES-02",
+      "archetype": "HESITANT",
+      "ai_score": 65.0,
+      "human_score": 68.2,
+      "delta": -3.2,
+      "discrepancy_type": "HESITATION_ACOUSTIC_SENSITIVITY",
+      "root_cause": "AI scored composite at 65.0 vs human panel 68.2. Slight divergence (+0.3 pts) shows effective resilience; however, filler word penalty and 3.8s hesitation latency required careful balancing against solid semantic technical correctness.",
+      "remediation_recommendation": "Incorporate pause-type classification (formulation pause vs knowledge gap) to ensure thoughtful technical deliberation is not penalized as hesitation."
+    },
+    {
+      "candidate_id": "SIM-INEXP-03",
+      "archetype": "INEXPERIENCED",
+      "ai_score": 55.8,
+      "human_score": 52.8,
+      "delta": 3.0,
+      "discrepancy_type": "VAGUENESS_PROBING_CONVERGENCE",
+      "root_cause": "AI score of 55.8 converged closely with human panel 52.8 (delta: +3.0). Dynamic follow-up successfully caught lack of depth in connection pooling.",
+      "remediation_recommendation": "Maintain current Bayesian length-normalization and vagueness follow-up thresholds."
+    },
+    {
+      "candidate_id": "SIM-OVER-04",
+      "archetype": "OVERQUALIFIED",
+      "ai_score": 92.2,
+      "human_score": 89.5,
+      "delta": 2.7,
+      "discrepancy_type": "OVERQUALIFICATION_LEVELING_DIVERGENCE",
+      "root_cause": "AI awarded Strong Hire (92.2) based on flawless system architecture answers and high composure, whereas the human panel recommended Hire (89.5) with a mandatory role-leveling escalation to Principal Architect due to tenure (>14 yrs) and domain over-indexing.",
+      "remediation_recommendation": "Implement 'Role-Leveling Calibration Heuristics' that trigger lateral/senior upgrades when domain complexity exceeds target role profile by >2.5 sigma."
+    },
+    {
+      "candidate_id": "SIM-INCON-05",
+      "archetype": "INCONSISTENT",
+      "ai_score": 40.1,
+      "human_score": 43.5,
+      "delta": -3.4,
+      "discrepancy_type": "FALLACY_PENALTY_CONVERGENCE",
+      "root_cause": "AI score of 40.1 and No Hire decision closely matched human panel 43.5. Cross-turn contradiction detection correctly identified solo gateway authorship contradiction.",
+      "remediation_recommendation": "Ensure fallacy penalty caps prevent negative composite score edge cases in shorter transcripts."
+    }
+  ],
+  "generated_at": "2026-10-15T13:22:17.181921"
+}

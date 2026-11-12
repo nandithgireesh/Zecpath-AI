@@ -1,0 +1,137 @@
+{
+  "candidate_id": "SIM-OVER-04",
+  "candidate_name": "Dr. Rajesh Sundaram",
+  "target_role": "DevOps Engineer",
+  "role_family": "TECHNICAL_ENGINEERING",
+  "evaluation_date": "2026-10-15T13:42:41.615106",
+  "round_inputs": {
+    "ATS_RESUME": {
+      "round_type": "ATS_RESUME",
+      "round_name": "ATS Resume & Skill Matching (Round 1)",
+      "raw_score": 94.0,
+      "normalized_score": 94.0,
+      "confidence_weight": 1.0,
+      "dimension_breakdown": {
+        "skill_score": 96.0,
+        "experience_score": 92.0,
+        "education_score": 94.0,
+        "semantic_score": 94.0
+      },
+      "strengths": [
+        "Strong keyword skill alignment with job description."
+      ],
+      "flags_or_penalties": [],
+      "source_session_or_doc_id": null
+    },
+    "CONVERSATIONAL_SCREENING": {
+      "round_type": "CONVERSATIONAL_SCREENING",
+      "round_name": "Conversational Pre-Screening (Round 2)",
+      "raw_score": 90.0,
+      "normalized_score": 90.0,
+      "confidence_weight": 1.0,
+      "dimension_breakdown": {
+        "clarity_score": 92.0,
+        "relevance_score": 90.0,
+        "behavioral_score": 88.0,
+        "consistency_score": 90.0
+      },
+      "strengths": [
+        "Satisfied baseline communication and role eligibility requirements."
+      ],
+      "flags_or_penalties": [],
+      "source_session_or_doc_id": null
+    },
+    "HR_INTERVIEW": {
+      "round_type": "HR_INTERVIEW",
+      "round_name": "In-Depth HR Interview & Aptitude (Round 3)",
+      "raw_score": 92.2,
+      "normalized_score": 92.2,
+      "confidence_weight": 1.0,
+      "dimension_breakdown": {
+        "behavioral_score": 92.2,
+        "communication_score": 90.0,
+        "confidence_score": 92.2,
+        "aptitude_score": 94.0,
+        "cultural_fit": 86.8
+      },
+      "strengths": [
+        "Demonstrated competency in structured problem-solving and situational triage."
+      ],
+      "flags_or_penalties": [],
+      "source_session_or_doc_id": null
+    }
+  },
+  "weight_profile_used": {
+    "role_family": "TECHNICAL_ENGINEERING",
+    "display_name": "Technical & Engineering Track",
+    "ats_weight": 0.25,
+    "screening_weight": 0.3,
+    "hr_interview_weight": 0.45,
+    "minimum_thresholds": {
+      "ATS_RESUME": 50.0,
+      "CONVERSATIONAL_SCREENING": 50.0,
+      "HR_INTERVIEW": 55.0
+    },
+    "rationale": "Emphasizes deep technical reasoning, CAP theorem trade-offs, and STAR architecture in Round 3 (45%), while validating core eligibility in Round 2 (30%) and resume tech stack in Round 1 (25%)."
+  },
+  "round_contributions": {
+    "ATS_RESUME": {
+      "round_type": "ATS_RESUME",
+      "display_name": "ATS Resume & Skill Matching (Round 1)",
+      "raw_score": 94.0,
+      "effective_weight": 0.25,
+      "weighted_points": 23.5,
+      "passed_gate": true,
+      "gate_threshold": 50.0,
+      "status_note": "PASSED GATE"
+    },
+    "CONVERSATIONAL_SCREENING": {
+      "round_type": "CONVERSATIONAL_SCREENING",
+      "display_name": "Conversational Pre-Screening (Round 2)",
+      "raw_score": 90.0,
+      "effective_weight": 0.3,
+      "weighted_points": 27.0,
+      "passed_gate": true,
+      "gate_threshold": 50.0,
+      "status_note": "PASSED GATE"
+    },
+    "HR_INTERVIEW": {
+      "round_type": "HR_INTERVIEW",
+      "display_name": "In-Depth HR Interview & Aptitude (Round 3)",
+      "raw_score": 92.2,
+      "effective_weight": 0.45,
+      "weighted_points": 41.49,
+      "passed_gate": true,
+      "gate_threshold": 55.0,
+      "status_note": "PASSED GATE"
+    }
+  },
+  "composite_score": 92.0,
+  "hiring_fit": {
+    "technical_competence_fit": 94.4,
+    "communication_clarity_fit": 90.9,
+    "behavioral_culture_fit": 87.3,
+    "adaptability_trajectory_fit": 91.1,
+    "risk_and_integrity_discount": 0.0,
+    "net_hiring_fit_percentage": 91.5,
+    "calibrated_percentile": 94.7,
+    "fit_summary": "Elite cross-round alignment across technical depth, verbal articulation, and cultural ownership."
+  },
+  "final_decision": "STRONG_HIRE",
+  "readiness_level": "IMMEDIATE_FAST_TRACK",
+  "calibrated_role_tier": "Principal / Staff Architect (Leveling Upgrade for DevOps Engineer)",
+  "executive_verdict": "Exceptional candidate demonstrating elite cross-round mastery (Fit: 91.5%, 94.7th percentile). Immediate fast-track hire recommended for Principal / Staff Architect (Leveling Upgrade for DevOps Engineer).",
+  "key_strengths": [
+    "Strong keyword skill alignment with job description.",
+    "Satisfied baseline communication and role eligibility requirements.",
+    "Demonstrated competency in structured problem-solving and situational triage."
+  ],
+  "developmental_areas": [],
+  "safety_gate_passed": true,
+  "gate_failure_reasons": [],
+  "audit_metadata": {
+    "audit_hash": "ZEC-UNIFIED-70DB371482DCE822",
+    "engine_version": "2.0-unified",
+    "calibration_standard": "Enterprise Bar Raiser v2.0"
+  }
+}

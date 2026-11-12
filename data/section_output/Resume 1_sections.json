@@ -1,0 +1,11 @@
+{
+    "skills": "Technical Skills: Python, C, SQL, NumPy, Pandas, Transformers, Data Analysis, Matplotlib, TensorFlow,\nSoft Skills: Efficient team collaborator with strong coordination skills. , Time Management",
+    "experience": "developing AI solutions using machine learning, deep learning, NLP, and optimization techniques. A proactive learner\nand problem-solver, with solid skills in debugging, and database management.",
+    "education": "Bachelor of Technology - Artificial Intelligence and Machine Learning\nPresent\nHigher Secondary Education - Science Computer\nCGPA: 9.7 / 10\n2021\nSecondary Education\nCGPA: 9.3 / 10\n2019",
+    "projects": "MULTI-OMIC PATHWAY BASED DRUG REPURPOSING\nApril 2025\nObjective: Developed a deep learning model integrating gene and miRNA expression data to identify disease-relevant\nbiological pathways for accurate phenotype prediction. Used Layer-Wise Relevance Propagation (LRP) and Random\nWalk with Restart (RWR) on a biomedical knowledge graph to prioritize repurposable drugs, improving interpretability\nand clinical relevance.\nTech: Python, Flask, Deep Learning, HTML, CSS, JavaScript\nLOST AND FOUND TRACKER\n2024\nObjective: A platform for users to track lost items efficiently through a centralized database management system\n(DBMS). Features include user authentication, inventory management for updating lost items , automatic notifications\nfor reported/found items, search functionality for locating items, and a user-friendly interface for reporting and claiming\nitems.\nTech: MySQL, HTML, JavaScript\nAI SNAKE NAVIGATORA\n2024\nObjective: NAVIGATORA novel approach to enhancing the classic Snake game using advanced AI techniques,specifically\nfocusing on pathfinding algorithms.\nTech: Python, A-Star Algorithm, CSP",
+    "certifications": "- The Joy of Computing Using Python - NPTEL, 2023\n- The Fundamentals of Digital Marketing, 2021\n- Generative AI Workshop - ISTE MACE, 2024\n- Gen AI and Prompt Engineering Workshop, 2024",
+    "responsibility": "Documentation Crew - Takshak 24 (College Tech Fest)\n2024",
+    "languages": "",
+    "personal": "",
+    "references": ""
+}

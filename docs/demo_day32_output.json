@@ -1,0 +1,26 @@
+{
+  "session_id": "sess_prod_aa339ce30b4b",
+  "candidate_id": "cand_rahul_sharma_981",
+  "candidate_name": "Rahul Sharma",
+  "job_role": "Senior Python Engineer",
+  "completed_at": "2026-09-24T04:43:37.084324+00:00",
+  "eligibility_verified": true,
+  "final_score": 91.1,
+  "decision": "STRONG_HIRE",
+  "score_breakdown": {
+    "technical_competence": 95.0,
+    "communication_clarity": 92.0,
+    "confidence_sentiment": 85.0
+  },
+  "technologies_verified": [
+    "microservices",
+    "postgres",
+    "async",
+    "redis",
+    "celery",
+    "python"
+  ],
+  "turns_completed": 4,
+  "brevity_protection_applied": true,
+  "false_rejection_risk": "0.0%"
+}

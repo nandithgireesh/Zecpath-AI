@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ScreeningSystemOptimizationSchema",
+  "description": "Schema for Day 30 AI Screening System Testing, Benchmark Evaluations, and Threshold Optimizations",
+  "type": "object",
+  "required": [
+    "report_id",
+    "generated_at",
+    "baseline_metrics",
+    "optimized_metrics",
+    "false_rejection_reduction_pct",
+    "benchmark_profiles_evaluated"
+  ],
+  "properties": {
+    "report_id": {
+      "type": "string",
+      "description": "Unique evaluation run identifier"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO-8601 UTC timestamp of benchmark evaluation"
+    },
+    "baseline_thresholds": {
+      "type": "object",
+      "properties": {
+        "overall_hire_cutoff": { "type": "number" },
+        "technical_hire_cutoff": { "type": "number" },
+        "communication_hire_cutoff": { "type": "number" }
+      }
+    },
+    "optimized_thresholds": {
+      "type": "object",
+      "properties": {
+        "overall_hire_cutoff": { "type": "number" },
+        "technical_hire_cutoff": { "type": "number" },
+        "communication_hire_cutoff": { "type": "number" },
+        "enable_tech_compensation": { "type": "boolean" },
+        "tech_compensation_threshold": { "type": "number" },
+        "brevity_protection": { "type": "boolean" },
+        "hesitation_penalty_dampener": { "type": "boolean" },
+        "enable_second_look_routing": { "type": "boolean" }
+      }
+    },
+    "baseline_metrics": {
+      "type": "object",
+      "required": ["accuracy", "precision", "recall", "f1_score", "false_rejection_rate", "false_acceptance_rate", "cohens_kappa"],
+      "properties": {
+        "accuracy": { "type": "number" },
+        "precision": { "type": "number" },
+        "recall": { "type": "number" },
+        "f1_score": { "type": "number" },
+        "false_rejection_rate": { "type": "number" },
+        "false_acceptance_rate": { "type": "number" },
+        "cohens_kappa": { "type": "number" }
+      }
+    },
+    "optimized_metrics": {
+      "type": "object",
+      "required": ["accuracy", "precision", "recall", "f1_score", "false_rejection_rate", "false_acceptance_rate", "cohens_kappa"],
+      "properties": {
+        "accuracy": { "type": "number" },
+        "precision": { "type": "number" },
+        "recall": { "type": "number" },
+        "f1_score": { "type": "number" },
+        "false_rejection_rate": { "type": "number" },
+        "false_acceptance_rate": { "type": "number" },
+        "cohens_kappa": { "type": "number" }
+      }
+    },
+    "false_rejection_reduction_pct": {
+      "type": "number",
+      "description": "Percentage reduction in False Rejections achieved by optimization"
+    },
+    "resolved_candidates": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Qualified candidates rescued from false rejection"
+    },
+    "benchmark_profiles_evaluated": {
+      "type": "integer",
+      "description": "Total candidate profiles tested"
+    },
+    "key_takeaways": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

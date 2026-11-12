@@ -1,0 +1,82 @@
+{
+    "version": "1.0.0",
+    "call_flow_name": "AI_Automated_Screening_Call_Flow",
+    "description": "State machine and conversational prompt graph for automated AI voice screening calls.",
+    "persona": {
+        "bot_name": "Zecpath AI Recruiter",
+        "tone": "Professional, empathetic, and encouraging",
+        "voice_gender": "Neutral-Friendly",
+        "speech_rate": "1.0x"
+    },
+    "stages": [
+        {
+            "stage_id": "STAGE_1_GREETING",
+            "category": "Introduction",
+            "description": "Greet candidate by name, confirm identity, state purpose of the call, and request 5-7 minutes of time.",
+            "bot_prompt": "Hello {candidate_name}! This is {bot_name} calling on behalf of the talent acquisition team regarding your application for the {role_name} position. Is this a convenient time for a quick 5-minute pre-screening conversation?",
+            "expected_intent": "consent_affirmation",
+            "fallback_prompt": "No problem at all. When would be a better time today for us to connect?"
+        },
+        {
+            "stage_id": "STAGE_2_SELF_INTRO",
+            "category": "Introduction",
+            "description": "Invite candidate to briefly introduce themselves.",
+            "question_id": "INTRO_01",
+            "transition_prompt": "Great! Let's begin. Could you tell me a little about yourself and your recent engineering journey?"
+        },
+        {
+            "stage_id": "STAGE_3_EDUCATION",
+            "category": "Education",
+            "description": "Verify academic background and degree.",
+            "question_id": "EDU_01",
+            "transition_prompt": "Thank you. Moving quickly to your educational background..."
+        },
+        {
+            "stage_id": "STAGE_4_EXPERIENCE",
+            "category": "Experience",
+            "description": "Assess total work duration and core role responsibilities.",
+            "question_id": "EXP_01",
+            "transition_prompt": "Understood. Let's discuss your hands-on work experience."
+        },
+        {
+            "stage_id": "STAGE_5_TECHNICAL_SKILLS",
+            "category": "Skills",
+            "description": "Evaluate core technical depth and role competencies.",
+            "question_selection_strategy": "role_dynamic",
+            "transition_prompt": "That gives great context. Now I'd love to ask a couple of technical questions specifically focused on the {role_name} role."
+        },
+        {
+            "stage_id": "STAGE_6_LOCATION_PREFERENCE",
+            "category": "Location",
+            "description": "Confirm current location and relocation or remote availability.",
+            "question_id": "LOC_02",
+            "transition_prompt": "Thanks for sharing those technical details. Regarding work location and flexibility..."
+        },
+        {
+            "stage_id": "STAGE_7_SALARY_EXPECTATION",
+            "category": "Salary",
+            "description": "Capture current and expected CTC for compensation alignment.",
+            "question_id": "SAL_02",
+            "transition_prompt": "Got it. Regarding compensation expectations..."
+        },
+        {
+            "stage_id": "STAGE_8_NOTICE_PERIOD",
+            "category": "Notice period",
+            "description": "Determine official notice duration and earliest available start date.",
+            "question_id": "NP_01",
+            "transition_prompt": "Lastly, regarding your availability to join..."
+        },
+        {
+            "stage_id": "STAGE_9_CLOSING",
+            "category": "Introduction",
+            "description": "Thank the candidate, explain next steps, and conclude the automated call.",
+            "bot_prompt": "Thank you so much for your time today, {candidate_name}. I have recorded all your details. Our hiring team will review your responses alongside your technical profile, and our recruiter will follow up with you within 24 to 48 hours. Have a wonderful day ahead!",
+            "expected_intent": "call_conclusion"
+        }
+    ],
+    "conversational_fallbacks": {
+        "audio_unclear": "I'm sorry, I could not hear that clearly. Could you please repeat your last sentence?",
+        "out_of_domain_query": "I am an automated AI screening assistant focused on your background and profile. Our talent team will be happy to answer detailed questions during your next interview round.",
+        "candidate_hesitation": "Take your time! Whenever you're ready, please go ahead."
+    }
+}

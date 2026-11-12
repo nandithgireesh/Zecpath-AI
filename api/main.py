@@ -1,0 +1,731 @@
+import logging
+import uuid
+
+from fastapi import (
+    FastAPI,
+    HTTPException,
+    UploadFile,
+    File,
+    BackgroundTasks,
+)
+
+from api.resume_service import ResumeService
+
+from api.schemas import (
+    ATSScoreRequest,
+    ATSScoreResponse,
+    RankingRequest,
+    RankingResponse,
+    RankedCandidate,
+    ShortlistResponse,
+)
+
+from api.services import ATSService
+
+from api.job_manager import job_manager
+from api.logging_config import setup_logging
+
+# =====================================================
+# LOGGING
+# =====================================================
+
+setup_logging()
+
+logger = logging.getLogger("ZecpathATS")
+
+
+# =====================================================
+# FastAPI Application
+# =====================================================
+
+app = FastAPI(
+    title="Zecpath AI - ATS API",
+    description=(
+        "API for resume upload, parsing, scoring, "
+        "ranking, shortlisting and asynchronous processing"
+    ),
+    version="1.0.0",
+)
+
+
+# =====================================================
+# Initialize Services
+# =====================================================
+
+ats_service = ATSService()
+resume_service = ResumeService()
+
+
+# =====================================================
+# BACKGROUND RESUME PROCESSING
+# =====================================================
+
+
+def process_resume_background(
+    job_id: str,
+    resume_id: str,
+):
+    """
+    Parse a resume in the background.
+    """
+
+    try:
+
+        logger.info(
+            f"Background resume processing started | "
+            f"job_id={job_id} | "
+            f"resume_id={resume_id}"
+        )
+
+        # -------------------------------------------------
+        # Update job status
+        # -------------------------------------------------
+
+        job_manager.update_job(
+            job_id,
+            status="PROCESSING",
+            message="Resume parsing started",
+        )
+
+        # -------------------------------------------------
+        # Parse resume
+        # -------------------------------------------------
+
+        resume = resume_service.parse_resume(resume_id)
+
+        # -------------------------------------------------
+        # Mark completed
+        # -------------------------------------------------
+
+        job_manager.update_job(
+            job_id,
+            status="COMPLETED",
+            message="Resume parsing completed",
+            result={
+                "resume_id": resume_id,
+                "resume": resume,
+            },
+        )
+
+        logger.info(
+            f"Background resume processing completed | "
+            f"job_id={job_id} | "
+            f"resume_id={resume_id}"
+        )
+
+    except Exception as error:
+
+        logger.exception(f"Background resume processing failed | " f"job_id={job_id}")
+
+        job_manager.update_job(
+            job_id,
+            status="FAILED",
+            message="Resume parsing failed",
+            error=str(error),
+        )
+
+
+# =====================================================
+# BACKGROUND ATS PROCESSING
+# =====================================================
+
+
+def process_ats_background(
+    job_id: str,
+    request_data: dict,
+):
+    """
+    Calculate ATS score in the background.
+    """
+
+    try:
+
+        logger.info(f"Background ATS processing started | " f"job_id={job_id}")
+
+        # -------------------------------------------------
+        # Update job status
+        # -------------------------------------------------
+
+        job_manager.update_job(
+            job_id,
+            status="PROCESSING",
+            message="ATS scoring started",
+        )
+
+        # -------------------------------------------------
+        # Extract request data
+        # -------------------------------------------------
+
+        resume = request_data["resume"]
+        job_description = request_data["job_description"]
+
+        # -------------------------------------------------
+        # Calculate ATS score
+        # -------------------------------------------------
+
+        report = ats_service.calculate_score(
+            resume,
+            job_description,
+        )
+
+        # -------------------------------------------------
+        # Prepare result
+        # -------------------------------------------------
+
+        result = {
+            "ats_score": report["final_ats_score"],
+            "level": report["level"],
+            "skill_score": report["skill_score"],
+            "experience_score": report["experience_score"],
+            "education_score": report["education_score"],
+            "semantic_score": report["semantic_score"],
+        }
+
+        # -------------------------------------------------
+        # Mark completed
+        # -------------------------------------------------
+
+        job_manager.update_job(
+            job_id,
+            status="COMPLETED",
+            message="ATS scoring completed",
+            result=result,
+        )
+
+        logger.info(
+            f"Background ATS processing completed | "
+            f"job_id={job_id} | "
+            f"ats_score={report['final_ats_score']}"
+        )
+
+    except Exception as error:
+
+        logger.exception(f"Background ATS processing failed | " f"job_id={job_id}")
+
+        job_manager.update_job(
+            job_id,
+            status="FAILED",
+            message="ATS scoring failed",
+            error=str(error),
+        )
+
+
+# =====================================================
+# ROOT
+# =====================================================
+
+
+@app.get("/")
+def root():
+
+    return {
+        "message": "Zecpath AI ATS API",
+        "status": "running",
+        "version": "1.0.0",
+    }
+
+
+# =====================================================
+# HEALTH CHECK
+# =====================================================
+
+
+@app.get("/health")
+def health_check():
+
+    return {
+        "status": "healthy",
+        "service": "ATS Engine",
+    }
+
+
+# =====================================================
+# UPLOAD + PARSE RESUME
+# =====================================================
+
+
+@app.post("/ats/upload")
+def upload_resume(
+    file: UploadFile = File(...),
+):
+
+    try:
+
+        # -------------------------------------------------
+        # Validate filename
+        # -------------------------------------------------
+
+        if not file.filename:
+
+            raise HTTPException(
+                status_code=400,
+                detail="Filename is required",
+            )
+
+        # -------------------------------------------------
+        # Validate PDF
+        # -------------------------------------------------
+
+        if not file.filename.lower().endswith(".pdf"):
+
+            raise HTTPException(
+                status_code=400,
+                detail="Only PDF resumes are supported",
+            )
+
+        # -------------------------------------------------
+        # Save resume
+        # -------------------------------------------------
+
+        result = resume_service.save_resume(file)
+
+        resume_id = result["resume_id"]
+
+        # -------------------------------------------------
+        # Parse resume
+        # -------------------------------------------------
+
+        resume = resume_service.parse_resume(resume_id)
+
+        # -------------------------------------------------
+        # Return parsed resume
+        # -------------------------------------------------
+
+        return {
+            "resume_id": resume_id,
+            "filename": result["filename"],
+            "status": "PARSED",
+            "resume": resume,
+        }
+
+    except HTTPException:
+
+        raise
+
+    except Exception as error:
+
+        logger.exception("Resume upload failed")
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(error),
+        )
+
+
+# =====================================================
+# ASYNC RESUME UPLOAD
+# =====================================================
+
+
+@app.post("/ats/upload-async")
+def upload_resume_async(
+    background_tasks: BackgroundTasks,
+    file: UploadFile = File(...),
+):
+
+    try:
+
+        # -------------------------------------------------
+        # Validate filename
+        # -------------------------------------------------
+
+        if not file.filename:
+
+            raise HTTPException(
+                status_code=400,
+                detail="Filename is required",
+            )
+
+        # -------------------------------------------------
+        # Validate PDF
+        # -------------------------------------------------
+
+        if not file.filename.lower().endswith(".pdf"):
+
+            raise HTTPException(
+                status_code=400,
+                detail="Only PDF resumes are supported",
+            )
+
+        # -------------------------------------------------
+        # Save resume
+        # -------------------------------------------------
+
+        result = resume_service.save_resume(file)
+
+        resume_id = result["resume_id"]
+
+        # -------------------------------------------------
+        # Create job
+        # -------------------------------------------------
+
+        job_id = str(uuid.uuid4())
+
+        job_manager.create_job(job_id)
+
+        logger.info(
+            f"Resume upload accepted | " f"job_id={job_id} | " f"resume_id={resume_id}"
+        )
+
+        # -------------------------------------------------
+        # Start background processing
+        # -------------------------------------------------
+
+        background_tasks.add_task(
+            process_resume_background,
+            job_id,
+            resume_id,
+        )
+
+        # -------------------------------------------------
+        # Return immediately
+        # -------------------------------------------------
+
+        return {
+            "job_id": job_id,
+            "resume_id": resume_id,
+            "filename": result["filename"],
+            "status": "PENDING",
+            "message": "Resume uploaded. Processing started in background.",
+        }
+
+    except HTTPException:
+
+        raise
+
+    except Exception as error:
+
+        logger.exception("Async resume upload failed")
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(error),
+        )
+
+
+# =====================================================
+# ASYNC ATS SCORING JOB
+# =====================================================
+
+
+@app.post("/ats/jobs")
+def create_ats_job(
+    request: ATSScoreRequest,
+    background_tasks: BackgroundTasks,
+):
+
+    try:
+
+        # -------------------------------------------------
+        # Generate job ID
+        # -------------------------------------------------
+
+        job_id = str(uuid.uuid4())
+
+        # -------------------------------------------------
+        # Create job
+        # -------------------------------------------------
+
+        job_manager.create_job(job_id)
+
+        logger.info(
+            f"ATS job created | "
+            f"job_id={job_id} | "
+            f"role={request.job_description.role}"
+        )
+
+        # -------------------------------------------------
+        # Convert Pydantic request to dictionary
+        # -------------------------------------------------
+
+        request_data = {
+            "resume": request.resume.model_dump(),
+            "job_description": (request.job_description.model_dump()),
+        }
+
+        # -------------------------------------------------
+        # Start background ATS processing
+        # -------------------------------------------------
+
+        background_tasks.add_task(
+            process_ats_background,
+            job_id,
+            request_data,
+        )
+
+        # -------------------------------------------------
+        # Return immediately
+        # -------------------------------------------------
+
+        return {
+            "job_id": job_id,
+            "status": "PENDING",
+            "message": "ATS job created successfully",
+        }
+
+    except Exception as error:
+
+        logger.exception("Failed to create ATS job")
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(error),
+        )
+
+
+# =====================================================
+# JOB STATUS
+# =====================================================
+
+
+@app.get("/ats/jobs/{job_id}")
+def get_job_status(
+    job_id: str,
+):
+
+    job = job_manager.get_job(job_id)
+
+    if not job:
+
+        raise HTTPException(
+            status_code=404,
+            detail="Job not found",
+        )
+
+    return job
+
+
+# =====================================================
+# PARSE EXISTING RESUME
+# =====================================================
+
+
+@app.post("/ats/parse/{resume_id}")
+def parse_resume(
+    resume_id: str,
+):
+
+    try:
+
+        resume = resume_service.parse_resume(resume_id)
+
+        return {
+            "resume_id": resume_id,
+            "status": "PARSED",
+            "resume": resume,
+        }
+
+    except FileNotFoundError as error:
+
+        raise HTTPException(
+            status_code=404,
+            detail=str(error),
+        )
+
+    except Exception as error:
+
+        logger.exception("Resume parsing failed")
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(error),
+        )
+
+
+# =====================================================
+# ATS SCORE - SYNCHRONOUS
+# =====================================================
+
+
+@app.post(
+    "/ats/score",
+    response_model=ATSScoreResponse,
+)
+def calculate_ats_score(
+    request: ATSScoreRequest,
+):
+
+    try:
+
+        report = ats_service.calculate_score(
+            request.resume.model_dump(),
+            request.job_description.model_dump(),
+        )
+
+        return {
+            "ats_score": report["final_ats_score"],
+            "level": report["level"],
+            "skill_score": report["skill_score"],
+            "experience_score": report["experience_score"],
+            "education_score": report["education_score"],
+            "semantic_score": report["semantic_score"],
+        }
+
+    except Exception as error:
+
+        logger.exception("ATS scoring failed")
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(error),
+        )
+
+
+# =====================================================
+# RANK CANDIDATES
+# =====================================================
+
+
+@app.post(
+    "/ats/rank",
+    response_model=RankingResponse,
+)
+def rank_candidates(
+    request: RankingRequest,
+):
+
+    try:
+
+        candidates = []
+
+        # -------------------------------------------------
+        # Calculate ATS score
+        # -------------------------------------------------
+
+        for candidate in request.candidates:
+
+            report = ats_service.calculate_score(
+                candidate.resume.model_dump(),
+                request.job_description.model_dump(),
+            )
+
+            candidates.append(
+                {
+                    "resume": candidate.resume_id,
+                    "ats_score": report["final_ats_score"],
+                    "level": report["level"],
+                }
+            )
+
+        # -------------------------------------------------
+        # Rank candidates
+        # -------------------------------------------------
+
+        ranked = ats_service.rank_candidates(candidates)
+
+        # -------------------------------------------------
+        # Convert response
+        # -------------------------------------------------
+
+        formatted = []
+
+        for candidate in ranked:
+
+            formatted.append(
+                RankedCandidate(
+                    rank=candidate["rank"],
+                    resume_id=candidate["resume"],
+                    ats_score=candidate["ats_score"],
+                    level=candidate["level"],
+                    status=candidate.get(
+                        "status",
+                        "PENDING",
+                    ),
+                )
+            )
+
+        return {
+            "role": request.job_description.role,
+            "candidates": formatted,
+        }
+
+    except Exception as error:
+
+        logger.exception("Candidate ranking failed")
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(error),
+        )
+
+
+# =====================================================
+# SHORTLIST CANDIDATES
+# =====================================================
+
+
+@app.post(
+    "/ats/shortlist",
+    response_model=ShortlistResponse,
+)
+def shortlist_candidates(
+    request: RankingRequest,
+):
+
+    try:
+
+        candidates = []
+
+        # -------------------------------------------------
+        # Calculate ATS score
+        # -------------------------------------------------
+
+        for candidate in request.candidates:
+
+            report = ats_service.calculate_score(
+                candidate.resume.model_dump(),
+                request.job_description.model_dump(),
+            )
+
+            candidates.append(
+                {
+                    "resume": candidate.resume_id,
+                    "ats_score": report["final_ats_score"],
+                    "level": report["level"],
+                }
+            )
+
+        # -------------------------------------------------
+        # Rank candidates
+        # -------------------------------------------------
+
+        ranked = ats_service.rank_candidates(candidates)
+
+        # -------------------------------------------------
+        # Shortlist
+        # -------------------------------------------------
+
+        result = ats_service.shortlist_candidates(ranked)
+
+        # -------------------------------------------------
+        # Convert result
+        # -------------------------------------------------
+
+        def convert(items):
+
+            return [
+                RankedCandidate(
+                    rank=item["rank"],
+                    resume_id=item["resume"],
+                    ats_score=item["ats_score"],
+                    level=item["level"],
+                    status=item["status"],
+                )
+                for item in items
+            ]
+
+        return {
+            "role": request.job_description.role,
+            "shortlisted": convert(result["shortlisted"]),
+            "review": convert(result["review"]),
+            "rejected": convert(result["rejected"]),
+        }
+
+    except Exception as error:
+
+        logger.exception("Candidate shortlisting failed")
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(error),
+        )

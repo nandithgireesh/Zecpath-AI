@@ -1,0 +1,309 @@
+[
+  {
+    "session_id": "SESS-SIM-CONF-01-2026",
+    "candidate": {
+      "candidate_id": "SIM-CONF-01",
+      "name": "Aditi Rao",
+      "target_role": "Senior Cloud Platform Architect",
+      "experience_years": 7.5,
+      "archetype": "CONFIDENT",
+      "role_track": "technical_roles",
+      "expected_recommendation": "STRONG_HIRE",
+      "human_ground_truth": {
+        "evaluator_role": "Senior Bar Raiser Panel (HR Director + Staff Eng)",
+        "behavioral_score": 90.0,
+        "communication_score": 88.0,
+        "composure_score": 91.0,
+        "aptitude_score": 90.0,
+        "composite_score": 89.7,
+        "recommendation": "STRONG_HIRE",
+        "notes": "Exceptional technical rigor, structured STAR/IDEA delivery, high composure under failure scenarios, zero fallacies."
+      }
+    },
+    "turns_executed": [
+      {
+        "turn_index": 1,
+        "phase": "SITUATIONAL",
+        "question_asked": "Describe a situation where a critical database outage occurred under peak load. How did you diagnose and contain the incident?",
+        "candidate_response": "When our distributed database experienced connection pool exhaustion during flash sales, I took ownership of the triage. First, I analyzed telemetry metrics to confirm thread contention. Subsequently, we instituted connection queue throttling and gracefully degraded non-critical checkout services, isolating the blast radius while conducting a blameless post-mortem.",
+        "hesitation_seconds": 1.1,
+        "filler_percentage": 1.2,
+        "stress_index": 22.0,
+        "relevance_score": 92.0,
+        "dynamic_followup_triggered": false,
+        "followup_reason": null
+      },
+      {
+        "turn_index": 2,
+        "phase": "APTITUDE_LOGIC",
+        "question_asked": "How do you evaluate consistency versus availability trade-offs when designing financial transaction pipelines?",
+        "candidate_response": "In payment architectures, strong consistency is non-negotiable for accounting ledgers. However, for audit telemetry and notifications, we chose eventual consistency via Kafka. This bilateral trade-off ensured zero double-charge risk while protecting system throughput under high concurrency.",
+        "hesitation_seconds": 0.9,
+        "filler_percentage": 1.0,
+        "stress_index": 19.0,
+        "relevance_score": 94.0,
+        "dynamic_followup_triggered": false,
+        "followup_reason": null
+      }
+    ],
+    "ai_composite_score": 90.3,
+    "ai_recommendation": "STRONG_HIRE",
+    "human_composite_score": 89.7,
+    "human_recommendation": "STRONG_HIRE",
+    "score_variance": 0.6,
+    "decision_match": true,
+    "tier_distance": 0,
+    "inconsistencies_detected": 0,
+    "cultural_fit_average": 81.2,
+    "summary_markdown_path": "data/simulations\\SIM-CONF-01_summary.md",
+    "summary_json_path": "data/simulations\\SIM-CONF-01_summary.json"
+  },
+  {
+    "session_id": "SESS-SIM-HES-02-2026",
+    "candidate": {
+      "candidate_id": "SIM-HES-02",
+      "name": "Siddharth Verma",
+      "target_role": "Data Infrastructure Engineer",
+      "experience_years": 4.0,
+      "archetype": "HESITANT",
+      "role_track": "technical_roles",
+      "expected_recommendation": "LEAN_HIRE",
+      "human_ground_truth": {
+        "evaluator_role": "Senior Bar Raiser Panel",
+        "behavioral_score": 70.0,
+        "communication_score": 66.0,
+        "composure_score": 64.0,
+        "aptitude_score": 72.0,
+        "composite_score": 68.2,
+        "recommendation": "LEAN_HIRE",
+        "notes": "Solid foundational database and Kafka understanding, but marked by prolonged hesitation pauses (3.8s) and frequent hedging. Needs manager probing."
+      }
+    },
+    "turns_executed": [
+      {
+        "turn_index": 1,
+        "phase": "SITUATIONAL",
+        "question_asked": "Describe how you handled a complex database migration with zero downtime.",
+        "candidate_response": "Um... well, maybe I guess we started by setting up dual-write replication... um, you know, we were not completely sure about the network latency, so we kind of monitored it carefully and then switched over the DNS after a few hours.",
+        "hesitation_seconds": 3.9,
+        "filler_percentage": 7.8,
+        "stress_index": 68.0,
+        "relevance_score": 72.0,
+        "dynamic_followup_triggered": false,
+        "followup_reason": null
+      },
+      {
+        "turn_index": 2,
+        "phase": "APTITUDE_LOGIC",
+        "question_asked": "What are the core failure modes of distributed event streaming?",
+        "candidate_response": "I am 100% absolutely certain and completely confident that Kafka consumer lag is trivial to resolve without doubt. Though, uh, when consumer partitions rebalance, maybe you can lose messages if offsets aren't committed properly.",
+        "hesitation_seconds": 3.6,
+        "filler_percentage": 7.2,
+        "stress_index": 72.0,
+        "relevance_score": 70.0,
+        "dynamic_followup_triggered": false,
+        "followup_reason": null
+      }
+    ],
+    "ai_composite_score": 65.0,
+    "ai_recommendation": "LEAN_HIRE",
+    "human_composite_score": 68.2,
+    "human_recommendation": "LEAN_HIRE",
+    "score_variance": -3.2,
+    "decision_match": true,
+    "tier_distance": 0,
+    "inconsistencies_detected": 2,
+    "cultural_fit_average": 73.8,
+    "summary_markdown_path": "data/simulations\\SIM-HES-02_summary.md",
+    "summary_json_path": "data/simulations\\SIM-HES-02_summary.json"
+  },
+  {
+    "session_id": "SESS-SIM-INEXP-03-2026",
+    "candidate": {
+      "candidate_id": "SIM-INEXP-03",
+      "name": "Kavita Patel",
+      "target_role": "Senior Systems Engineer",
+      "experience_years": 1.2,
+      "archetype": "INEXPERIENCED",
+      "role_track": "technical_roles",
+      "expected_recommendation": "LEAN_NO_HIRE",
+      "human_ground_truth": {
+        "evaluator_role": "Senior Bar Raiser Panel",
+        "behavioral_score": 52.0,
+        "communication_score": 60.0,
+        "composure_score": 55.0,
+        "aptitude_score": 45.0,
+        "composite_score": 52.8,
+        "recommendation": "LEAN_NO_HIRE",
+        "notes": "Enthusiastic and clear speaker, but trade-offs remain superficial. Lacks depth in distributed locks and connection pools for senior expectations."
+      }
+    },
+    "turns_executed": [
+      {
+        "turn_index": 1,
+        "phase": "TECHNICAL",
+        "question_asked": "How do you design a high-throughput microservices architecture?",
+        "candidate_response": "We just use Node.js and MongoDB. Whenever it slows down, we just restart the server or scale up the CPU on AWS.",
+        "hesitation_seconds": 1.5,
+        "filler_percentage": 3.0,
+        "stress_index": 35.0,
+        "relevance_score": 52.0,
+        "dynamic_followup_triggered": true,
+        "followup_reason": "VAGUENESS_DETECTED"
+      },
+      {
+        "turn_index": 2,
+        "phase": "DYNAMIC_FOLLOWUP",
+        "question_asked": "Follow-up: How do you handle database deadlocks and connection pooling?",
+        "candidate_response": "I think our cloud provider automatically manages connection pools, so I haven't really had to adjust max connections or timeouts manually.",
+        "hesitation_seconds": 2.0,
+        "filler_percentage": 4.0,
+        "stress_index": 48.0,
+        "relevance_score": 48.0,
+        "dynamic_followup_triggered": false,
+        "followup_reason": null
+      }
+    ],
+    "ai_composite_score": 55.8,
+    "ai_recommendation": "LEAN_NO_HIRE",
+    "human_composite_score": 52.8,
+    "human_recommendation": "LEAN_NO_HIRE",
+    "score_variance": 3.0,
+    "decision_match": true,
+    "tier_distance": 0,
+    "inconsistencies_detected": 0,
+    "cultural_fit_average": 73.8,
+    "summary_markdown_path": "data/simulations\\SIM-INEXP-03_summary.md",
+    "summary_json_path": "data/simulations\\SIM-INEXP-03_summary.json"
+  },
+  {
+    "session_id": "SESS-SIM-OVER-04-2026",
+    "candidate": {
+      "candidate_id": "SIM-OVER-04",
+      "name": "Dr. Rajesh Sundaram",
+      "target_role": "DevOps Engineer",
+      "experience_years": 14.0,
+      "archetype": "OVERQUALIFIED",
+      "role_track": "technical_roles",
+      "expected_recommendation": "HIRE",
+      "human_ground_truth": {
+        "evaluator_role": "Senior Bar Raiser Panel",
+        "behavioral_score": 88.0,
+        "communication_score": 85.0,
+        "composure_score": 92.0,
+        "aptitude_score": 94.0,
+        "composite_score": 89.5,
+        "recommendation": "HIRE",
+        "notes": "Far exceeds requested DevOps responsibilities; discusses kernel eBPF and multi-cloud mesh. Recommending role leveling upgrade to Principal Architect."
+      }
+    },
+    "turns_executed": [
+      {
+        "turn_index": 1,
+        "phase": "TECHNICAL",
+        "question_asked": "Describe your approach to automating CI/CD pipeline deployments.",
+        "candidate_response": "In our global financial infrastructure, simple CI/CD is insufficient. I architected zero-trust immutable image pipelines using Cosign cryptographic attestation, SPIFFE/SPIRE workload identities, and automated canary rollouts managed by ArgoCD and eBPF network telemetry to detect anomalies before 1% traffic shifting.",
+        "hesitation_seconds": 0.8,
+        "filler_percentage": 0.5,
+        "stress_index": 16.0,
+        "relevance_score": 96.0,
+        "dynamic_followup_triggered": false,
+        "followup_reason": null
+      },
+      {
+        "turn_index": 2,
+        "phase": "BEHAVIORAL",
+        "question_asked": "How do you manage disagreements on simple configuration choices?",
+        "candidate_response": "I prioritize team ownership and blameless consensus. Even if an architecture decision differs from my preferred approach, if it satisfies security, SLAs, and observability constraints, I empower the team to execute autonomously.",
+        "hesitation_seconds": 1.0,
+        "filler_percentage": 0.8,
+        "stress_index": 18.0,
+        "relevance_score": 92.0,
+        "dynamic_followup_triggered": false,
+        "followup_reason": null
+      }
+    ],
+    "ai_composite_score": 92.2,
+    "ai_recommendation": "STRONG_HIRE",
+    "human_composite_score": 89.5,
+    "human_recommendation": "HIRE",
+    "score_variance": 2.7,
+    "decision_match": false,
+    "tier_distance": 1,
+    "inconsistencies_detected": 0,
+    "cultural_fit_average": 87.8,
+    "summary_markdown_path": "data/simulations\\SIM-OVER-04_summary.md",
+    "summary_json_path": "data/simulations\\SIM-OVER-04_summary.json"
+  },
+  {
+    "session_id": "SESS-SIM-INCON-05-2026",
+    "candidate": {
+      "candidate_id": "SIM-INCON-05",
+      "name": "Tarun Khanna",
+      "target_role": "Senior Backend Lead",
+      "experience_years": 6.0,
+      "archetype": "INCONSISTENT",
+      "role_track": "technical_roles",
+      "expected_recommendation": "NO_HIRE",
+      "human_ground_truth": {
+        "evaluator_role": "Senior Bar Raiser Panel",
+        "behavioral_score": 40.0,
+        "communication_score": 55.0,
+        "composure_score": 45.0,
+        "aptitude_score": 35.0,
+        "composite_score": 43.5,
+        "recommendation": "NO_HIRE",
+        "notes": "Major red flags: Contradicted solo architecture claims in Turn 3, deflected responsibility for outage onto QA, and exhibited false dilemma fallacy."
+      }
+    },
+    "turns_executed": [
+      {
+        "turn_index": 1,
+        "phase": "BEHAVIORAL",
+        "question_asked": "Tell me about your role leading the payment gateway redesign.",
+        "candidate_response": "I single-handedly built the entire distributed payment gateway from scratch alone, making all architectural choices.",
+        "hesitation_seconds": 1.8,
+        "filler_percentage": 4.5,
+        "stress_index": 55.0,
+        "relevance_score": 65.0,
+        "dynamic_followup_triggered": false,
+        "followup_reason": null
+      },
+      {
+        "turn_index": 2,
+        "phase": "SITUATIONAL",
+        "question_asked": "When the recent release failed, how did the post-mortem proceed?",
+        "candidate_response": "It wasn't my fault at all, the management ruined our timeline and the QA team failed to test properly. Either we rewrite the entire codebase in Go or the company will go bankrupt.",
+        "hesitation_seconds": 3.5,
+        "filler_percentage": 6.0,
+        "stress_index": 82.0,
+        "relevance_score": 40.0,
+        "dynamic_followup_triggered": false,
+        "followup_reason": null
+      },
+      {
+        "turn_index": 3,
+        "phase": "TECHNICAL",
+        "question_asked": "How did you configure database connection pools in that gateway?",
+        "candidate_response": "My seniors decided all database architecture decisions, I only wrote tests and followed orders.",
+        "hesitation_seconds": 3.2,
+        "filler_percentage": 5.5,
+        "stress_index": 75.0,
+        "relevance_score": 45.0,
+        "dynamic_followup_triggered": false,
+        "followup_reason": null
+      }
+    ],
+    "ai_composite_score": 40.1,
+    "ai_recommendation": "NO_HIRE",
+    "human_composite_score": 43.5,
+    "human_recommendation": "NO_HIRE",
+    "score_variance": -3.4,
+    "decision_match": true,
+    "tier_distance": 0,
+    "inconsistencies_detected": 3,
+    "cultural_fit_average": 62.4,
+    "summary_markdown_path": "data/simulations\\SIM-INCON-05_summary.md",
+    "summary_json_path": "data/simulations\\SIM-INCON-05_summary.json"
+  }
+]

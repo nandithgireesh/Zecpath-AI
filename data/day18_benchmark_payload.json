@@ -1,0 +1,34 @@
+{
+    "resume": {
+        "skills": [
+            "Python",
+            "Machine Learning",
+            "Deep Learning",
+            "NumPy",
+            "Pandas",
+            "TensorFlow"
+        ],
+        "experience": "5 years",
+        "education": "M.Tech in Artificial Intelligence and Machine Learning",
+        "projects": [
+            "Real-Time Machine Learning Prediction System",
+            "Deep Learning Image Classification"
+        ]
+    },
+    "job_description": {
+        "role": "Machine Learning Engineer",
+        "skills": [
+            "Python",
+            "Machine Learning",
+            "Deep Learning",
+            "NumPy",
+            "Pandas",
+            "TensorFlow"
+        ],
+        "experience": "0-2 years",
+        "education": "B.Tech / M.Tech in Computer Science, Artificial Intelligence, Machine Learning, or related field",
+        "projects": [
+            "Machine Learning Projects"
+        ]
+    }
+}

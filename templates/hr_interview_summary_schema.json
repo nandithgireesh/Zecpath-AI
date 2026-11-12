@@ -1,0 +1,233 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CandidateInterviewSummarySchema",
+  "description": "Enterprise ATS JSON Schema for Zecpath-AI Day 39 Interview Summary Generator",
+  "type": "object",
+  "required": [
+    "summary_id",
+    "candidate_id",
+    "candidate_name",
+    "job_role",
+    "experience_years",
+    "session_id",
+    "generated_at",
+    "overall_performance",
+    "candidate_strengths",
+    "candidate_weaknesses",
+    "cultural_fit_indicators",
+    "risk_flags",
+    "inconsistencies",
+    "natural_language_report"
+  ],
+  "properties": {
+    "summary_id": {
+      "type": "string",
+      "description": "Unique summary identifier with format SUM-<candidate_id>-<timestamp>"
+    },
+    "candidate_id": {
+      "type": "string",
+      "description": "Unique candidate tracking identifier"
+    },
+    "candidate_name": {
+      "type": "string",
+      "description": "Full legal or professional name of the candidate"
+    },
+    "job_role": {
+      "type": "string",
+      "description": "Target job position evaluated"
+    },
+    "experience_years": {
+      "type": "number",
+      "minimum": 0.0,
+      "description": "Total professional industry experience in years"
+    },
+    "session_id": {
+      "type": "string",
+      "description": "Associated interview session ID"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 generation timestamp"
+    },
+    "overall_performance": {
+      "type": "object",
+      "required": [
+        "composite_score",
+        "behavioral_competency_score",
+        "communication_clarity_score",
+        "confidence_composure_score",
+        "cognitive_aptitude_score",
+        "recommendation",
+        "readiness_level",
+        "calibrated_role_tier",
+        "executive_verdict"
+      ],
+      "properties": {
+        "composite_score": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 100.0
+        },
+        "behavioral_competency_score": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 100.0
+        },
+        "communication_clarity_score": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 100.0
+        },
+        "confidence_composure_score": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 100.0
+        },
+        "cognitive_aptitude_score": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 100.0
+        },
+        "recommendation": {
+          "type": "string",
+          "enum": [
+            "STRONG_HIRE",
+            "HIRE",
+            "LEAN_HIRE",
+            "LEAN_NO_HIRE",
+            "NO_HIRE"
+          ]
+        },
+        "readiness_level": {
+          "type": "string"
+        },
+        "calibrated_role_tier": {
+          "type": "string"
+        },
+        "executive_verdict": {
+          "type": "string"
+        }
+      }
+    },
+    "candidate_strengths": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "candidate_weaknesses": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "cultural_fit_indicators": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "dimension",
+          "score",
+          "alignment_level",
+          "evidence_excerpts",
+          "observations"
+        ],
+        "properties": {
+          "dimension": {
+            "type": "string",
+            "enum": [
+              "ownership_and_accountability",
+              "collaboration_and_teamwork",
+              "customer_centricity",
+              "adaptability_and_growth",
+              "transparency_and_ethics"
+            ]
+          },
+          "score": {
+            "type": "number",
+            "minimum": 0.0,
+            "maximum": 100.0
+          },
+          "alignment_level": {
+            "type": "string",
+            "enum": ["EXEMPLARY", "STRONG", "MODERATE", "WEAK"]
+          },
+          "evidence_excerpts": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "observations": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "risk_flags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "inconsistencies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "inconsistency_id",
+          "inconsistency_type",
+          "severity",
+          "claim_source",
+          "contradicting_source",
+          "claimed_statement",
+          "contradicting_statement",
+          "explanation",
+          "recommended_probing_question"
+        ],
+        "properties": {
+          "inconsistency_id": { "type": "string" },
+          "inconsistency_type": {
+            "type": "string",
+            "enum": [
+              "factual_experience_mismatch",
+              "cross_turn_contradiction",
+              "verbal_affect_discordance",
+              "competency_performance_gap",
+              "role_leveling_discrepancy"
+            ]
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["CRITICAL", "MODERATE", "MINOR"]
+          },
+          "claim_source": { "type": "string" },
+          "contradicting_source": { "type": "string" },
+          "claimed_statement": { "type": "string" },
+          "contradicting_statement": { "type": "string" },
+          "explanation": { "type": "string" },
+          "recommended_probing_question": { "type": "string" }
+        }
+      }
+    },
+    "natural_language_report": {
+      "type": "object",
+      "required": [
+        "executive_overview",
+        "communication_persona",
+        "behavioral_and_cultural_fit",
+        "cognitive_and_technical_maturity",
+        "inconsistency_and_risk_analysis",
+        "hiring_manager_action_plan",
+        "targeted_interview_probes"
+      ],
+      "properties": {
+        "executive_overview": { "type": "string" },
+        "communication_persona": { "type": "string" },
+        "behavioral_and_cultural_fit": { "type": "string" },
+        "cognitive_and_technical_maturity": { "type": "string" },
+        "inconsistency_and_risk_analysis": { "type": "string" },
+        "hiring_manager_action_plan": { "type": "string" },
+        "targeted_interview_probes": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

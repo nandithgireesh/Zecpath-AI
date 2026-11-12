@@ -1,0 +1,18 @@
+{
+    "skills": [
+        "c",
+        "css",
+        "git",
+        "html",
+        "java",
+        "javascript",
+        "python",
+        "react",
+        "sql"
+    ],
+    "experience": "Junior Web Developer, WebWorks Technologies, 2024–2025. Developed web applications using Python and JavaScript and designed SQL queries. Projects E-commerce Web Application using React and Python; SQL-based Customer Management System.",
+    "education": "B.Tech in Computer Science and Engineering, 2024 Technical Skills Python, SQL, HTML, CSS, JavaScript, React, Git Experience Junior Web Developer, WebWorks Technologies, 2024–2025. Developed web applications using Python and JavaScript and designed SQL queries. Projects E-commerce Web Application using React and Python; SQL-based Customer Management System.",
+    "projects": "E-commerce Web Application using React and Python; SQL-based Customer Management System.",
+    "raw_text": "ROHAN NAIR\nrohan.nair@example.com | +91 9123456780\nProfessional Summary\nSoftware developer with experience in Python, SQL, and web application development.\nEducation\nB.Tech in Computer Science and Engineering, 2024\nTechnical Skills\nPython, SQL, HTML, CSS, JavaScript, React, Git\nExperience\nJunior Web Developer, WebWorks Technologies, 2024–2025. Developed web applications using Python and\nJavaScript and designed SQL queries.\nProjects\nE-commerce Web Application using React and Python; SQL-based Customer Management System.",
+    "resume_id": "partial_candidate"
+}

@@ -1,0 +1,228 @@
+{
+  "dataset_metadata": {
+    "title": "Zecpath-AI Day 45 HR Interview AI Benchmark Demo Dataset",
+    "version": "1.5.0",
+    "target_jurisdictions": ["NYC Local Law 144", "EEOC Uniform Guidelines (29 CFR § 1607)", "Illinois BIPA (740 ILCS 14/)", "EU AI Act (Annex III)"],
+    "created_at": "2026-10-06T14:20:00Z",
+    "author": "Nandith Gireesh",
+    "organization": "Zecser Business LLP",
+    "cohort_size": 5
+  },
+  "benchmark_cohort": [
+    {
+      "candidate_id": "CAND-45-01",
+      "pseudonym": "PSEUDO-7F3A9C12",
+      "candidate_name": "Aditi Rao",
+      "target_role": "Lead Cloud Infrastructure Architect",
+      "experience_years": 8.5,
+      "seniority": "SENIOR",
+      "statutory_consent": {
+        "explicit_opt_in": true,
+        "receipt_sha256": "ced23a7224d8b495e015fdfa8e53a1f458140f91eee270ea679110bb112f7fa5",
+        "timestamp_utc": "2026-10-06T14:21:00Z"
+      },
+      "turns": [
+        {
+          "turn_index": 1,
+          "competency": "Distributed System Architecture",
+          "raw_transcript": "My name is Aditi Rao. I deployed Apache Kafka across multi-region AWS clusters with 3-replica configurations to prevent partition loss.",
+          "speech_latency_seconds": 3.2,
+          "audio_duration_seconds": 14.5,
+          "answer_word_count": 22,
+          "expected_action": "PROBE_DEEPER",
+          "scrubbed_entities": ["Aditi Rao", "AWS"]
+        },
+        {
+          "turn_index": 2,
+          "competency": "Distributed System Architecture",
+          "raw_transcript": "When network splits occurred, we configured min.insync.replicas=2 and handled producer idempotence to guarantee exactly-once processing semantics.",
+          "speech_latency_seconds": 2.8,
+          "audio_duration_seconds": 18.0,
+          "answer_word_count": 20,
+          "expected_action": "ADVANCE_TOPIC",
+          "scrubbed_entities": []
+        }
+      ],
+      "scoring_profile": {
+        "semantic_relevance": 88.5,
+        "communication_fluency": 82.0,
+        "raw_composure": 86.0,
+        "consistency_score": 89.0,
+        "deliberation_credit_applied": true,
+        "deliberation_credit_pts": 4.20,
+        "net_penalty_deduction": -1.50,
+        "net_composite_score": 88.93,
+        "overqualification_index": 0.32,
+        "expected_decision": "STRONG_HIRE"
+      }
+    },
+    {
+      "candidate_id": "CAND-45-02",
+      "pseudonym": "PSEUDO-4B81D3E0",
+      "candidate_name": "Marcus Chen",
+      "target_role": "Senior Full-Stack Engineer",
+      "experience_years": 6.0,
+      "seniority": "SENIOR",
+      "statutory_consent": {
+        "explicit_opt_in": true,
+        "receipt_sha256": "4b81d3e098df2410a56feac77198ba12048fbc210087fe5412cb901aa874e1d3",
+        "timestamp_utc": "2026-10-06T14:22:15Z"
+      },
+      "turns": [
+        {
+          "turn_index": 1,
+          "competency": "Frontend State & Rendering Architecture",
+          "raw_transcript": "Um, like, as a 29 year old guy from Stanford, you know, I built React Next.js server components with hydration streaming.",
+          "speech_latency_seconds": 1.4,
+          "audio_duration_seconds": 12.0,
+          "answer_word_count": 21,
+          "expected_action": "PROBE_DEEPER",
+          "scrubbed_entities": ["29 year old", "guy", "Stanford"]
+        },
+        {
+          "turn_index": 2,
+          "competency": "Frontend State & Rendering Architecture",
+          "raw_transcript": "We optimized Core Web Vitals, reducing Largest Contentful Paint to 1.1s by deferring non-critical scripts and caching GraphQL edges.",
+          "speech_latency_seconds": 1.8,
+          "audio_duration_seconds": 16.5,
+          "answer_word_count": 19,
+          "expected_action": "ADVANCE_TOPIC",
+          "scrubbed_entities": []
+        }
+      ],
+      "scoring_profile": {
+        "semantic_relevance": 78.0,
+        "communication_fluency": 74.0,
+        "raw_composure": 76.5,
+        "consistency_score": 80.0,
+        "deliberation_credit_applied": false,
+        "deliberation_credit_pts": 0.0,
+        "net_penalty_deduction": -3.50,
+        "net_composite_score": 75.25,
+        "overqualification_index": 0.22,
+        "expected_decision": "HIRE"
+      }
+    },
+    {
+      "candidate_id": "CAND-45-03",
+      "pseudonym": "PSEUDO-99EC218B",
+      "candidate_name": "Priya Patel",
+      "target_role": "Data Platform Specialist (ESL Dialect Normalization)",
+      "experience_years": 7.0,
+      "seniority": "SENIOR",
+      "statutory_consent": {
+        "explicit_opt_in": true,
+        "receipt_sha256": "99ec218bbca081741fded4410986701bbaf98177210eabbc74109fa881726a91",
+        "timestamp_utc": "2026-10-06T14:23:45Z"
+      },
+      "turns": [
+        {
+          "turn_index": 1,
+          "competency": "ETL Batch & Streaming Pipeline",
+          "raw_transcript": "In my previous project, we prepone the release cycle and did the needful on Apache Spark batch joins using broadcast variables.",
+          "speech_latency_seconds": 2.5,
+          "audio_duration_seconds": 15.0,
+          "answer_word_count": 21,
+          "expected_action": "ADVANCE_TOPIC",
+          "scrubbed_entities": ["prepone -> advance", "did the needful -> completed the required tasks"]
+        }
+      ],
+      "scoring_profile": {
+        "semantic_relevance": 84.0,
+        "communication_fluency": 79.5,
+        "raw_composure": 83.0,
+        "consistency_score": 82.5,
+        "deliberation_credit_applied": true,
+        "deliberation_credit_pts": 3.80,
+        "net_penalty_deduction": -1.00,
+        "net_composite_score": 84.88,
+        "overqualification_index": 0.25,
+        "expected_decision": "STRONG_HIRE"
+      }
+    },
+    {
+      "candidate_id": "CAND-45-04",
+      "pseudonym": "PSEUDO-1C55FA92",
+      "candidate_name": "Kevin Miller",
+      "target_role": "Junior Backend Developer",
+      "experience_years": 1.5,
+      "seniority": "JUNIOR",
+      "statutory_consent": {
+        "explicit_opt_in": true,
+        "receipt_sha256": "1c55fa92bb660410abfdeca09817345610899017621efba0987112009874bca1",
+        "timestamp_utc": "2026-10-06T14:25:00Z"
+      },
+      "turns": [
+        {
+          "turn_index": 1,
+          "competency": "API Architecture & SQL Optimization",
+          "raw_transcript": "I wrote Python endpoints and used basic SQL queries to get data from Postgres.",
+          "speech_latency_seconds": 0.8,
+          "audio_duration_seconds": 8.0,
+          "answer_word_count": 13,
+          "expected_action": "PROBE_DEEPER",
+          "scrubbed_entities": []
+        },
+        {
+          "turn_index": 2,
+          "competency": "API Architecture & SQL Optimization",
+          "raw_transcript": "We added an index on user_id, which made the lookup fast.",
+          "speech_latency_seconds": 0.9,
+          "audio_duration_seconds": 9.0,
+          "answer_word_count": 11,
+          "expected_action": "ADVANCE_TOPIC",
+          "scrubbed_entities": []
+        }
+      ],
+      "scoring_profile": {
+        "semantic_relevance": 64.0,
+        "communication_fluency": 68.0,
+        "raw_composure": 70.0,
+        "consistency_score": 67.0,
+        "deliberation_credit_applied": false,
+        "deliberation_credit_pts": 0.0,
+        "net_penalty_deduction": -2.00,
+        "net_composite_score": 65.20,
+        "overqualification_index": 0.05,
+        "expected_decision": "LEAN_HIRE"
+      }
+    },
+    {
+      "candidate_id": "CAND-45-05",
+      "pseudonym": "PSEUDO-E4A0711B",
+      "candidate_name": "Dr. Elena Rostova",
+      "target_role": "Senior Cloud Infrastructure Architect",
+      "experience_years": 16.0,
+      "seniority": "STAFF_PRINCIPAL",
+      "statutory_consent": {
+        "explicit_opt_in": true,
+        "receipt_sha256": "e4a0711b789123aa089fbca71098234109887711223344556677889900aabbcc",
+        "timestamp_utc": "2026-10-06T14:26:30Z"
+      },
+      "turns": [
+        {
+          "turn_index": 1,
+          "competency": "Global Distributed Systems & Fault Tolerance",
+          "raw_transcript": "I authored consensus protocols across multi-datacenter Paxos implementations and directed global cloud topology migrations for Tier-1 banking cores.",
+          "speech_latency_seconds": 2.9,
+          "audio_duration_seconds": 17.5,
+          "answer_word_count": 20,
+          "expected_action": "ADVANCE_TOPIC",
+          "scrubbed_entities": []
+        }
+      ],
+      "scoring_profile": {
+        "semantic_relevance": 96.0,
+        "communication_fluency": 92.0,
+        "raw_composure": 94.0,
+        "consistency_score": 95.0,
+        "deliberation_credit_applied": true,
+        "deliberation_credit_pts": 4.50,
+        "net_penalty_deduction": 0.0,
+        "net_composite_score": 98.90,
+        "overqualification_index": 0.88,
+        "expected_decision": "OVERQUALIFIED_UPGRADE"
+      }
+    }
+  ]
+}

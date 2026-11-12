@@ -1,0 +1,202 @@
+[
+    {
+        "jd": "JD1.json",
+        "role": "Machine Learning Engineer",
+        "ranked_candidates": [
+            {
+                "resume": "Resume 1.json",
+                "ats_score": 45.8,
+                "level": "Poor",
+                "rank": 1,
+                "status": "SHORTLIST"
+            },
+            {
+                "resume": "Resume 2.json",
+                "ats_score": 24.3,
+                "level": "Poor",
+                "rank": 2,
+                "status": "REJECT"
+            },
+            {
+                "resume": "Resume 3.json",
+                "ats_score": 14.05,
+                "level": "Poor",
+                "rank": 3,
+                "status": "REJECT"
+            }
+        ],
+        "summary": {
+            "total_candidates": 3,
+            "shortlisted": 1,
+            "review": 0,
+            "rejected": 2,
+            "top_candidate": {
+                "resume": "Resume 1.json",
+                "ats_score": 45.8,
+                "level": "Poor",
+                "rank": 1,
+                "status": "SHORTLIST"
+            }
+        }
+    },
+    {
+        "jd": "JD2.json",
+        "role": "JOB DESCRIPTION: JUNIOR LINUX SYSTEM ADMINISTRATOR",
+        "ranked_candidates": [
+            {
+                "resume": "Resume 1.json",
+                "ats_score": 20.8,
+                "level": "Poor",
+                "rank": 1,
+                "status": "REJECT"
+            },
+            {
+                "resume": "Resume 3.json",
+                "ats_score": 18.1,
+                "level": "Poor",
+                "rank": 2,
+                "status": "REJECT"
+            },
+            {
+                "resume": "Resume 2.json",
+                "ats_score": 17.3,
+                "level": "Poor",
+                "rank": 3,
+                "status": "REJECT"
+            }
+        ],
+        "summary": {
+            "total_candidates": 3,
+            "shortlisted": 0,
+            "review": 0,
+            "rejected": 3,
+            "top_candidate": {
+                "resume": "Resume 1.json",
+                "ats_score": 20.8,
+                "level": "Poor",
+                "rank": 1,
+                "status": "REJECT"
+            }
+        }
+    },
+    {
+        "jd": "JD3.json",
+        "role": "Associate - Product Marketer",
+        "ranked_candidates": [
+            {
+                "resume": "Resume 3.json",
+                "ats_score": 31.15,
+                "level": "Poor",
+                "rank": 1,
+                "status": "REVIEW"
+            },
+            {
+                "resume": "Resume 2.json",
+                "ats_score": 27.3,
+                "level": "Poor",
+                "rank": 2,
+                "status": "REVIEW"
+            },
+            {
+                "resume": "Resume 1.json",
+                "ats_score": 26.0,
+                "level": "Poor",
+                "rank": 3,
+                "status": "REVIEW"
+            }
+        ],
+        "summary": {
+            "total_candidates": 3,
+            "shortlisted": 0,
+            "review": 3,
+            "rejected": 0,
+            "top_candidate": {
+                "resume": "Resume 3.json",
+                "ats_score": 31.15,
+                "level": "Poor",
+                "rank": 1,
+                "status": "REVIEW"
+            }
+        }
+    },
+    {
+        "jd": "JD4.json",
+        "role": "Business Analyst",
+        "ranked_candidates": [
+            {
+                "resume": "Resume 2.json",
+                "ats_score": 39.25,
+                "level": "Poor",
+                "rank": 1,
+                "status": "REVIEW"
+            },
+            {
+                "resume": "Resume 1.json",
+                "ats_score": 28.15,
+                "level": "Poor",
+                "rank": 2,
+                "status": "REVIEW"
+            },
+            {
+                "resume": "Resume 3.json",
+                "ats_score": 20.65,
+                "level": "Poor",
+                "rank": 3,
+                "status": "REJECT"
+            }
+        ],
+        "summary": {
+            "total_candidates": 3,
+            "shortlisted": 0,
+            "review": 2,
+            "rejected": 1,
+            "top_candidate": {
+                "resume": "Resume 2.json",
+                "ats_score": 39.25,
+                "level": "Poor",
+                "rank": 1,
+                "status": "REVIEW"
+            }
+        }
+    },
+    {
+        "jd": "JD5.json",
+        "role": "Staff Nurse",
+        "ranked_candidates": [
+            {
+                "resume": "Resume 3.json",
+                "ats_score": 43.75,
+                "level": "Poor",
+                "rank": 1,
+                "status": "SHORTLIST"
+            },
+            {
+                "resume": "Resume 1.json",
+                "ats_score": 21.05,
+                "level": "Poor",
+                "rank": 2,
+                "status": "REJECT"
+            },
+            {
+                "resume": "Resume 2.json",
+                "ats_score": 20.5,
+                "level": "Poor",
+                "rank": 3,
+                "status": "REJECT"
+            }
+        ],
+        "summary": {
+            "total_candidates": 3,
+            "shortlisted": 1,
+            "review": 0,
+            "rejected": 2,
+            "top_candidate": {
+                "resume": "Resume 3.json",
+                "ats_score": 43.75,
+                "level": "Poor",
+                "rank": 1,
+                "status": "SHORTLIST"
+            }
+        }
+    }
+]

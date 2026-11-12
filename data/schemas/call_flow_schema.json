@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AICallFlowSchema",
+  "description": "Draft-07 JSON Schema for AI conversational screening call flow, state machine, and error recovery actions.",
+  "type": "object",
+  "required": [
+    "session_id",
+    "candidate_id",
+    "candidate_name",
+    "role_name",
+    "current_phase",
+    "current_state",
+    "is_active",
+    "is_completed",
+    "turn_history"
+  ],
+  "properties": {
+    "session_id": {
+      "type": "string",
+      "description": "Unique session identifier"
+    },
+    "candidate_id": {
+      "type": "string",
+      "description": "Unique candidate identifier"
+    },
+    "candidate_name": {
+      "type": "string",
+      "description": "Full name of candidate being screened"
+    },
+    "role_name": {
+      "type": "string",
+      "description": "Target job position"
+    },
+    "current_phase": {
+      "type": "string",
+      "enum": [
+        "GREETING_CONSENT",
+        "PROFILE_CONFIRMATION",
+        "CORE_TECHNICAL",
+        "OPERATIONAL_CONSTRAINTS",
+        "CANDIDATE_QNA",
+        "CLOSING_WRAPUP"
+      ]
+    },
+    "current_state": {
+      "type": "string",
+      "enum": [
+        "INITIALIZING",
+        "GREETING",
+        "AWAITING_INPUT",
+        "PROCESSING_INPUT",
+        "FOLLOW_UP_PROBING",
+        "REPHRASING_FALLBACK",
+        "HANDLING_SILENCE",
+        "HANDLING_CONFUSION",
+        "HANDLING_REPETITION",
+        "TRANSITIONING_NEXT",
+        "WRAPUP",
+        "COMPLETED",
+        "CALL_TERMINATED"
+      ]
+    },
+    "current_question_index": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "question_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "question_retries": {
+      "type": "object",
+      "additionalProperties": { "type": "integer" }
+    },
+    "consecutive_failures": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "total_silence_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "total_confusion_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "total_repetition_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "is_active": {
+      "type": "boolean"
+    },
+    "is_completed": {
+      "type": "boolean"
+    },
+    "termination_reason": {
+      "type": ["string", "null"]
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "turn_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["turn_id", "speaker", "text", "state_before", "state_after"],
+        "properties": {
+          "turn_id": { "type": "integer" },
+          "speaker": { "type": "string", "enum": ["AI", "CANDIDATE"] },
+          "text": { "type": "string" },
+          "state_before": { "type": "string" },
+          "state_after": { "type": "string" },
+          "timestamp": { "type": "string" },
+          "disruption_type": {
+            "type": "string",
+            "enum": [
+              "NONE",
+              "SILENCE_TIMEOUT",
+              "CANDIDATE_CONFUSION",
+              "REPEATED_ANSWER",
+              "AUDIO_INCOMPREHENSIBLE",
+              "OFF_TOPIC",
+              "TECHNICAL_GLITCH"
+            ]
+          },
+          "metadata": { "type": "object" }
+        }
+      }
+    }
+  }
+}

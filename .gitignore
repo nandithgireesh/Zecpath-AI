@@ -1,15 +1,44 @@
-# Virtual Environment
+# Virtual Environments & Python Cache
 venv/
-
-# Python cache
+.venv/
+env/
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.pytest_cache/
 
-# Log files
-ai.log
-
-# Environment variables
+# Environment & Credentials
 .env
+.env.local
+*.key
+*.pem
 
-# VS Code settings
+# OS & Editor
+.DS_Store
+Thumbs.db
 .vscode/
+.idea/
+.gemini/
+
+# Scratch, Temporary & Build Logs
+scratch/
+123/
+*.log
+*.tmp
+build_day*.py
+check_git*.py
+rebuild_*.py
+
+# Assignment Raw PDFs, Binary Deliverables & Screenshots (Delivered via Google Drive)
+*.pdf
+*.zip
+*.docx
+*.png
+*.jpg
+Day_*_LaTeX*/
+Day_*_Drive_*/
+user_screenshot*
+Review_Report_Day_45_to_55_LaTeX/
